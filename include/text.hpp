@@ -7,9 +7,8 @@ class text
 
     public : 
 
-    explicit text(const std :: string& path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" );
+    text(const std :: string& path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" );
     ~text() = default;
-
     sf :: Text afficherText(const std :: string& name ,unsigned size , sf::Color color, float x , float y);
 
     private : 

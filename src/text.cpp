@@ -10,7 +10,7 @@ text::text(const std::string& path )
 
 }
 
-    sf::Text text :: afficherText(const std :: string& name ,unsigned size , sf::Color color, float x , float y)
+sf::Text text :: afficherText(const std :: string& name ,unsigned size , sf::Color color, float x , float y)
 {
 
     sf :: Text txt ; 
