@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main() {
+    std::cout << "C++17 SFML Toroide" << std::endl;
     sf::RenderWindow window(sf::VideoMode(800, 600), "Toroïde SFML");
     window.setFramerateLimit(120);
 
