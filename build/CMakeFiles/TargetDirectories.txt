@@ -1,0 +1,3 @@
+/home/aziz-scofeild/TowerDedense/build/CMakeFiles/main.dir
+/home/aziz-scofeild/TowerDedense/build/CMakeFiles/edit_cache.dir
+/home/aziz-scofeild/TowerDedense/build/CMakeFiles/rebuild_cache.dir
