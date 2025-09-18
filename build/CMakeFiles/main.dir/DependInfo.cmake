@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/aziz-scofeild/TowerDedense/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
-  "/home/aziz-scofeild/TowerDedense/src/text.cpp" "CMakeFiles/main.dir/src/text.cpp.o" "gcc" "CMakeFiles/main.dir/src/text.cpp.o.d"
+  "/home/achraf/project/TowerDefense/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
+  "/home/achraf/project/TowerDefense/src/text.cpp" "CMakeFiles/main.dir/src/text.cpp.o" "gcc" "CMakeFiles/main.dir/src/text.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

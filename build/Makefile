@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aziz-scofeild/TowerDedense
+CMAKE_SOURCE_DIR = /home/achraf/project/TowerDefense
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aziz-scofeild/TowerDedense/build
+CMAKE_BINARY_DIR = /home/achraf/project/TowerDefense/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aziz-scofeild/TowerDedense/build/CMakeFiles /home/aziz-scofeild/TowerDedense/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/achraf/project/TowerDefense/build/CMakeFiles /home/achraf/project/TowerDefense/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aziz-scofeild/TowerDedense/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/achraf/project/TowerDefense/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,7 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/aziz-scofeild/TowerDedense/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/achraf/project/TowerDefense/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -204,7 +204,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/aziz-scofeild/TowerDedense/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/achraf/project/TowerDefense/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

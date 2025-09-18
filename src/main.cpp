@@ -1,34 +1,71 @@
-#include <SFML/Graphics.hpp>
 #include <iostream>
-#include "text.hpp"
+#include <SFML/Graphics.hpp>
+#include <vector>
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Toroïde SFML");
-    window.setFramerateLimit(120);
+int main(){
+    const int cellsize = 50;
+    const int width  = 1280;
+    const int height = 720;
+    const int ligne = width / cellsize;  
+    const int col   = height / cellsize; 
+    const sf::Color gridlinecolor = sf::Color::White;
 
-    sf::CircleShape ball(20.f);                 // rayon = 20 px
-    ball.setFillColor(sf::Color::Cyan);
-    ball.setOrigin(ball.getRadius(), ball.getRadius());  // l'origine = centre
-    ball.setPosition(0.f, 0.f);
+    std::vector<std::vector<sf::Color>> cellcolor(ligne, std::vector<sf::Color>(col, sf::Color::Black));
 
-    sf::Vector2f velocity(120.f, 70.f);         // px/s (x,y)
-    sf::Clock clock;
+    sf::RenderWindow window(sf::VideoMode(width, height),"Tower Defense");
 
-    while (window.isOpen()) {
-        sf::Event e;
-        while (window.pollEvent(e)) {
-            if (e.type == sf::Event::Closed) window.close();
+    while(window.isOpen()){
+        sf::Event event;
+        while(window.pollEvent(event)){
+            if(event.type == sf::Event::Closed)
+                window.close();
+
+            if(event.type== sf::Event::MouseButtonPressed && event.mouseButton.button==sf::Mouse::Left) {
+                int mousex = event.mouseButton.x;
+                int mousey = event.mouseButton.y;
+
+                const int cellx = mousex / cellsize;
+                const int celly = mousey / cellsize;
+
+                if (cellx < ligne && celly < col){
+                    if(cellcolor[cellx][celly]==sf::Color::Black)
+                        cellcolor[cellx][celly]=sf::Color::Red;
+                    else
+                        cellcolor[cellx][celly]=sf::Color::Black;
+                }
+            }
         }
 
-    
-
         window.clear();
-        window.draw(t);
+
+        for (int x = 0; x < ligne; ++x) {
+            for (int y= 0; y < col; ++y) {
+                sf::RectangleShape cell (sf::Vector2f(cellsize,cellsize));
+                cell.setPosition(x*cellsize, y*cellsize);
+                cell.setFillColor(cellcolor[x][y]); 
+                window.draw(cell);
+            }
+        }
+
+        for (int x = 0; x <= width; x += cellsize) {
+            sf::Vertex line[] = 
+            {
+                sf::Vertex(sf::Vector2f(x, 0), gridlinecolor),
+                sf::Vertex(sf::Vector2f(x, height), gridlinecolor)
+            };
+            window.draw(line, 2, sf::Lines);
+        }
+
+        for (int y = 0; y <= height; y += cellsize) {
+            sf::Vertex line[] = 
+            {
+                sf::Vertex(sf::Vector2f(0, y), gridlinecolor),
+                sf::Vertex(sf::Vector2f(width, y), gridlinecolor)
+            };
+            window.draw(line, 2, sf::Lines);
+        }
+
         window.display();
-
     }
-
-
-
     return 0;
 }
