@@ -6,7 +6,6 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/aziz-scofeild/TowerDedense/src/*.cpp")
 set(OLD_GLOB
   "/home/aziz-scofeild/TowerDedense/src/main.cpp"
-  "/home/aziz-scofeild/TowerDedense/src/text.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

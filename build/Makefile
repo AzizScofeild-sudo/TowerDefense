@@ -154,30 +154,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/text.o: src/text.cpp.o
-.PHONY : src/text.o
-
-# target to build an object file
-src/text.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.o
-.PHONY : src/text.cpp.o
-
-src/text.i: src/text.cpp.i
-.PHONY : src/text.i
-
-# target to preprocess a source file
-src/text.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.i
-.PHONY : src/text.cpp.i
-
-src/text.s: src/text.cpp.s
-.PHONY : src/text.s
-
-# target to generate assembly for a file
-src/text.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.s
-.PHONY : src/text.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -190,9 +166,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/text.o"
-	@echo "... src/text.i"
-	@echo "... src/text.s"
 .PHONY : help
 
 
