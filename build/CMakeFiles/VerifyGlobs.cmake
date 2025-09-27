@@ -5,9 +5,11 @@ cmake_policy(SET CMP0009 NEW)
 # SOURCES at CMakeLists.txt:13 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/achraf/project/TowerDefense/src/*.cpp")
 set(OLD_GLOB
-  "/home/achraf/project/TowerDefense/src/Level.cpp"
   "/home/achraf/project/TowerDefense/src/main.cpp"
-  "/home/achraf/project/TowerDefense/src/text.cpp"
+  "/home/achraf/project/TowerDefense/src/mediumTower.cpp"
+  "/home/achraf/project/TowerDefense/src/strongTower.cpp"
+  "/home/achraf/project/TowerDefense/src/tower.cpp"
+  "/home/achraf/project/TowerDefense/src/weakTower.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

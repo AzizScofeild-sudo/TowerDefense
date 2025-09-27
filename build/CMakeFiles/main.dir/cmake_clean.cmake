@@ -1,10 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/src/Level.cpp.o"
-  "CMakeFiles/main.dir/src/Level.cpp.o.d"
   "CMakeFiles/main.dir/src/main.cpp.o"
   "CMakeFiles/main.dir/src/main.cpp.o.d"
-  "CMakeFiles/main.dir/src/text.cpp.o"
-  "CMakeFiles/main.dir/src/text.cpp.o.d"
+  "CMakeFiles/main.dir/src/mediumTower.cpp.o"
+  "CMakeFiles/main.dir/src/mediumTower.cpp.o.d"
+  "CMakeFiles/main.dir/src/strongTower.cpp.o"
+  "CMakeFiles/main.dir/src/strongTower.cpp.o.d"
+  "CMakeFiles/main.dir/src/tower.cpp.o"
+  "CMakeFiles/main.dir/src/tower.cpp.o.d"
+  "CMakeFiles/main.dir/src/weakTower.cpp.o"
+  "CMakeFiles/main.dir/src/weakTower.cpp.o.d"
   "main"
   "main.pdb"
 )

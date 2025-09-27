@@ -69,24 +69,10 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/src/Level.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Level.cpp.o: /home/achraf/project/TowerDefense/src/Level.cpp
-CMakeFiles/main.dir/src/Level.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/Level.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Level.cpp.o -MF CMakeFiles/main.dir/src/Level.cpp.o.d -o CMakeFiles/main.dir/src/Level.cpp.o -c /home/achraf/project/TowerDefense/src/Level.cpp
-
-CMakeFiles/main.dir/src/Level.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Level.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/Level.cpp > CMakeFiles/main.dir/src/Level.cpp.i
-
-CMakeFiles/main.dir/src/Level.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Level.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/Level.cpp -o CMakeFiles/main.dir/src/Level.cpp.s
-
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: /home/achraf/project/TowerDefense/src/main.cpp
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /home/achraf/project/TowerDefense/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
@@ -97,38 +83,84 @@ CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
 
-CMakeFiles/main.dir/src/text.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/text.cpp.o: /home/achraf/project/TowerDefense/src/text.cpp
-CMakeFiles/main.dir/src/text.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/text.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/text.cpp.o -MF CMakeFiles/main.dir/src/text.cpp.o.d -o CMakeFiles/main.dir/src/text.cpp.o -c /home/achraf/project/TowerDefense/src/text.cpp
+CMakeFiles/main.dir/src/mediumTower.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/mediumTower.cpp.o: /home/achraf/project/TowerDefense/src/mediumTower.cpp
+CMakeFiles/main.dir/src/mediumTower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/mediumTower.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/mediumTower.cpp.o -MF CMakeFiles/main.dir/src/mediumTower.cpp.o.d -o CMakeFiles/main.dir/src/mediumTower.cpp.o -c /home/achraf/project/TowerDefense/src/mediumTower.cpp
 
-CMakeFiles/main.dir/src/text.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/text.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/text.cpp > CMakeFiles/main.dir/src/text.cpp.i
+CMakeFiles/main.dir/src/mediumTower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/mediumTower.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/mediumTower.cpp > CMakeFiles/main.dir/src/mediumTower.cpp.i
 
-CMakeFiles/main.dir/src/text.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/text.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/text.cpp -o CMakeFiles/main.dir/src/text.cpp.s
+CMakeFiles/main.dir/src/mediumTower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/mediumTower.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/mediumTower.cpp -o CMakeFiles/main.dir/src/mediumTower.cpp.s
+
+CMakeFiles/main.dir/src/strongTower.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/strongTower.cpp.o: /home/achraf/project/TowerDefense/src/strongTower.cpp
+CMakeFiles/main.dir/src/strongTower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/strongTower.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/strongTower.cpp.o -MF CMakeFiles/main.dir/src/strongTower.cpp.o.d -o CMakeFiles/main.dir/src/strongTower.cpp.o -c /home/achraf/project/TowerDefense/src/strongTower.cpp
+
+CMakeFiles/main.dir/src/strongTower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/strongTower.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/strongTower.cpp > CMakeFiles/main.dir/src/strongTower.cpp.i
+
+CMakeFiles/main.dir/src/strongTower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/strongTower.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/strongTower.cpp -o CMakeFiles/main.dir/src/strongTower.cpp.s
+
+CMakeFiles/main.dir/src/tower.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/tower.cpp.o: /home/achraf/project/TowerDefense/src/tower.cpp
+CMakeFiles/main.dir/src/tower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/tower.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tower.cpp.o -MF CMakeFiles/main.dir/src/tower.cpp.o.d -o CMakeFiles/main.dir/src/tower.cpp.o -c /home/achraf/project/TowerDefense/src/tower.cpp
+
+CMakeFiles/main.dir/src/tower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/tower.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/tower.cpp > CMakeFiles/main.dir/src/tower.cpp.i
+
+CMakeFiles/main.dir/src/tower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tower.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/tower.cpp -o CMakeFiles/main.dir/src/tower.cpp.s
+
+CMakeFiles/main.dir/src/weakTower.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/weakTower.cpp.o: /home/achraf/project/TowerDefense/src/weakTower.cpp
+CMakeFiles/main.dir/src/weakTower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/weakTower.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/weakTower.cpp.o -MF CMakeFiles/main.dir/src/weakTower.cpp.o.d -o CMakeFiles/main.dir/src/weakTower.cpp.o -c /home/achraf/project/TowerDefense/src/weakTower.cpp
+
+CMakeFiles/main.dir/src/weakTower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/weakTower.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/weakTower.cpp > CMakeFiles/main.dir/src/weakTower.cpp.i
+
+CMakeFiles/main.dir/src/weakTower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/weakTower.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/weakTower.cpp -o CMakeFiles/main.dir/src/weakTower.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/Level.cpp.o" \
 "CMakeFiles/main.dir/src/main.cpp.o" \
-"CMakeFiles/main.dir/src/text.cpp.o"
+"CMakeFiles/main.dir/src/mediumTower.cpp.o" \
+"CMakeFiles/main.dir/src/strongTower.cpp.o" \
+"CMakeFiles/main.dir/src/tower.cpp.o" \
+"CMakeFiles/main.dir/src/weakTower.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/src/Level.cpp.o
 main: CMakeFiles/main.dir/src/main.cpp.o
-main: CMakeFiles/main.dir/src/text.cpp.o
+main: CMakeFiles/main.dir/src/mediumTower.cpp.o
+main: CMakeFiles/main.dir/src/strongTower.cpp.o
+main: CMakeFiles/main.dir/src/tower.cpp.o
+main: CMakeFiles/main.dir/src/weakTower.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 main: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 main: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -130,30 +130,6 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-src/Level.o: src/Level.cpp.o
-.PHONY : src/Level.o
-
-# target to build an object file
-src/Level.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Level.cpp.o
-.PHONY : src/Level.cpp.o
-
-src/Level.i: src/Level.cpp.i
-.PHONY : src/Level.i
-
-# target to preprocess a source file
-src/Level.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Level.cpp.i
-.PHONY : src/Level.cpp.i
-
-src/Level.s: src/Level.cpp.s
-.PHONY : src/Level.s
-
-# target to generate assembly for a file
-src/Level.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Level.cpp.s
-.PHONY : src/Level.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -178,29 +154,101 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/text.o: src/text.cpp.o
-.PHONY : src/text.o
+src/mediumTower.o: src/mediumTower.cpp.o
+.PHONY : src/mediumTower.o
 
 # target to build an object file
-src/text.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.o
-.PHONY : src/text.cpp.o
+src/mediumTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.o
+.PHONY : src/mediumTower.cpp.o
 
-src/text.i: src/text.cpp.i
-.PHONY : src/text.i
+src/mediumTower.i: src/mediumTower.cpp.i
+.PHONY : src/mediumTower.i
 
 # target to preprocess a source file
-src/text.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.i
-.PHONY : src/text.cpp.i
+src/mediumTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.i
+.PHONY : src/mediumTower.cpp.i
 
-src/text.s: src/text.cpp.s
-.PHONY : src/text.s
+src/mediumTower.s: src/mediumTower.cpp.s
+.PHONY : src/mediumTower.s
 
 # target to generate assembly for a file
-src/text.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.s
-.PHONY : src/text.cpp.s
+src/mediumTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.s
+.PHONY : src/mediumTower.cpp.s
+
+src/strongTower.o: src/strongTower.cpp.o
+.PHONY : src/strongTower.o
+
+# target to build an object file
+src/strongTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.o
+.PHONY : src/strongTower.cpp.o
+
+src/strongTower.i: src/strongTower.cpp.i
+.PHONY : src/strongTower.i
+
+# target to preprocess a source file
+src/strongTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.i
+.PHONY : src/strongTower.cpp.i
+
+src/strongTower.s: src/strongTower.cpp.s
+.PHONY : src/strongTower.s
+
+# target to generate assembly for a file
+src/strongTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.s
+.PHONY : src/strongTower.cpp.s
+
+src/tower.o: src/tower.cpp.o
+.PHONY : src/tower.o
+
+# target to build an object file
+src/tower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.o
+.PHONY : src/tower.cpp.o
+
+src/tower.i: src/tower.cpp.i
+.PHONY : src/tower.i
+
+# target to preprocess a source file
+src/tower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.i
+.PHONY : src/tower.cpp.i
+
+src/tower.s: src/tower.cpp.s
+.PHONY : src/tower.s
+
+# target to generate assembly for a file
+src/tower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.s
+.PHONY : src/tower.cpp.s
+
+src/weakTower.o: src/weakTower.cpp.o
+.PHONY : src/weakTower.o
+
+# target to build an object file
+src/weakTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.o
+.PHONY : src/weakTower.cpp.o
+
+src/weakTower.i: src/weakTower.cpp.i
+.PHONY : src/weakTower.i
+
+# target to preprocess a source file
+src/weakTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.i
+.PHONY : src/weakTower.cpp.i
+
+src/weakTower.s: src/weakTower.cpp.s
+.PHONY : src/weakTower.s
+
+# target to generate assembly for a file
+src/weakTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.s
+.PHONY : src/weakTower.cpp.s
 
 # Help Target
 help:
@@ -211,15 +259,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
-	@echo "... src/Level.o"
-	@echo "... src/Level.i"
-	@echo "... src/Level.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/text.o"
-	@echo "... src/text.i"
-	@echo "... src/text.s"
+	@echo "... src/mediumTower.o"
+	@echo "... src/mediumTower.i"
+	@echo "... src/mediumTower.s"
+	@echo "... src/strongTower.o"
+	@echo "... src/strongTower.i"
+	@echo "... src/strongTower.s"
+	@echo "... src/tower.o"
+	@echo "... src/tower.i"
+	@echo "... src/tower.s"
+	@echo "... src/weakTower.o"
+	@echo "... src/weakTower.i"
+	@echo "... src/weakTower.s"
 .PHONY : help
 
 
