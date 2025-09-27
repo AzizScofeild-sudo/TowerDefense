@@ -6,7 +6,7 @@ class WeakTower : public Tower {
 public:
     WeakTower(int gridX, int gridY, int cellSize);
 
-    void shoot() override;               // comportement spécifique
+    void shoot() override;               
     void draw(sf::RenderWindow& window) override;
 };
 

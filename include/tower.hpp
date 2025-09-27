@@ -6,9 +6,8 @@ class Tower {
 public:
     Tower(int gridX, int gridY, int cellSize);
 
-    virtual void draw(sf::RenderWindow& window);  // virtual pour polymorphisme
-    virtual void shoot() = 0;                     // pure virtual = obligation override
-
+    virtual void draw(sf::RenderWindow& window);  
+    virtual void shoot() = 0;                     
     sf::Vector2i getGridPosition() const;
 
 protected:
