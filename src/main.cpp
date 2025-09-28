@@ -1,15 +1,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include <random>
-#include <ctime>
-#include <memory>//
-
+#include <memory>
 #include "weakTower.hpp"
 #include "mediumTower.hpp"
 #include "strongTower.hpp"
+#include "creature.hpp"
 
-// — Gestion de l’affichage adaptatif —
 sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window)
 {
     const float windowRatio = (height_window == 0 ) ? 1.f :
@@ -51,9 +48,16 @@ int main() {
     view.setSize(static_cast<float>(width), static_cast<float>(height));
     view.setCenter(width/2 , height/2);
 
+    // --- Vecteurs de tours et créatures ---
     std::vector<std::shared_ptr<Tower>> towers;
+    std::vector<std::shared_ptr<Creature>> creatures; 
 
-    int towerType; // 1: WeakTower, 2: MediumTower, 3: StrongTower
+    int towerType = 1; // 1: WeakTower, 2: MediumTower, 3: StrongTower
+    creatures.push_back(std::make_shared<Creature>(0, 15, cellsize));
+
+    // --- AJOUTÉ : Timer pour spawn automatique ---
+    sf::Clock spawnTimer;
+    const float spawnInterval = 2.f; // 2 secondes
 
     while(window.isOpen()){
         sf::Event event;
@@ -67,6 +71,12 @@ int main() {
                 window.setView(view);
             }
 
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Num1) towerType = 1;
+                if (event.key.code == sf::Keyboard::Num2) towerType = 2;
+                if (event.key.code == sf::Keyboard::Num3) towerType = 3;
+            }
+
             if(event.type == sf::Event::MouseButtonPressed &&
                event.mouseButton.button == sf::Mouse::Left)
             {
@@ -75,17 +85,9 @@ int main() {
 
                 const int cellx = mousex / cellsize;
                 const int celly = mousey / cellsize;
-                if(event.type==sf::Event::KeyPressed)
-                {
-                    if(event.key.code==sf::Keyboard::Num1) towerType=1;
-                    if(event.key.code==sf::Keyboard::Num2) towerType=2;
-                    if(event.key.code==sf::Keyboard::Num3) towerType=3;
-                }
 
                 if (cellx < ligne && celly < col)
                 {
-                    // Sélection du type de tour selon towerType
-                    
                     if (towerType == 1)
                         towers.push_back(std::make_shared<WeakTower>(cellx, celly, cellsize));
                     else if (towerType == 2)
@@ -94,19 +96,21 @@ int main() {
                         towers.push_back(std::make_shared<StrongTower>(cellx, celly, cellsize));
                 }
             }
-
-            // Changer le type de tour avec les touches 1, 2, 3
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Num1) towerType = 1;
-                if (event.key.code == sf::Keyboard::Num2) towerType = 2;
-                if (event.key.code == sf::Keyboard::Num3) towerType = 3;
-            }
         }
 
-        // --- Rendu ---
+        // --- AJOUTÉ : Générer une créature toutes les 2 secondes ---
+        if (spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
+            creatures.push_back(std::make_shared<Creature>(0, 15, cellsize));
+            spawnTimer.restart(); // remettre le timer à zéro
+        }
+
+        // Déplacer les créatures
+        for (auto &c : creatures) {
+            c->move(); // avance horizontalement
+        }
+
         window.clear();
 
-        // Dessin des cellules
         for (int x = 0; x < ligne; ++x) {
             for (int y= 0; y < col; ++y) {
                 sf::RectangleShape cell (sf::Vector2f(cellsize,cellsize));
@@ -116,8 +120,7 @@ int main() {
             }
         }
 
-        // Lignes verticales
-        for (int x = 0; x <width; x += cellsize) {
+        for (int x = 0; x < width; x += cellsize) {
             sf::Vertex line[] =
             {
                 sf::Vertex(sf::Vector2f(x, 0), gridlinecolor),
@@ -126,7 +129,6 @@ int main() {
             window.draw(line, 2, sf::Lines);
         }
 
-        // Lignes horizontales
         for (int y = 0; y < height; y += cellsize) {
             sf::Vertex line[] =
             {
@@ -135,10 +137,14 @@ int main() {
             };
             window.draw(line, 2, sf::Lines);
         }
+        
 
-        // Dessiner toutes les tours
         for (auto& t : towers) {
             t->draw(window);
+        }
+
+        for (auto& c : creatures) {
+            c->draw(window);
         }
 
         window.display();

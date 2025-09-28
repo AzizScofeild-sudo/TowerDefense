@@ -1,6 +1,7 @@
 #include "weakTower.hpp"
 #include <iostream>
 
+
 WeakTower::WeakTower(int gridX, int gridY, int cellSize)
     : Tower(gridX, gridY, cellSize)
 {

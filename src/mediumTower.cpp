@@ -1,6 +1,7 @@
 #include "mediumTower.hpp"
 #include <iostream>
 
+
 MediumTower::MediumTower(int gridX, int gridY, int cellSize)
     : Tower(gridX, gridY, cellSize)
 {

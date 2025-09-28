@@ -130,6 +130,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/creature.o: src/creature.cpp.o
+.PHONY : src/creature.o
+
+# target to build an object file
+src/creature.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.o
+.PHONY : src/creature.cpp.o
+
+src/creature.i: src/creature.cpp.i
+.PHONY : src/creature.i
+
+# target to preprocess a source file
+src/creature.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.i
+.PHONY : src/creature.cpp.i
+
+src/creature.s: src/creature.cpp.s
+.PHONY : src/creature.s
+
+# target to generate assembly for a file
+src/creature.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.s
+.PHONY : src/creature.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -259,6 +283,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/creature.o"
+	@echo "... src/creature.i"
+	@echo "... src/creature.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
