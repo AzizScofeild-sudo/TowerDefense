@@ -2,8 +2,8 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-
-sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window)
+#include "tile.hpp"
+sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window) // methode pour ma class windowManager
 {
     const float windowRatio = (height_window == 0 ) ? 1.f : static_cast<float>(width_window) /static_cast<float>(height_window) ;
     const float viewRatio = view.getSize().x / view.getSize().y ;
@@ -26,14 +26,16 @@ sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_wi
     return view ;
 }
 
+// Ma bouclez main doit contenir une seul ligne d'execution 
+// je dois donc eventuelllement creer une class window pour afficher le fenetre 
+// et une class windowManager pour la creatrtion des chmains (path)
 
 int main(){
-
 //declaration : 
 ////taille de la fenetre :
-const unsigned int width_window =1200 ,height_window = 800 ; 
+const unsigned int width_window =1200 ,height_window = 800 ; // les atributs de ma class 
 /////cellules : 
-unsigned int cell_size = 25 ; 
+unsigned int cell_size = 25 ; // atribus de la class 
 unsigned int row = height_window/cell_size ; 
 unsigned int colone = width_window/cell_size ; 
 ////Couleur des cases de la fenetre :
@@ -130,8 +132,12 @@ window.clear(sf::Color::Black);
         std :: cout << "window X = " << window.getSize().x <<  "  Y = " << window.getSize().y << std::endl;
        }
 
-    window.display();
 
+
+    window.display();
     }
+
+    tile t ; 
+    t.setType(tileType::start);   
     return 0 ; 
 }
