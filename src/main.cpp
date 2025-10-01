@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include "tile.hpp"
+#include "tileMap.hpp"
+
 sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window) // methode pour ma class windowManager
 {
     const float windowRatio = (height_window == 0 ) ? 1.f : static_cast<float>(width_window) /static_cast<float>(height_window) ;
@@ -26,6 +28,11 @@ sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_wi
     return view ;
 }
 
+
+
+
+
+
 // Ma bouclez main doit contenir une seul ligne d'execution 
 // je dois donc eventuelllement creer une class window pour afficher le fenetre 
 // et une class windowManager pour la creatrtion des chmains (path)
@@ -38,8 +45,7 @@ const unsigned int width_window =1200 ,height_window = 800 ; // les atributs de 
 unsigned int cell_size = 25 ; // atribus de la class 
 unsigned int row = height_window/cell_size ; 
 unsigned int colone = width_window/cell_size ; 
-////Couleur des cases de la fenetre :
-std::vector<std::vector<sf::Color>> cell_color(row,std::vector<sf::Color>(colone,sf::Color::Black));
+tileMap map{colone ,row ,cell_size};
 
 
 /////////
@@ -51,91 +57,110 @@ window.setFramerateLimit(60);
 sf::View view ; 
 view.setSize(static_cast<float>(width_window), static_cast<float>(height_window));
 view.setCenter(width_window/2 , height_window/2);
-//view = manageWindow(view, window.getSize().x, window.getSize().y);
-//window.setView(view); 
+view = manageWindow(view, window.getSize().x, window.getSize().y);
+window.setView(view); 
 
 
 
+
+// --- au-dessus de la boucle, si tu veux tracer en glissant :
+bool isPainting = false;      // vrai quand on maintient le clic gauche
+tileType paintType = tileType::path; // type en cours (sera recalculé à chaque clic)
 
 while (window.isOpen())
 {
-////////Gestion des evenements :
-    sf :: Event event ; 
-    while(window.pollEvent(event))
+    sf::Event event;
+    while (window.pollEvent(event))
     {
-        if(event.type == sf::Event::Closed) window.close(); 
+        if (event.type == sf::Event::Closed)
+            window.close();
+
         if (event.type == sf::Event::Resized)
         {
-            view = manageWindow(view , event.size.width , event.size.height);
-            window.setView(view); 
+            view = manageWindow(view, event.size.width, event.size.height);
+            window.setView(view);
         }
-        if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
-        {
-            sf::Vector2f world = window.mapPixelToCoords({event.mouseButton.x ,event.mouseButton.y});
-            unsigned int mouse_x = world.x ; 
-            unsigned int mouse_y = world.y ; 
-//////// Detecter la case selectionnee :
-            unsigned int cell_x = mouse_x/cell_size;
-            unsigned int cell_y = mouse_y/cell_size;
-//////// Affecter une couleur a une case 
-            if(cell_x < colone && cell_y < row )
-            {
-                if(cell_color[cell_y][cell_x] == sf::Color::Black)
-                {
-                    cell_color[cell_y][cell_x] = sf::Color::Red ; 
-                }
-                else
-                {
-                    cell_color[cell_y][cell_x] = sf::Color::Black ; 
-                }
-                 
-                
-            }
-        }
-    }////fin de la bouble de gestion d'evenement
 
-window.clear(sf::Color::Black);
-
-    
-////////dessiner les differentes cases 
-    for(unsigned int y = 0 ; y < row ; ++y )
-    {
-        for(unsigned int x = 0 ; x < colone ; ++x)
-        {
-            sf::RectangleShape cell(sf::Vector2f(cell_size,cell_size));
-            cell.setPosition(x * cell_size ,y * cell_size);
-            cell.setFillColor(cell_color[y][x]);
-            window.draw(cell);
-        }
-    }////Fin de la boucle (Dessiner les cases)
-
-////////Dessiner les line verticales : 
-    for(unsigned int x = 0 ; x < width_window ; x+=cell_size)
-       {
-        sf::Vertex line[] = 
-        {
-            sf::Vertex(sf::Vector2f(x,0),sf::Color::White),
-            sf::Vertex(sf::Vector2f(x,height_window),sf::Color::White) 
+        // -------------------------
+        // choix du type à peindre :
+        // -------------------------
+        auto computePaintType = [&]() -> tileType {
+            // On lit l'état du clavier AU MOMENT du clic
+            // (left click + G/O/S/T)
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) return tileType::ground;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) return tileType::obstacle;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) return tileType::start;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) return tileType::goal;
+            // par défaut : Path
+            return tileType::path;
         };
-        window.draw(line,2,sf::Lines); 
-       }
-    
-////////Dessiner les ligne horizontales :
-        for(unsigned int y = 0 ; y < height_window ; y+=cell_size)
-       {
-        sf::Vertex line[] = 
+
+        // ------------------------------------------------
+        // CLIC GAUCHE : peindre (avec ou sans modificateur)
+        // ------------------------------------------------
+        if (event.type == sf::Event::MouseButtonPressed &&
+            event.mouseButton.button == sf::Mouse::Left)
         {
-            sf::Vertex(sf::Vector2f(0,y),sf::Color::White),
-            sf::Vertex(sf::Vector2f(width_window,y),sf::Color::White) 
-        };
-        window.draw(line,2,sf::Lines); 
-        std :: cout << "window X = " << window.getSize().x <<  "  Y = " << window.getSize().y << std::endl;
-       }
+            isPainting = true;
 
+            // 1) pixel écran -> coords monde (prend en compte la view)
+            sf::Vector2f world = window.mapPixelToCoords(
+                { event.mouseButton.x, event.mouseButton.y }, window.getView());
 
+            // 2) monde -> cellule (x,y)
+            sf::Vector2i cell = map.worldToCell(world); // <- si ta signature prend Vector2i, caste world.x/y en int d’abord
 
+            // 3) déterminer le type à peindre en fonction des touches
+            paintType = computePaintType();
+
+            // 4) peindre si dans la carte
+            if (cell.x >= 0 && cell.y >= 0)
+                map.paint((unsigned)cell.x, (unsigned)cell.y, paintType);
+        }
+
+        // ------------------------------------------------
+        // DRAG (glisser en maintenant le clic gauche)
+        // ------------------------------------------------
+        if (event.type == sf::Event::MouseMoved && isPainting)
+        {
+            sf::Vector2f world = window.mapPixelToCoords(
+                { event.mouseMove.x, event.mouseMove.y }, window.getView());
+
+            sf::Vector2i cell = map.worldToCell(world);
+            if (cell.x >= 0 && cell.y >= 0)
+                map.paint((unsigned)cell.x, (unsigned)cell.y, paintType);
+        }
+
+        // ------------------------------------------------
+        // RELÂCHEMENT clic gauche : on arrête de peindre
+        // ------------------------------------------------
+        if (event.type == sf::Event::MouseButtonReleased &&
+            event.mouseButton.button == sf::Mouse::Left)
+        {
+            isPainting = false;
+        }
+
+        // ------------------------------------------------
+        // CLIC DROIT : gomme (force Ground)
+        // ------------------------------------------------
+        if (event.type == sf::Event::MouseButtonPressed &&
+            event.mouseButton.button == sf::Mouse::Right)
+        {
+            sf::Vector2f world = window.mapPixelToCoords(
+                { event.mouseButton.x, event.mouseButton.y }, window.getView());
+
+            sf::Vector2i cell = map.worldToCell(world);
+            if (cell.x >= 0 && cell.y >= 0)
+                map.paint((unsigned)cell.x, (unsigned)cell.y, tileType::ground);
+        }
+    } // fin pollEvent
+
+    // ---- Rendu (une seule fois par frame) ----
+    window.clear(sf::Color::Black);
+    map.draw(window);
     window.display();
-    }
+}
+
 
     tile t ; 
     t.setType(tileType::start);   

@@ -34,7 +34,6 @@ sf::Color tile::displayColor() const  noexcept
     
     default:
             return sf::Color::Magenta; // fallback, ne devrait pas arriver
-        break;
     };
 }
 
