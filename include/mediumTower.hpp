@@ -4,7 +4,7 @@
 
 class MediumTower : public Tower {
 public:
-    MediumTower(int gridX, int gridY, int cellSize);
+    MediumTower(int gridX, int gridY, tileMap& map);
 
     void shoot() override;
     void draw(sf::RenderWindow& window) override;

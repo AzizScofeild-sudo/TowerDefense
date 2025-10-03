@@ -1,10 +1,12 @@
 #ifndef CREATURE_HPP
 #define CREATURE_HPP
 #include <SFML/Graphics.hpp>
+#include "tileMap.hpp"
+
 
 class Creature {
 public:
-    Creature(int gridX, int gridY, int cellSize, int health = 100, float speed = 0.2f);
+    Creature(int gridX, int gridY ,tileMap& map ,int health, float speed);
 
     void move();                 
 
@@ -19,6 +21,6 @@ private:
     sf::Vector2f position;
     int health;
     float speed;
-    int cellSize;
+    int map;
 };  
 #endif

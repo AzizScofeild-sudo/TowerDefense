@@ -4,7 +4,7 @@
 
 class WeakTower : public Tower {
 public:
-    WeakTower(int gridX, int gridY, int cellSize);
+    WeakTower(int gridX, int gridY, tileMap& map);
 
     void shoot() override;               
     void draw(sf::RenderWindow& window) override;

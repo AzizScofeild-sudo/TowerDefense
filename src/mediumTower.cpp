@@ -2,8 +2,8 @@
 #include <iostream>
 
 
-MediumTower::MediumTower(int gridX, int gridY, int cellSize)
-    : Tower(gridX, gridY, cellSize)
+MediumTower::MediumTower(int gridX, int gridY, tileMap& map)
+    : Tower(gridX, gridY, map)
 {
     damage = 10;
     range = 100;

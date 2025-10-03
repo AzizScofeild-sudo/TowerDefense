@@ -1,153 +1,132 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <memory>
+#include "tile.hpp"
+#include "tileMap.hpp"
 #include "weakTower.hpp"
 #include "mediumTower.hpp"
 #include "strongTower.hpp"
 #include "creature.hpp"
 
-sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window)
-{
+// --- Gestion redimensionnement fenêtre ---
+sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window) {
     const float windowRatio = (height_window == 0 ) ? 1.f :
-        static_cast<float>(width_window) /static_cast<float>(height_window);
+        static_cast<float>(width_window) / static_cast<float>(height_window);
     const float viewRatio = view.getSize().x / view.getSize().y ;
-
     float X = 0.f, Y = 0.f ;
     float portion_x = 1.f , portion_y = 1.f ;
 
-    if(windowRatio > viewRatio)
-    {
+    if(windowRatio > viewRatio) {
         portion_x = viewRatio / windowRatio ;
         X = (1 - portion_x)/2;
-    }
-    else if(windowRatio < viewRatio)
-    {
+    } else if(windowRatio < viewRatio) {
         portion_y = windowRatio / viewRatio ;
         Y = (1-portion_y)/2 ;
     }
-
     view.setViewport(sf::FloatRect( X , Y , portion_x , portion_y));
     return view ;
 }
 
 int main() {
-    const int cellsize = 25;
-    const int width  = 1200;
-    const int height = 800;
-    const int ligne = width / cellsize;
-    const int col   = height / cellsize;
-    const sf::Color gridlinecolor = sf::Color::White;
+    const unsigned width_window = 1200, height_window = 800;
+    const unsigned cell_size = 25;
+    unsigned row = height_window / cell_size;
+    unsigned col = width_window / cell_size;
 
-    std::vector<std::vector<sf::Color>> cellcolor(
-        ligne, std::vector<sf::Color>(col, sf::Color::Black)
-    );
+    sf::RenderWindow window(sf::VideoMode(width_window,height_window), "Tower Defense");
+    window.setFramerateLimit(60);
 
-    sf::RenderWindow window(sf::VideoMode(width, height),"Tower Defense");
-    sf::View view ;
-    view.setSize(static_cast<float>(width), static_cast<float>(height));
-    view.setCenter(width/2 , height/2);
+    sf::View view;
+    view.setSize((float)width_window, (float)height_window);
+    view.setCenter(width_window/2, height_window/2);
+    view = manageWindow(view, window.getSize().x, window.getSize().y);
+    window.setView(view);
 
-    // --- Vecteurs de tours et créatures ---
+    // --- TileMap pour éditeur ---
+    tileMap map{col , row , cell_size};
+    bool isPainting = false;
+    tileType paintType = tileType::path;
+
+    // --- Tours et créatures ---
     std::vector<std::shared_ptr<Tower>> towers;
-    std::vector<std::shared_ptr<Creature>> creatures; 
-
-    int towerType = 1; // 1: WeakTower, 2: MediumTower, 3: StrongTower
-    creatures.push_back(std::make_shared<Creature>(0, 15, cellsize));
-
-    // --- AJOUTÉ : Timer pour spawn automatique ---
+    std::vector<std::shared_ptr<Creature>> creatures;
+    int towerType = 1;
     sf::Clock spawnTimer;
-    const float spawnInterval = 2.f; // 2 secondes
+    const float spawnInterval = 7.f;
 
-    while(window.isOpen()){
+    while (window.isOpen()) {
         sf::Event event;
-        while(window.pollEvent(event)){
-            if(event.type == sf::Event::Closed)
-                window.close();
-
-            if (event.type == sf::Event::Resized)
-            {
-                view = manageWindow(view , event.size.width , event.size.height);
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) window.close();
+            if (event.type == sf::Event::Resized) {
+                view = manageWindow(view, event.size.width, event.size.height);
                 window.setView(view);
             }
 
+            // --- Choix du type de tour ---
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Num1) towerType = 1;
                 if (event.key.code == sf::Keyboard::Num2) towerType = 2;
                 if (event.key.code == sf::Keyboard::Num3) towerType = 3;
             }
 
-            if(event.type == sf::Event::MouseButtonPressed &&
-               event.mouseButton.button == sf::Mouse::Left)
+            // --- Peinture avec clic gauche ---
+            if (event.type == sf::Event::MouseButtonPressed &&
+                event.mouseButton.button == sf::Mouse::Left) 
             {
-                int mousex = event.mouseButton.x;
-                int mousey = event.mouseButton.y;
+                isPainting = true;
+                sf::Vector2f world = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
+                sf::Vector2i cell = map.worldToCell(world);
 
-                const int cellx = mousex / cellsize;
-                const int celly = mousey / cellsize;
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) paintType = tileType::ground;
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) paintType = tileType::obstacle;
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) paintType = tileType::start;
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) paintType = tileType::goal;
+                else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) paintType = tileType::path;
 
-                if (cellx < ligne && celly < col)
-                {
-                    if (towerType == 1)
-                        towers.push_back(std::make_shared<WeakTower>(cellx, celly, cellsize));
-                    else if (towerType == 2)
-                        towers.push_back(std::make_shared<MediumTower>(cellx, celly, cellsize));
-                    else if (towerType == 3)
-                        towers.push_back(std::make_shared<StrongTower>(cellx, celly, cellsize));
+                if (cell.x >= 0 && cell.y >= 0) {
+                    // --- Créer les tours si la case est walkable ---
+                    if (map.accessTile(cell.x, cell.y).walkable()) {
+                        if (towerType == 1)
+                            towers.push_back(std::make_shared<WeakTower>(cell.x, cell.y, map));
+                        else if (towerType == 2)
+                            towers.push_back(std::make_shared<MediumTower>(cell.x, cell.y, map));
+                        else if (towerType == 3)
+                            towers.push_back(std::make_shared<StrongTower>(cell.x, cell.y, map));
+                    }
+                    map.paint(cell.x, cell.y, paintType);
                 }
             }
-        }
 
-        // --- AJOUTÉ : Générer une créature toutes les 2 secondes ---
-        if (spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
-            creatures.push_back(std::make_shared<Creature>(0, 15, cellsize));
-            spawnTimer.restart(); // remettre le timer à zéro
-        }
+            // --- Peinture continue ---
+            if (event.type == sf::Event::MouseMoved && isPainting) {
+                sf::Vector2f world = window.mapPixelToCoords({event.mouseMove.x, event.mouseMove.y});
+                sf::Vector2i cell = map.worldToCell(world);
+                if (cell.x >= 0 && cell.y >= 0)
+                    map.paint(cell.x, cell.y, paintType);
+            }
 
-        // Déplacer les créatures
-        for (auto &c : creatures) {
-            c->move(); // avance horizontalement
-        }
-
-        window.clear();
-
-        for (int x = 0; x < ligne; ++x) {
-            for (int y= 0; y < col; ++y) {
-                sf::RectangleShape cell (sf::Vector2f(cellsize,cellsize));
-                cell.setPosition(x*cellsize, y*cellsize);
-                cell.setFillColor(cellcolor[x][y]);
-                window.draw(cell);
+            if (event.type == sf::Event::MouseButtonReleased &&
+                event.mouseButton.button == sf::Mouse::Left) 
+            {
+                isPainting = false;
             }
         }
 
-        for (int x = 0; x < width; x += cellsize) {
-            sf::Vertex line[] =
-            {
-                sf::Vertex(sf::Vector2f(x, 0), gridlinecolor),
-                sf::Vertex(sf::Vector2f(x, height), gridlinecolor)
-            };
-            window.draw(line, 2, sf::Lines);
+        // --- Spawner une créature toutes les 5s ---
+        if (spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
+            creatures.push_back(std::make_shared<Creature>(0, row / 2, map, 100, 0.5f));
+            spawnTimer.restart();
         }
 
-        for (int y = 0; y < height; y += cellsize) {
-            sf::Vertex line[] =
-            {
-                sf::Vertex(sf::Vector2f(0, y), gridlinecolor),
-                sf::Vertex(sf::Vector2f(width, y), gridlinecolor)
-            };
-            window.draw(line, 2, sf::Lines);
-        }
-        
+        // Déplacer créatures
+        for (auto &c : creatures) c->move();
 
-        for (auto& t : towers) {
-            t->draw(window);
-        }
-
-        for (auto& c : creatures) {
-            c->draw(window);
-        }
-
+        // --- Rendering ---
+        window.clear();
+        map.draw(window);
+        for (auto& t : towers) t->draw(window);
+        for (auto& c : creatures) c->draw(window);
         window.display();
     }
-    return 0;
 }

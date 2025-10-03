@@ -1,8 +1,8 @@
 #include "strongTower.hpp"
 #include <iostream>
 
-StrongTower::StrongTower(int gridX, int gridY, int cellSize)
-    : Tower(gridX, gridY, cellSize)
+StrongTower::StrongTower(int gridX, int gridY, tileMap& map)
+    : Tower(gridX, gridY, map)
 {
     damage = 20;
     range = 150;
