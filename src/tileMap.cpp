@@ -7,9 +7,14 @@
 
 tileMap::tileMap(unsigned width ,unsigned height ,unsigned cell_size):width(width),height(height),cell_size(cell_size)   
 {
-    
     tiles.resize(width * height);
-   
+}
+
+
+tileMap::tileMap(float width_window , float height_window)
+{
+    setDimenssion(width_window , height_window);
+    tiles.resize(width * height);
 }
 
 
@@ -31,7 +36,7 @@ bool tileMap::inBounds(unsigned x ,unsigned y) const  noexcept
 
 void tileMap::paint(unsigned x ,unsigned y ,tileType t)
 {
-      if(inBounds(x,y)) accessTile(x,y).setType(t);
+      if(inBounds(x,y)) {accessTile(x,y).setType(t);}
 }
 
 sf::Vector2i tileMap::worldToCell(sf::Vector2f& world) const 
@@ -60,7 +65,7 @@ void tileMap::draw(sf::RenderTarget& rt) const
         }
     }
 // Dessiner la grille : 
-    const sf::Color lineColor(0, 0, 0, 60);
+    const sf::Color lineColor(0, 0, 0, 0);
 
     for(unsigned x = 0 ; x <= width ; ++x)
     {
@@ -80,10 +85,19 @@ void tileMap::draw(sf::RenderTarget& rt) const
             sf::Vertex({0.f, static_cast<float>(y*cell_size)}, lineColor),
             sf::Vertex({static_cast<float>(width*cell_size), static_cast<float>(y*cell_size)}, lineColor)  
 
+        
         };
         rt.draw(line, 2, sf::Lines);
     }
 
+
+}
+
+
+void tileMap::setDimenssion(float width_window , float height_window)
+{
+    width = static_cast<unsigned>(width_window) / cell_size ; 
+    height = static_cast<unsigned>(height_window) / cell_size ; 
 
 }
 

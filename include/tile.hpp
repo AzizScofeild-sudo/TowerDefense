@@ -24,7 +24,7 @@
     sf::Color displayColor() const noexcept ; 
    private : 
 
-   tileType  type = tileType::ground ;
+   tileType  type = tileType:: ground ;
    bool buildable = true; 
 
  };

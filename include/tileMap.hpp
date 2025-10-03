@@ -11,6 +11,8 @@ class tileMap
     public :
     ~tileMap() = default;
     tileMap(unsigned width , unsigned height , unsigned cell_size);
+    tileMap(float width_window , float height_window);
+
    tile& accessTile(unsigned x , unsigned y);
    const tile& accessTile(unsigned x , unsigned y) const;
    bool inBounds(unsigned x ,unsigned y) const noexcept;
@@ -24,12 +26,16 @@ class tileMap
    unsigned getheight() const noexcept ;
    unsigned getSizeTile() const noexcept ; 
 
+    private : 
+
+    void setDimenssion(float width_window , float height_window);
+
+
     private :
 
     unsigned width ; 
     unsigned height ;
-    unsigned cell_size ; 
-    std::vector<tile> tiles  ;
-
+    unsigned cell_size = 25 ;
+    std::vector<tile> tiles ;
 };
 #endif 
