@@ -1,4 +1,4 @@
-# Install script for directory: /home/aziz-scofeild/TowerDedense
+# Install script for directory: /home/achraf/project/TowerDefense
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aziz-scofeild/TowerDedense/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/achraf/project/TowerDefense/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

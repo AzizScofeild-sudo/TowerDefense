@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/aziz-scofeild/TowerDedense/include
+CXX_INCLUDES = -I/home/achraf/project/TowerDefense/include
 
 CXX_FLAGS = -std=c++17 -Wall -Wextra -pedantic
 
