@@ -253,6 +253,9 @@ CMakeFiles/main.dir/src/main.cpp.o: \
  /home/achraf/project/TowerDefense/include/weakTower.hpp \
  /home/achraf/project/TowerDefense/include/tower.hpp \
  /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/creature.hpp \
  /home/achraf/project/TowerDefense/include/mediumTower.hpp \
  /home/achraf/project/TowerDefense/include/strongTower.hpp \
- /home/achraf/project/TowerDefense/include/creature.hpp
+ /home/achraf/project/TowerDefense/include/creature.hpp \
+ /usr/include/c++/13/iostream /usr/include/c++/13/istream \
+ /usr/include/c++/13/bits/istream.tcc

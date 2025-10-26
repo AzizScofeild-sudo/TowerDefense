@@ -202,6 +202,30 @@ src/mediumTower.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.s
 .PHONY : src/mediumTower.cpp.s
 
+src/projectile.o: src/projectile.cpp.o
+.PHONY : src/projectile.o
+
+# target to build an object file
+src/projectile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.o
+.PHONY : src/projectile.cpp.o
+
+src/projectile.i: src/projectile.cpp.i
+.PHONY : src/projectile.i
+
+# target to preprocess a source file
+src/projectile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.i
+.PHONY : src/projectile.cpp.i
+
+src/projectile.s: src/projectile.cpp.s
+.PHONY : src/projectile.s
+
+# target to generate assembly for a file
+src/projectile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.s
+.PHONY : src/projectile.cpp.s
+
 src/strongTower.o: src/strongTower.cpp.o
 .PHONY : src/strongTower.o
 
@@ -340,6 +364,9 @@ help:
 	@echo "... src/mediumTower.o"
 	@echo "... src/mediumTower.i"
 	@echo "... src/mediumTower.s"
+	@echo "... src/projectile.o"
+	@echo "... src/projectile.i"
+	@echo "... src/projectile.s"
 	@echo "... src/strongTower.o"
 	@echo "... src/strongTower.i"
 	@echo "... src/strongTower.s"

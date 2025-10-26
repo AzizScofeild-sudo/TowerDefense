@@ -2,6 +2,7 @@
 #define TOWER_HPP
 #include <SFML/Graphics.hpp>
 #include "tileMap.hpp"
+#include "creature.hpp"
 
 class Tower {
 public:
@@ -9,8 +10,9 @@ public:
 
     virtual void draw(sf::RenderWindow& window);  
     virtual void shoot() = 0;                     
-    sf::Vector2i getGridPosition() const;
-
+    sf::Vector2i getTowerPosition() const; 
+    bool isCreatureInRange(const Creature& creature) const;
+    void buildable() const noexcept;
 protected:
     tileMap& map;
     sf::RectangleShape shape;

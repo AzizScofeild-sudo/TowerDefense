@@ -7,24 +7,25 @@
 #include "mediumTower.hpp"
 #include "strongTower.hpp"
 #include "creature.hpp"
+#include <iostream>
 
-// --- Gestion redimensionnement fenêtre ---
-sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window) {
-    const float windowRatio = (height_window == 0 ) ? 1.f :
+// --- Gestion du redimensionnement de la fenêtre ---
+sf::View manageWindow(sf::View view, unsigned width_window, unsigned height_window) {
+    const float windowRatio = (height_window == 0) ? 1.f :
         static_cast<float>(width_window) / static_cast<float>(height_window);
-    const float viewRatio = view.getSize().x / view.getSize().y ;
-    float X = 0.f, Y = 0.f ;
-    float portion_x = 1.f , portion_y = 1.f ;
+    const float viewRatio = view.getSize().x / view.getSize().y;
+    float X = 0.f, Y = 0.f;
+    float portion_x = 1.f, portion_y = 1.f;
 
-    if(windowRatio > viewRatio) {
-        portion_x = viewRatio / windowRatio ;
-        X = (1 - portion_x)/2;
-    } else if(windowRatio < viewRatio) {
-        portion_y = windowRatio / viewRatio ;
-        Y = (1-portion_y)/2 ;
+    if (windowRatio > viewRatio) {
+        portion_x = viewRatio / windowRatio;
+        X = (1 - portion_x) / 2;
+    } else if (windowRatio < viewRatio) {
+        portion_y = windowRatio / viewRatio;
+        Y = (1 - portion_y) / 2;
     }
-    view.setViewport(sf::FloatRect( X , Y , portion_x , portion_y));
-    return view ;
+    view.setViewport(sf::FloatRect(X, Y, portion_x, portion_y));
+    return view;
 }
 
 int main() {
@@ -33,17 +34,17 @@ int main() {
     unsigned row = height_window / cell_size;
     unsigned col = width_window / cell_size;
 
-    sf::RenderWindow window(sf::VideoMode(width_window,height_window), "Tower Defense");
+    sf::RenderWindow window(sf::VideoMode(width_window, height_window), "Tower Defense");
     window.setFramerateLimit(60);
 
     sf::View view;
     view.setSize((float)width_window, (float)height_window);
-    view.setCenter(width_window/2, height_window/2);
+    view.setCenter(width_window / 2, height_window / 2);
     view = manageWindow(view, window.getSize().x, window.getSize().y);
     window.setView(view);
 
     // --- TileMap pour éditeur ---
-    tileMap map{col , row , cell_size};
+    tileMap map{col, row, cell_size};
     bool isPainting = false;
     tileType paintType = tileType::path;
 
@@ -51,10 +52,18 @@ int main() {
     std::vector<std::shared_ptr<Tower>> towers;
     std::vector<std::shared_ptr<Creature>> creatures;
     int towerType = 1;
-    sf::Clock spawnTimer;
-    const float spawnInterval = 7.f;
+    sf::Clock spawnTimer, deltaClock;
+    const float spawnInterval = 5.f;
 
+    // --- Chemin fixe (à modifier selon ta carte) ---
+    std::vector<sf::Vector2i> path = {
+        {0,15},{8,15},{8,10},{15,10},{15,5},{22,5},{22,15},{30,15}
+    };
+
+    // --- Boucle principale ---
     while (window.isOpen()) {
+        float deltaTime = deltaClock.restart().asSeconds();
+
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) window.close();
@@ -70,10 +79,9 @@ int main() {
                 if (event.key.code == sf::Keyboard::Num3) towerType = 3;
             }
 
-            // --- Peinture avec clic gauche ---
+            // --- Clic gauche : placer tours / peindre ---
             if (event.type == sf::Event::MouseButtonPressed &&
-                event.mouseButton.button == sf::Mouse::Left) 
-            {
+                event.mouseButton.button == sf::Mouse::Left) {
                 isPainting = true;
                 sf::Vector2f world = window.mapPixelToCoords({event.mouseButton.x, event.mouseButton.y});
                 sf::Vector2i cell = map.worldToCell(world);
@@ -85,7 +93,6 @@ int main() {
                 else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) paintType = tileType::path;
 
                 if (cell.x >= 0 && cell.y >= 0) {
-                    // --- Créer les tours si la case est walkable ---
                     if (map.accessTile(cell.x, cell.y).walkable()) {
                         if (towerType == 1)
                             towers.push_back(std::make_shared<WeakTower>(cell.x, cell.y, map));
@@ -107,26 +114,40 @@ int main() {
             }
 
             if (event.type == sf::Event::MouseButtonReleased &&
-                event.mouseButton.button == sf::Mouse::Left) 
-            {
+                event.mouseButton.button == sf::Mouse::Left) {
                 isPainting = false;
             }
         }
 
-        // --- Spawner une créature toutes les 5s ---
+        // --- Spawn d'une créature toutes les 5 secondes ---
         if (spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
-            creatures.push_back(std::make_shared<Creature>(0, row / 2, map, 100, 0.5f));
+            creatures.push_back(std::make_shared<Creature>(
+                path.front().x, path.front().y, map, 100, 100.f)); // vitesse : 100.f pixels/s
             spawnTimer.restart();
         }
 
-        // Déplacer créatures
-        for (auto &c : creatures) c->move();
+        // --- Déplacement des créatures ---
+        for (auto& c : creatures)
+            c->move(path, deltaTime);
+        
+        // --- Tours qui tirent sur les créatures dans leur portée ---
+        for (auto& t : towers) {
+            for (auto& c : creatures) {
+                if (c->isAlive() && t->isCreatureInRange(*c)) {
+                    std::cout<< "Tower at (" << t->getTowerPosition().x << "," << t->getTowerPosition().y
+                             << ") shoots creature at (" << c->getCreaturePosition().x << ","
+                             << c->getCreaturePosition().y << ")\n";
+                }
+            }
+        }
 
-        // --- Rendering ---
+        // --- Rendu ---
         window.clear();
         map.draw(window);
         for (auto& t : towers) t->draw(window);
         for (auto& c : creatures) c->draw(window);
         window.display();
     }
+
+    return 0;
 }

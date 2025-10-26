@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/main.cpp.o.d"
   "CMakeFiles/main.dir/src/mediumTower.cpp.o"
   "CMakeFiles/main.dir/src/mediumTower.cpp.o.d"
+  "CMakeFiles/main.dir/src/projectile.cpp.o"
+  "CMakeFiles/main.dir/src/projectile.cpp.o.d"
   "CMakeFiles/main.dir/src/strongTower.cpp.o"
   "CMakeFiles/main.dir/src/strongTower.cpp.o.d"
   "CMakeFiles/main.dir/src/tile.cpp.o"

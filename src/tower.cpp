@@ -1,4 +1,5 @@
 #include "tower.hpp"
+#include <cmath>
 
 Tower::Tower(int gridX, int gridY,tileMap& map)
     : map(map), gridPos(gridX, gridY), range(50), damage(1)
@@ -21,7 +22,18 @@ void Tower::draw(sf::RenderWindow& window)
     window.draw(rangeCircle);
 }
 
-sf::Vector2i Tower::getGridPosition() const
+sf::Vector2i Tower::getTowerPosition() const
 {
     return gridPos;
+}
+ 
+bool Tower::isCreatureInRange(const Creature& creature) const
+{
+    sf::Vector2f towerCenter = rangeCircle.getPosition();
+    sf::Vector2f creaturePos = creature.getCreaturePosition();
+
+    float dx = towerCenter.x - creaturePos.x;
+    float dy = towerCenter.y - creaturePos.y;
+    float distance= std::sqrt(dx * dx + dy * dy);
+    return distance<= rangeCircle.getRadius();
 }

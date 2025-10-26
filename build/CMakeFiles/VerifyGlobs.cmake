@@ -8,6 +8,7 @@ set(OLD_GLOB
   "/home/achraf/project/TowerDefense/src/creature.cpp"
   "/home/achraf/project/TowerDefense/src/main.cpp"
   "/home/achraf/project/TowerDefense/src/mediumTower.cpp"
+  "/home/achraf/project/TowerDefense/src/projectile.cpp"
   "/home/achraf/project/TowerDefense/src/strongTower.cpp"
   "/home/achraf/project/TowerDefense/src/tile.cpp"
   "/home/achraf/project/TowerDefense/src/tileMap.cpp"

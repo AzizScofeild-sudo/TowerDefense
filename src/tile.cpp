@@ -21,6 +21,8 @@ bool tile::walkable() const noexcept
 }
 
 
+
+
 sf::Color tile::displayColor() const  noexcept
 {
     switch (type)
