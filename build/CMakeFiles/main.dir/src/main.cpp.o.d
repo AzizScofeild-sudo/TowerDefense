@@ -1,5 +1,6 @@
 CMakeFiles/main.dir/src/main.cpp.o: \
  /home/aziz-scofeild/TowerDedense/src/main.cpp /usr/include/stdc-predef.h \
+ /home/aziz-scofeild/TowerDedense/include/window.hpp \
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -242,6 +243,5 @@ CMakeFiles/main.dir/src/main.cpp.o: \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /usr/include/c++/13/cstdint \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
- /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /home/aziz-scofeild/TowerDedense/include/mapEditor.hpp \
- /home/aziz-scofeild/TowerDedense/include/tileMap.hpp
+ /home/aziz-scofeild/TowerDedense/include/mapManager.hpp

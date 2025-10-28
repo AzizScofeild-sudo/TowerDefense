@@ -20,12 +20,13 @@
     tile(); 
     ~tile() = default ; 
     bool walkable() const noexcept ; 
-    void setType(tileType newType) noexcept ; 
+    void setType(tileType newType) noexcept ;
+    tileType getType() const noexcept ; 
     sf::Color displayColor() const noexcept ; 
    private : 
 
-   tileType  type = tileType:: ground ;
-   bool buildable = true; 
+   tileType  type_ = tileType:: ground ;
+   bool buildable_ = true; 
 
  };
 

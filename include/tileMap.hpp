@@ -23,7 +23,7 @@ class tileMap
    // les accesseurs : 
 
    unsigned getWidth() const noexcept ;
-   unsigned getheight() const noexcept ;
+   unsigned getHeight() const noexcept ;
    unsigned getSizeTile() const noexcept ; 
 
     private : 
@@ -33,9 +33,9 @@ class tileMap
 
     private :
 
-    unsigned width ; 
-    unsigned height ;
-    unsigned cell_size = 25 ;
-    std::vector<tile> tiles ;
+    unsigned width_ ; 
+    unsigned height_ ;
+    unsigned cell_size_ = 25 ;
+    std::vector<tile> tiles_ ;
 };
 #endif 

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/main.cpp.o.d"
   "CMakeFiles/main.dir/src/mapEditor.cpp.o"
   "CMakeFiles/main.dir/src/mapEditor.cpp.o.d"
+  "CMakeFiles/main.dir/src/mapManager.cpp.o"
+  "CMakeFiles/main.dir/src/mapManager.cpp.o.d"
   "CMakeFiles/main.dir/src/tile.cpp.o"
   "CMakeFiles/main.dir/src/tile.cpp.o.d"
   "CMakeFiles/main.dir/src/tileMap.cpp.o"

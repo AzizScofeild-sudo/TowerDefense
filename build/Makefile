@@ -178,6 +178,30 @@ src/mapEditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.s
 .PHONY : src/mapEditor.cpp.s
 
+src/mapManager.o: src/mapManager.cpp.o
+.PHONY : src/mapManager.o
+
+# target to build an object file
+src/mapManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.o
+.PHONY : src/mapManager.cpp.o
+
+src/mapManager.i: src/mapManager.cpp.i
+.PHONY : src/mapManager.i
+
+# target to preprocess a source file
+src/mapManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.i
+.PHONY : src/mapManager.cpp.i
+
+src/mapManager.s: src/mapManager.cpp.s
+.PHONY : src/mapManager.s
+
+# target to generate assembly for a file
+src/mapManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.s
+.PHONY : src/mapManager.cpp.s
+
 src/tile.o: src/tile.cpp.o
 .PHONY : src/tile.o
 
@@ -265,6 +289,9 @@ help:
 	@echo "... src/mapEditor.o"
 	@echo "... src/mapEditor.i"
 	@echo "... src/mapEditor.s"
+	@echo "... src/mapManager.o"
+	@echo "... src/mapManager.i"
+	@echo "... src/mapManager.s"
 	@echo "... src/tile.o"
 	@echo "... src/tile.i"
 	@echo "... src/tile.s"
