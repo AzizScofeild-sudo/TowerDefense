@@ -1,5 +1,16 @@
 {
     "files.associations": {
-        "random": "cpp"
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "compare": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "any": "cpp",
+        "ranges": "cpp",
+        "ratio": "cpp",
+        "variant": "cpp"
     }
 }

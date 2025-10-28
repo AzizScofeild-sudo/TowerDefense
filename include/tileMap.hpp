@@ -1,5 +1,5 @@
 #ifndef __TILEMAP__
-#define __TILEMAP__
+ #define __TILEMAP__
 
 #include "tile.hpp"
 #include <vector>
@@ -7,39 +7,35 @@
 
 class tileMap
 {
-public:
+
+    public :
     ~tileMap() = default;
+    tileMap(unsigned width , unsigned height , unsigned cell_size);
+    tileMap(float width_window , float height_window);
 
-    // Constructeur
-    tileMap(unsigned width, unsigned height, unsigned cell_size);
+   tile& accessTile(unsigned x , unsigned y);
+   const tile& accessTile(unsigned x , unsigned y) const;
+   bool inBounds(unsigned x ,unsigned y) const noexcept;
+   void  paint(unsigned x , unsigned y , tileType t );
+   sf::Vector2i worldToCell(sf::Vector2f& world) const;
+   void draw(sf::RenderTarget& rt) const;
 
-    // Accès aux tiles
-    tile& accessTile(unsigned x, unsigned y);
-    const tile& accessTile(unsigned x, unsigned y) const;
+   // les accesseurs : 
 
-    // Vérification des limites
-    bool inBounds(unsigned x, unsigned y) const noexcept;
+   unsigned getWidth() const noexcept ;
+   unsigned getHeight() const noexcept ;
+   unsigned getSizeTile() const noexcept ; 
 
-    // Peindre une tile
-    void paint(unsigned x, unsigned y, tileType t);
+    private : 
 
-    // Convertir coordonnées monde -> cellule
-    sf::Vector2i worldToCell(sf::Vector2f& world) const;
-
-    // Dessiner la map
-    void draw(sf::RenderTarget& rt) const;
+    void setDimenssion(float width_window , float height_window);
 
 
-    // Accesseurs
-    unsigned getWidth() const noexcept;
-    unsigned getHeight() const noexcept;
-    unsigned getSizeTile() const noexcept;
+    private :
 
-private:
-    unsigned width; 
-    unsigned height;
-    unsigned cell_size;
-    std::vector<tile> tiles;
+    unsigned width_ ; 
+    unsigned height_ ;
+    unsigned cell_size_ = 25 ;
+    std::vector<tile> tiles_ ;
 };
-
-#endif
+#endif 

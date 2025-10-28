@@ -1,12 +1,15 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <memory>
+#include <string>
+#include <filesystem>
 #include "tile.hpp"
 #include "tileMap.hpp"
 #include "weakTower.hpp"
 #include "mediumTower.hpp"
 #include "strongTower.hpp"
 #include "creature.hpp"
+#include "mapManager.hpp"
 #include <iostream>
 
 // --- Gestion du redimensionnement de la fenêtre ---
@@ -34,6 +37,11 @@ int main() {
     unsigned row = height_window / cell_size;
     unsigned col = width_window / cell_size;
 
+    // --- Créer le dossier "map" si nécessaire ---
+    if (!std::filesystem::exists("map")) {
+        std::filesystem::create_directory("map");
+    }
+
     sf::RenderWindow window(sf::VideoMode(width_window, height_window), "Tower Defense");
     window.setFramerateLimit(60);
 
@@ -55,10 +63,20 @@ int main() {
     sf::Clock spawnTimer, deltaClock;
     const float spawnInterval = 5.f;
 
-    // --- Chemin fixe (à modifier selon ta carte) ---
+    // --- Chemin fixe ---
     std::vector<sf::Vector2i> path = {
         {0,15},{8,15},{8,10},{15,10},{15,5},{22,5},{22,15},{30,15}
     };
+
+    // --- Texte pour notifications (save/load) ---
+    sf::Font font;
+        if (!font.loadFromFile("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")) {
+            std::cerr << "Impossible de charger la police DejaVuSans\n";
+        }
+
+    sf::Text message("", font, 20);
+    message.setFillColor(sf::Color::Yellow);
+    float messageTimer = 0.f;
 
     // --- Boucle principale ---
     while (window.isOpen()) {
@@ -72,11 +90,35 @@ int main() {
                 window.setView(view);
             }
 
-            // --- Choix du type de tour ---
+            // --- Gestion des touches ---
             if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Num1) towerType = 1;
-                if (event.key.code == sf::Keyboard::Num2) towerType = 2;
-                if (event.key.code == sf::Keyboard::Num3) towerType = 3;
+                switch (event.key.code) {
+                    case sf::Keyboard::Num1: towerType = 1; break;
+                    case sf::Keyboard::Num2: towerType = 2; break;
+                    case sf::Keyboard::Num3: towerType = 3; break;
+
+                    case sf::Keyboard::Num4:
+                        if(mapManager::saveJson("map/saveMap.json", map)) {
+                            message.setString("Map saved successfully!");
+                            std::cout << "Map saved successfully!\n";
+                        } else {
+                            message.setString("Failed to save map!");
+                            std::cout << "Failed to save map!\n";
+                        }
+                        messageTimer = 2.f; // message affiché 2 secondes
+                        break;
+
+                    case sf::Keyboard::Num5:
+                        if(mapManager::loadJson("map/saveMap.json", map)) {
+                            message.setString("Map loaded successfully!");
+                            std::cout << "Map loaded successfully!\n";
+                        } else {
+                            message.setString("Failed to load map!");
+                            std::cout << "Failed to load map!\n";
+                        }
+                        messageTimer = 2.f;
+                        break;
+                }
             }
 
             // --- Clic gauche : placer tours / peindre ---
@@ -119,33 +161,29 @@ int main() {
             }
         }
 
-        // --- Spawn d'une créature toutes les 5 secondes ---
+        // --- Spawn d'une créature ---
         if (spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
             creatures.push_back(std::make_shared<Creature>(
-                path.front().x, path.front().y, map, 100, 100.f)); // vitesse : 100.f pixels/s
+                path.front().x, path.front().y, map, 100, 100.f));
             spawnTimer.restart();
         }
 
         // --- Déplacement des créatures ---
         for (auto& c : creatures)
             c->move(path, deltaTime);
-        
-        // --- Tours qui tirent sur les créatures dans leur portée ---
-        for (auto& t : towers) {
-            for (auto& c : creatures) {
-                if (c->isAlive() && t->isCreatureInRange(*c)) {
-                    std::cout<< "Tower at (" << t->getTowerPosition().x << "," << t->getTowerPosition().y
-                             << ") shoots creature at (" << c->getCreaturePosition().x << ","
-                             << c->getCreaturePosition().y << ")\n";
-                }
-            }
-        }
 
         // --- Rendu ---
         window.clear();
         map.draw(window);
         for (auto& t : towers) t->draw(window);
         for (auto& c : creatures) c->draw(window);
+
+        // --- Affichage message temporaire ---
+        if (messageTimer > 0.f) {
+            window.draw(message);
+            messageTimer -= deltaTime;
+        }
+
         window.display();
     }
 
