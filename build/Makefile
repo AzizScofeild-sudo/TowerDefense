@@ -178,6 +178,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/mapEditor.o: src/mapEditor.cpp.o
+.PHONY : src/mapEditor.o
+
+# target to build an object file
+src/mapEditor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.o
+.PHONY : src/mapEditor.cpp.o
+
+src/mapEditor.i: src/mapEditor.cpp.i
+.PHONY : src/mapEditor.i
+
+# target to preprocess a source file
+src/mapEditor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.i
+.PHONY : src/mapEditor.cpp.i
+
+src/mapEditor.s: src/mapEditor.cpp.s
+.PHONY : src/mapEditor.s
+
+# target to generate assembly for a file
+src/mapEditor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.s
+.PHONY : src/mapEditor.cpp.s
+
+src/mapManager.o: src/mapManager.cpp.o
+.PHONY : src/mapManager.o
+
+# target to build an object file
+src/mapManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.o
+.PHONY : src/mapManager.cpp.o
+
+src/mapManager.i: src/mapManager.cpp.i
+.PHONY : src/mapManager.i
+
+# target to preprocess a source file
+src/mapManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.i
+.PHONY : src/mapManager.cpp.i
+
+src/mapManager.s: src/mapManager.cpp.s
+.PHONY : src/mapManager.s
+
+# target to generate assembly for a file
+src/mapManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.s
+.PHONY : src/mapManager.cpp.s
+
 src/mediumTower.o: src/mediumTower.cpp.o
 .PHONY : src/mediumTower.o
 
@@ -346,6 +394,30 @@ src/weakTower.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.s
 .PHONY : src/weakTower.cpp.s
 
+src/window.o: src/window.cpp.o
+.PHONY : src/window.o
+
+# target to build an object file
+src/window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/window.cpp.o
+.PHONY : src/window.cpp.o
+
+src/window.i: src/window.cpp.i
+.PHONY : src/window.i
+
+# target to preprocess a source file
+src/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/window.cpp.i
+.PHONY : src/window.cpp.i
+
+src/window.s: src/window.cpp.s
+.PHONY : src/window.s
+
+# target to generate assembly for a file
+src/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/window.cpp.s
+.PHONY : src/window.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -361,6 +433,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mapEditor.o"
+	@echo "... src/mapEditor.i"
+	@echo "... src/mapEditor.s"
+	@echo "... src/mapManager.o"
+	@echo "... src/mapManager.i"
+	@echo "... src/mapManager.s"
 	@echo "... src/mediumTower.o"
 	@echo "... src/mediumTower.i"
 	@echo "... src/mediumTower.s"
@@ -382,6 +460,9 @@ help:
 	@echo "... src/weakTower.o"
 	@echo "... src/weakTower.i"
 	@echo "... src/weakTower.s"
+	@echo "... src/window.o"
+	@echo "... src/window.i"
+	@echo "... src/window.s"
 .PHONY : help
 
 

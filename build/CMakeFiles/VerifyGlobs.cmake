@@ -7,6 +7,8 @@ file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/achraf/project/TowerDefense/src/
 set(OLD_GLOB
   "/home/achraf/project/TowerDefense/src/creature.cpp"
   "/home/achraf/project/TowerDefense/src/main.cpp"
+  "/home/achraf/project/TowerDefense/src/mapEditor.cpp"
+  "/home/achraf/project/TowerDefense/src/mapManager.cpp"
   "/home/achraf/project/TowerDefense/src/mediumTower.cpp"
   "/home/achraf/project/TowerDefense/src/projectile.cpp"
   "/home/achraf/project/TowerDefense/src/strongTower.cpp"
@@ -14,6 +16,7 @@ set(OLD_GLOB
   "/home/achraf/project/TowerDefense/src/tileMap.cpp"
   "/home/achraf/project/TowerDefense/src/tower.cpp"
   "/home/achraf/project/TowerDefense/src/weakTower.cpp"
+  "/home/achraf/project/TowerDefense/src/window.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
