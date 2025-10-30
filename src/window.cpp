@@ -1,4 +1,5 @@
 #include <window.hpp>
+#include <algorithm>
 
 
 Window::Window(const std::string window_name, unsigned width_window, unsigned height_window) : 
@@ -7,7 +8,8 @@ window_name_(window_name),
 width_window_(width_window),
 height_window_(height_window),
 map_(width_window, height_window),
-editor_(map_)
+editor_(map_),
+towerManager(map_)
 {
 
     this->setFramerateLimit(60);
@@ -43,7 +45,7 @@ sf::View Window::manageWindow(sf::View view , unsigned width_window , unsigned h
 }
 
 
-void Window::play_mode()
+void Window::play_mode(sf::Event& event)
 {
     if(!playLoaded_)
     {
@@ -54,13 +56,40 @@ void Window::play_mode()
     std::cout << "[ERR] Echec du chargement\n";
     }
     playLoaded_ = true ;
+    
+
+
+    //Placement des tours : 
+
+    editor_.keyBoardManager();
+        if (editor_.isBuilding() && event.type == sf::Event::MouseButtonPressed &&
+        event.mouseButton.button == sf::Mouse::Left) {
+
+        auto mouse = sf::Mouse::getPosition(*this);
+        auto [gx, gy] = worldToGrid(mouse, *this, map_.getSizeTile());
+
+        // Bornes à vérifier selon ta map (par ex. map.getWidth(), map.getHeight()) :
+        // if (gx >= map.getWidth() || gy >= map.getHeight()) continue;
+
+        if (towerManager.addTower({gx, gy})) {
+            // placé avec succès
+            std ::cout << "Tour construite en (" << gx << ", " << gy << ")" << std::endl ;
+        } else {
+            // son / message “impossible de construire ici”
+            std::cout << "Impossible de construire une tour ici !" << std::endl ;
+        }
+
+    }
+
+    
+
 
 }
 
 void Window::edit_mode(sf::Event& event)
 {   
     if(playLoaded_) std::cout << "edit mode.... " << std::endl ;
-              editor_.keyBoardManager();
+        editor_.keyBoardManager();
         editor_.eventManager(*this, event);
         
         
@@ -93,6 +122,13 @@ void Window::edit_mode(sf::Event& event)
 
 void Window::start_window()
 {
+    // Un “ghost” de prévisualisation (facultatif mais très pratique)
+sf::RectangleShape ghost;
+ghost.setSize({static_cast<float>(map_.getSizeTile()), static_cast<float>(map_.getSizeTile())});
+ghost.setFillColor(sf::Color(0, 255, 0, 70));        // vert translucide si OK
+ghost.setOutlineThickness(1.f);
+ghost.setOutlineColor(sf::Color::Black);
+
 
 while (this->isOpen())
 {
@@ -117,7 +153,19 @@ while (this->isOpen())
             this->edit_mode(event); 
             break;
         case modeJeuEditor::PLay:
-            this->play_mode(); 
+            this->play_mode(event);
+            if (editor_.isBuilding()) {
+    auto mouse = sf::Mouse::getPosition(*this);
+    auto [gx, gy] = worldToGrid(mouse, *this, map_.getSizeTile());
+    ghost.setPosition(gridToWorld(gx, gy, map_.getSizeTile()));
+
+    // Couleur selon possibilité de build
+    if (towerManager.buildable({gx, gy})) {
+        ghost.setFillColor(sf::Color(0, 255, 0, 70));   // vert si OK
+    } else {
+        ghost.setFillColor(sf::Color(255, 0, 0, 70));   // rouge si interdit
+    }
+} 
             break;
         default:
             break;
@@ -129,6 +177,32 @@ while (this->isOpen())
     // ---- Rendu (une seule fois par frame) ----
     this->clear(sf::Color::Black);
     map_.draw(*this);
+    towerManager.draw(*this);
+    if (editor_.isBuilding()) this->draw(ghost);
+    this->display();
     this->display();
 }
+}
+
+
+
+
+
+
+
+
+
+
+// fonction temporaire UTILES : 
+
+
+ sf::Vector2u Window::worldToGrid(sf::Vector2i mousePixel, const sf::RenderWindow& win, int cellSize) {
+    // (si tu utilises une view, transforme les coords pixel → monde)
+    sf::Vector2f world = win.mapPixelToCoords(mousePixel);
+    unsigned gx = static_cast<unsigned>(std::max(0, int(world.x) / cellSize));
+    unsigned gy = static_cast<unsigned>(std::max(0, int(world.y) / cellSize));
+    return {gx, gy};
+}
+ sf::Vector2f Window::gridToWorld(unsigned gx, unsigned gy, int cellSize) {
+    return {gx * static_cast<float>(cellSize), gy * static_cast<float>(cellSize)};
 }

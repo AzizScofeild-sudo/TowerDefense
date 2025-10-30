@@ -10,6 +10,8 @@
 #include "tileMap.hpp"
 #include "mapEditor.hpp"
 #include "mapManager.hpp"  
+#include "tower.hpp"
+#include "towerManager.hpp"
 
 
 class Window : public sf::RenderWindow {
@@ -20,8 +22,11 @@ class Window : public sf::RenderWindow {
     ~Window() = default ;
     void start_window();
 
-    void play_mode();
+    void play_mode(sf::Event& event);
     void edit_mode(sf::Event& event); 
+
+     static sf::Vector2u worldToGrid(sf::Vector2i mousePixel, const sf::RenderWindow& win, int cellSize);
+     static sf::Vector2f gridToWorld(unsigned gx, unsigned gy, int cellSize);
 
     private : 
     sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window);
@@ -33,7 +38,9 @@ class Window : public sf::RenderWindow {
     tileMap map_ ; 
     sf::View view_ ;
     mapEditor editor_ ;
+    TowerManager towerManager ;
     bool playLoaded_ = true ;
+    
 
 };
 #endif 

@@ -10,6 +10,8 @@ set(OLD_GLOB
   "/home/aziz-scofeild/TowerDedense/src/mapManager.cpp"
   "/home/aziz-scofeild/TowerDedense/src/tile.cpp"
   "/home/aziz-scofeild/TowerDedense/src/tileMap.cpp"
+  "/home/aziz-scofeild/TowerDedense/src/tower.cpp"
+  "/home/aziz-scofeild/TowerDedense/src/towerManager.cpp"
   "/home/aziz-scofeild/TowerDedense/src/window.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

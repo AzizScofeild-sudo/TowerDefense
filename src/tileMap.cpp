@@ -120,6 +120,3 @@ void tileMap::setDimenssion(float width_window , float height_window)
  {
      return cell_size_ ;
  }
-
-
-

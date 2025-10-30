@@ -1,7 +1,7 @@
-CMakeFiles/main.dir/src/window.cpp.o: \
- /home/aziz-scofeild/TowerDedense/src/window.cpp \
+CMakeFiles/main.dir/src/tower.cpp.o: \
+ /home/aziz-scofeild/TowerDedense/src/tower.cpp \
  /usr/include/stdc-predef.h \
- /home/aziz-scofeild/TowerDedense/include/window.hpp \
+ /home/aziz-scofeild/TowerDedense/include/tower.hpp \
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -235,21 +235,7 @@ CMakeFiles/main.dir/src/window.cpp.o: \
  /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
- /usr/include/SFML/Graphics/VertexBuffer.hpp /usr/include/c++/13/iostream \
- /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
- /usr/include/c++/13/fstream \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
- /home/aziz-scofeild/TowerDedense/include/tile.hpp \
- /usr/include/c++/13/cstdint \
+ /usr/include/SFML/Graphics/VertexBuffer.hpp \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
- /home/aziz-scofeild/TowerDedense/include/mapEditor.hpp \
- /home/aziz-scofeild/TowerDedense/include/mapManager.hpp \
- /home/aziz-scofeild/TowerDedense/include/tower.hpp \
- /home/aziz-scofeild/TowerDedense/include/towerManager.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/enable_special_members.h
+ /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+ /usr/include/c++/13/cstdint

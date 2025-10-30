@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp> 
 #include "tile.hpp"
 #include "tileMap.hpp"
 
@@ -23,6 +23,7 @@ public:
     sf::Vector2i worldToCell(sf::RenderWindow& window, sf::Vector2i pixel); 
     void paint(sf::Vector2i cell) ; 
     modeJeuEditor getMode() const noexcept ; 
+    bool isBuilding() const noexcept { return building ;}
 
 private:
 
@@ -30,6 +31,7 @@ private:
     bool isPainting_ = false;
     tileType paintType_ = tileType::path;
     modeJeuEditor mode_ = modeJeuEditor:: Edit ;
+    bool building = false ;
 };
 
 #endif

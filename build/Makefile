@@ -250,6 +250,54 @@ src/tileMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tileMap.cpp.s
 .PHONY : src/tileMap.cpp.s
 
+src/tower.o: src/tower.cpp.o
+.PHONY : src/tower.o
+
+# target to build an object file
+src/tower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.o
+.PHONY : src/tower.cpp.o
+
+src/tower.i: src/tower.cpp.i
+.PHONY : src/tower.i
+
+# target to preprocess a source file
+src/tower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.i
+.PHONY : src/tower.cpp.i
+
+src/tower.s: src/tower.cpp.s
+.PHONY : src/tower.s
+
+# target to generate assembly for a file
+src/tower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.s
+.PHONY : src/tower.cpp.s
+
+src/towerManager.o: src/towerManager.cpp.o
+.PHONY : src/towerManager.o
+
+# target to build an object file
+src/towerManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.o
+.PHONY : src/towerManager.cpp.o
+
+src/towerManager.i: src/towerManager.cpp.i
+.PHONY : src/towerManager.i
+
+# target to preprocess a source file
+src/towerManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.i
+.PHONY : src/towerManager.cpp.i
+
+src/towerManager.s: src/towerManager.cpp.s
+.PHONY : src/towerManager.s
+
+# target to generate assembly for a file
+src/towerManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.s
+.PHONY : src/towerManager.cpp.s
+
 src/window.o: src/window.cpp.o
 .PHONY : src/window.o
 
@@ -298,6 +346,12 @@ help:
 	@echo "... src/tileMap.o"
 	@echo "... src/tileMap.i"
 	@echo "... src/tileMap.s"
+	@echo "... src/tower.o"
+	@echo "... src/tower.i"
+	@echo "... src/tower.s"
+	@echo "... src/towerManager.o"
+	@echo "... src/towerManager.i"
+	@echo "... src/towerManager.s"
 	@echo "... src/window.o"
 	@echo "... src/window.i"
 	@echo "... src/window.s"

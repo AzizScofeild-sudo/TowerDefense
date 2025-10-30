@@ -13,6 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/aziz-scofeild/TowerDedense/src/mapManager.cpp" "CMakeFiles/main.dir/src/mapManager.cpp.o" "gcc" "CMakeFiles/main.dir/src/mapManager.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/tile.cpp" "CMakeFiles/main.dir/src/tile.cpp.o" "gcc" "CMakeFiles/main.dir/src/tile.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/tileMap.cpp" "CMakeFiles/main.dir/src/tileMap.cpp.o" "gcc" "CMakeFiles/main.dir/src/tileMap.cpp.o.d"
+  "/home/aziz-scofeild/TowerDedense/src/tower.cpp" "CMakeFiles/main.dir/src/tower.cpp.o" "gcc" "CMakeFiles/main.dir/src/tower.cpp.o.d"
+  "/home/aziz-scofeild/TowerDedense/src/towerManager.cpp" "CMakeFiles/main.dir/src/towerManager.cpp.o" "gcc" "CMakeFiles/main.dir/src/towerManager.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/window.cpp" "CMakeFiles/main.dir/src/window.cpp.o" "gcc" "CMakeFiles/main.dir/src/window.cpp.o.d"
   )
 

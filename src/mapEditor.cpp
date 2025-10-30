@@ -14,6 +14,7 @@ void mapEditor::keyBoardManager()
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) paintType_ = tileType::path; 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) mode_ = modeJeuEditor::PLay ;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) mode_ = modeJeuEditor::Edit ;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) building = true ;
 }
 
 sf::Vector2i mapEditor::worldToCell(sf::RenderWindow& window, sf::Vector2i pixel)
