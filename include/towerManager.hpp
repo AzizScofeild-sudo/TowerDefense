@@ -15,6 +15,7 @@ class TowerManager {
 
     bool buildable(sf::Vector2u grisPos) const;
     bool isOccupied(sf::Vector2u gridPos) const;
+    bool inGround(sf::Vector2u gridPos) const;
     bool addTower(sf::Vector2u gridPos); 
     void draw(sf::RenderWindow& window) const ;
     std::vector <Tower> getTowers() const { return towers_ ;}

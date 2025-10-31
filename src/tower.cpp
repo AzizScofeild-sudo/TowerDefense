@@ -4,8 +4,8 @@
 Tower::Tower(sf::Vector2u gridPos, tileMap& map): gridPos_(gridPos), map_(map)
 {
     int cellSize = map_.getSizeTile();
-    tower_shape_.setSize(sf::Vector2f(cellSize, cellSize));
-    tower_shape_.setPosition(gridPos.x * cellSize, gridPos.y * cellSize);
+    tower_shape_.setSize(sf::Vector2f(3*cellSize, 3*cellSize));
+    tower_shape_.setPosition((gridPos.x-1) * cellSize, (gridPos.y-1) * cellSize);
 }
 
 

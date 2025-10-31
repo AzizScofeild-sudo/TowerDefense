@@ -124,7 +124,7 @@ void Window::start_window()
 {
     // Un “ghost” de prévisualisation (facultatif mais très pratique)
 sf::RectangleShape ghost;
-ghost.setSize({static_cast<float>(map_.getSizeTile()), static_cast<float>(map_.getSizeTile())});
+ghost.setSize({static_cast<float>(3*map_.getSizeTile()), static_cast<float>(3*map_.getSizeTile())});
 ghost.setFillColor(sf::Color(0, 255, 0, 70));        // vert translucide si OK
 ghost.setOutlineThickness(1.f);
 ghost.setOutlineColor(sf::Color::Black);
@@ -204,5 +204,5 @@ while (this->isOpen())
     return {gx, gy};
 }
  sf::Vector2f Window::gridToWorld(unsigned gx, unsigned gy, int cellSize) {
-    return {gx * static_cast<float>(cellSize), gy * static_cast<float>(cellSize)};
+    return {(gx-1)* static_cast<float>(cellSize), (gy-1) * static_cast<float>(cellSize)};
 }
