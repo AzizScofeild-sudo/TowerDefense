@@ -3,6 +3,9 @@
 #include <memory>
 #include <string>
 #include <filesystem>
+#include <iostream>
+#include <cmath>
+
 #include "tile.hpp"
 #include "tileMap.hpp"
 #include "weakTower.hpp"
@@ -10,7 +13,7 @@
 #include "strongTower.hpp"
 #include "creature.hpp"
 #include "mapManager.hpp"
-#include <iostream>
+#include "projectile.hpp"
 
 // --- Gestion du redimensionnement de la fenêtre ---
 sf::View manageWindow(sf::View view, unsigned width_window, unsigned height_window) {
@@ -38,9 +41,8 @@ int main() {
     unsigned col = width_window / cell_size;
 
     // --- Créer le dossier "map" si nécessaire ---
-    if (!std::filesystem::exists("map")) {
+    if (!std::filesystem::exists("map"))
         std::filesystem::create_directory("map");
-    }
 
     sf::RenderWindow window(sf::VideoMode(width_window, height_window), "Tower Defense");
     window.setFramerateLimit(60);
@@ -51,36 +53,37 @@ int main() {
     view = manageWindow(view, window.getSize().x, window.getSize().y);
     window.setView(view);
 
-    // --- TileMap pour éditeur ---
+    // --- Initialisation de la carte ---
     tileMap map{col, row, cell_size};
-    bool isPainting = false;
-    tileType paintType = tileType::path;
+    mapManager manager; 
+    std::string mapPath = "/home/achraf/project/TowerDefense/map/saveMap.json";
 
-    // --- Tours et créatures ---
+    if (std::filesystem::exists(mapPath)) {
+        if (manager.loadJson(mapPath, map))
+            std::cout << "Map loaded successfully.\n";
+        else
+            std::cout << "Failed to load map.\n";
+    }
+
+    std::vector<sf::Vector2i> path = manager.extractPathTiles(map);
+    if (path.empty())
+        std::cout << "Aucun chemin (tileType::path) trouvé dans la map !\n";
+
+    // --- Listes principales ---
     std::vector<std::shared_ptr<Tower>> towers;
     std::vector<std::shared_ptr<Creature>> creatures;
-    int towerType = 1;
+
+
+    bool isPainting = false;
+    tileType paintType = tileType::path;
+    int towerType;
+
     sf::Clock spawnTimer, deltaClock;
     const float spawnInterval = 5.f;
 
-    // --- Chemin fixe ---
-    std::vector<sf::Vector2i> path = {
-        {0,15},{8,15},{8,10},{15,10},{15,5},{22,5},{22,15},{30,15}
-    };
-
-    // --- Texte pour notifications (save/load) ---
-    sf::Font font;
-        if (!font.loadFromFile("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")) {
-            std::cerr << "Impossible de charger la police DejaVuSans\n";
-        }
-
-    sf::Text message("", font, 20);
-    message.setFillColor(sf::Color::Yellow);
-    float messageTimer = 0.f;
-
     // --- Boucle principale ---
     while (window.isOpen()) {
-        float deltaTime = deltaClock.restart().asSeconds();
+        float frameTime = deltaClock.restart().asSeconds();
 
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -96,32 +99,23 @@ int main() {
                     case sf::Keyboard::Num1: towerType = 1; break;
                     case sf::Keyboard::Num2: towerType = 2; break;
                     case sf::Keyboard::Num3: towerType = 3; break;
-
-                    case sf::Keyboard::Num4:
-                        if(mapManager::saveJson("map/saveMap.json", map)) {
-                            message.setString("Map saved successfully!");
-                            std::cout << "Map saved successfully!\n";
-                        } else {
-                            message.setString("Failed to save map!");
-                            std::cout << "Failed to save map!\n";
-                        }
-                        messageTimer = 2.f; // message affiché 2 secondes
-                        break;
-
                     case sf::Keyboard::Num5:
-                        if(mapManager::loadJson("map/saveMap.json", map)) {
-                            message.setString("Map loaded successfully!");
+                        manager.saveJson(mapPath, map)
+                            ? std::cout << "Map saved successfully!\n"
+                            : std::cout << "Failed to save map!\n";
+                        break;
+                    case sf::Keyboard::Num7:
+                        if (manager.loadJson(mapPath, map)) {
                             std::cout << "Map loaded successfully!\n";
+                            path = manager.extractPathTiles(map);
                         } else {
-                            message.setString("Failed to load map!");
                             std::cout << "Failed to load map!\n";
                         }
-                        messageTimer = 2.f;
                         break;
                 }
             }
 
-            // --- Clic gauche : placer tours / peindre ---
+            // --- Placement de tours ou peinture ---
             if (event.type == sf::Event::MouseButtonPressed &&
                 event.mouseButton.button == sf::Mouse::Left) {
                 isPainting = true;
@@ -135,7 +129,7 @@ int main() {
                 else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) paintType = tileType::path;
 
                 if (cell.x >= 0 && cell.y >= 0) {
-                    if (map.accessTile(cell.x, cell.y).walkable()) {
+                    if (map.accessTile(cell.x, cell.y).buildable()) {
                         if (towerType == 1)
                             towers.push_back(std::make_shared<WeakTower>(cell.x, cell.y, map));
                         else if (towerType == 2)
@@ -147,7 +141,6 @@ int main() {
                 }
             }
 
-            // --- Peinture continue ---
             if (event.type == sf::Event::MouseMoved && isPainting) {
                 sf::Vector2f world = window.mapPixelToCoords({event.mouseMove.x, event.mouseMove.y});
                 sf::Vector2i cell = map.worldToCell(world);
@@ -156,13 +149,12 @@ int main() {
             }
 
             if (event.type == sf::Event::MouseButtonReleased &&
-                event.mouseButton.button == sf::Mouse::Left) {
+                event.mouseButton.button == sf::Mouse::Left)
                 isPainting = false;
-            }
         }
 
         // --- Spawn d'une créature ---
-        if (spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
+        if (!path.empty() && spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
             creatures.push_back(std::make_shared<Creature>(
                 path.front().x, path.front().y, map, 100, 100.f));
             spawnTimer.restart();
@@ -170,20 +162,42 @@ int main() {
 
         // --- Déplacement des créatures ---
         for (auto& c : creatures)
-            c->move(path, deltaTime);
+            c->move(path, frameTime);
+
+        // --- Tours tirent et mettent à jour leurs projectiles ---
+        for (auto& t : towers) {
+            for (auto& c : creatures) {
+                if (c->isAlive()) {
+                    sf::Vector2f towerPos = t->getTowerPosition();
+                    sf::Vector2f creaturePos = c->getCreaturePosition();
+                    float dx = towerPos.x - creaturePos.x;
+                    float dy = towerPos.y - creaturePos.y;
+                    float dist = std::sqrt(dx * dx + dy * dy);
+
+                    if (dist <= t->getRange()) {
+                        t->shoot(*c);
+                        break; // une seule cible par tour
+                    }
+                }
+            }
+            t->updateFrame(frameTime);
+        }
+
+        // --- Nettoyage des créatures mortes ---
+        creatures.erase(std::remove_if(creatures.begin(), creatures.end(),
+            [](const std::shared_ptr<Creature>& c) { return !c->isAlive(); }),
+            creatures.end());
 
         // --- Rendu ---
         window.clear();
         map.draw(window);
         for (auto& t : towers) t->draw(window);
         for (auto& c : creatures) c->draw(window);
-
-        // --- Affichage message temporaire ---
-        if (messageTimer > 0.f) {
-            window.draw(message);
-            messageTimer -= deltaTime;
+        for (auto& t : towers) {
+            for (const auto& p : t->getProjectiles()) {
+                p->draw(window);
+            }
         }
-
         window.display();
     }
 

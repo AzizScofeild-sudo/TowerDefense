@@ -13,9 +13,9 @@ StrongTower::StrongTower(int gridX, int gridY, tileMap& map)
     rangeCircle.setOrigin(range, range);
 }
 
-void StrongTower::shoot()
+void StrongTower::shoot(Creature& target)
 {
-
+    projectiles.push_back(std::make_unique<Projectile>(*this, target, 400.f, damage));
 }
 
 void StrongTower::draw(sf::RenderWindow& window)

@@ -14,9 +14,9 @@ MediumTower::MediumTower(int gridX, int gridY, tileMap& map)
     rangeCircle.setOrigin(range, range);
 }
 
-void MediumTower::shoot()
+void MediumTower::shoot(Creature& target)
 {
-
+    projectiles.push_back(std::make_unique<Projectile>(*this, target, 300.f, damage));
 }
 
 void MediumTower::draw(sf::RenderWindow& window)

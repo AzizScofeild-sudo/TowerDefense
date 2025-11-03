@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/creature.cpp.o"
   "CMakeFiles/main.dir/src/creature.cpp.o.d"
+  "CMakeFiles/main.dir/src/hpBar.cpp.o"
+  "CMakeFiles/main.dir/src/hpBar.cpp.o.d"
   "CMakeFiles/main.dir/src/main.cpp.o"
   "CMakeFiles/main.dir/src/main.cpp.o.d"
   "CMakeFiles/main.dir/src/mapEditor.cpp.o"

@@ -6,6 +6,7 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/achraf/project/TowerDefense/src/*.cpp")
 set(OLD_GLOB
   "/home/achraf/project/TowerDefense/src/creature.cpp"
+  "/home/achraf/project/TowerDefense/src/hpBar.cpp"
   "/home/achraf/project/TowerDefense/src/main.cpp"
   "/home/achraf/project/TowerDefense/src/mapEditor.cpp"
   "/home/achraf/project/TowerDefense/src/mapManager.cpp"

@@ -2,6 +2,8 @@
 #include <string>
 #include "tileMap.hpp"
 #include "tile.hpp"
+#include <vector>
+
 
 // mapManager : utilitaire de sauvegarde/chargement JSON
 class mapManager {
@@ -14,4 +16,6 @@ public:
 
     // Variante pratique : charge et retourne par valeur. En cas d'échec, width=0.
     static tileMap loadJson(const std::string& path);
+
+    std::vector<sf::Vector2i> extractPathTiles(const tileMap& map);
 };

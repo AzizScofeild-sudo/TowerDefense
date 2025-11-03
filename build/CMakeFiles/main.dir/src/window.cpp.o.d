@@ -247,9 +247,6 @@ CMakeFiles/main.dir/src/window.cpp.o: \
  /home/achraf/project/TowerDefense/include/mapEditor.hpp \
  /home/achraf/project/TowerDefense/include/weakTower.hpp \
  /home/achraf/project/TowerDefense/include/tower.hpp \
- /home/achraf/project/TowerDefense/include/creature.hpp \
- /home/achraf/project/TowerDefense/include/mediumTower.hpp \
- /home/achraf/project/TowerDefense/include/strongTower.hpp \
  /usr/include/c++/13/memory \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
@@ -262,4 +259,8 @@ CMakeFiles/main.dir/src/window.cpp.o: \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /home/achraf/project/TowerDefense/include/creature.hpp \
+ /home/achraf/project/TowerDefense/include/projectile.hpp \
+ /home/achraf/project/TowerDefense/include/mediumTower.hpp \
+ /home/achraf/project/TowerDefense/include/strongTower.hpp \
  /home/achraf/project/TowerDefense/include/mapManager.hpp

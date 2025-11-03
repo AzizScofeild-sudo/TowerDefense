@@ -11,7 +11,7 @@ Tower::Tower(int gridX, int gridY,tileMap& map)
     rangeCircle.setRadius(range);
     rangeCircle.setFillColor(sf::Color::Transparent);
     rangeCircle.setOutlineThickness(1.f);
-    rangeCircle.setOrigin(range, range); //
+    rangeCircle.setOrigin(range, range); 
     rangeCircle.setPosition(shape.getPosition().x + cellSize / 2.f, 
                             shape.getPosition().y + cellSize / 2.f);
 }
@@ -22,18 +22,49 @@ void Tower::draw(sf::RenderWindow& window)
     window.draw(rangeCircle);
 }
 
-sf::Vector2i Tower::getTowerPosition() const
+// position en pixels du centre de la tour
+sf::Vector2f Tower::getTowerPosition() const
 {
-    return gridPos;
+    int cellSize = map.getSizeTile();
+    return sf::Vector2f(gridPos.x * cellSize + cellSize / 2.f,
+                        gridPos.y * cellSize + cellSize / 2.f);
+    
 }
- 
-bool Tower::isCreatureInRange(const Creature& creature) const
-{
-    sf::Vector2f towerCenter = rangeCircle.getPosition();
-    sf::Vector2f creaturePos = creature.getCreaturePosition();
 
-    float dx = towerCenter.x - creaturePos.x;
-    float dy = towerCenter.y - creaturePos.y;
-    float distance= std::sqrt(dx * dx + dy * dy);
-    return distance<= rangeCircle.getRadius();
+//projetile(towerposition, creature cible, vitesse, degat)
+void Tower::shoot(Creature& target)
+{
+    projectiles.push_back(std::make_unique<Projectile>(*this, target, 300.f, damage));
 }
+
+//mettre a jour les projectiles
+void Tower::updateFrame(float deltatime)
+{
+    for(auto& p: projectiles){
+        p->moveProjectile(deltatime);
+        if(p->hasHitTarget()){
+            p->applyDamage();
+        }
+    }
+    
+    //suprimer les projectiles qui ont touché leur cible
+    projectiles.erase(
+        std::remove_if(projectiles.begin(), projectiles.end(),
+            [](const std::unique_ptr<Projectile>& p) { return p->hasHitTarget(); }),  //return condition de suppression
+        projectiles.end()
+    );
+}
+
+//utilisé dans main.cpp pour vérifier la portée
+float Tower::getRange() const
+{
+    return rangeCircle.getRadius();
+}
+
+//utilisé dans main.cpp pour obtenir les dégats
+int Tower::getDamage() const
+{
+    return damage;
+}
+
+

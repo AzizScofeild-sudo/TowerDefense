@@ -14,9 +14,9 @@ WeakTower::WeakTower(int gridX, int gridY, tileMap& map)
     rangeCircle.setOrigin(range, range);
 }
 
-void WeakTower::shoot()
+void WeakTower::shoot(Creature& target)
 {
-
+    projectiles.push_back(std::make_unique<Projectile>(*this, target, 200.f, damage));
 }
 
 void WeakTower::draw(sf::RenderWindow& window)

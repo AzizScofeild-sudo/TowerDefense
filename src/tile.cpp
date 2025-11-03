@@ -20,6 +20,10 @@ bool tile::walkable() const noexcept
     return (type_ == tileType::path || type_ == tileType::start || type_ == tileType::goal);
 }
 
+bool tile::buildable() const noexcept
+{
+    return (type_ == tileType::ground);
+}
 
 
 

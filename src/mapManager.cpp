@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <queue>
+#include <algorithm>
 using nlohmann::json;
 
 // ---------- helpers d'encodage ----------
@@ -123,4 +125,75 @@ tileMap mapManager::loadJson(const std::string& path) {
         return tileMap{ 0, 0, 0 };
     }
     return empty;
+}
+
+std::vector<sf::Vector2i> mapManager::extractPathTiles(const tileMap& map)
+{
+    int width = map.getWidth();
+    int height = map.getHeight();
+    sf::Vector2i start(-1, -1);
+    sf::Vector2i goal(-1, -1);
+
+    // --- Chercher start et goal ---
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            tileType t = map.accessTile(x, y).getType();
+            if (t == tileType::start) start = {x, y};
+            if (t == tileType::goal) goal = {x, y};
+        }
+    }
+
+    if (start.x == -1 || goal.x == -1) {
+        std::cerr << "extractPathTiles: start ou goal non trouvé\n";
+        return {};
+    }
+
+    // --- BFS pour ordonner le chemin ---
+    std::vector<std::vector<bool>> visited(height, std::vector<bool>(width, false));
+    std::vector<std::vector<sf::Vector2i>> parent(height, std::vector<sf::Vector2i>(width, {-1,-1}));
+    std::queue<sf::Vector2i> q;
+
+    q.push(start);
+    visited[start.y][start.x] = true;
+
+    int dx[4] = {1, -1, 0, 0};
+    int dy[4] = {0, 0, 1, -1};
+    bool found = false;
+
+    while(!q.empty()) {
+        sf::Vector2i curr = q.front(); q.pop();
+        if (curr == goal) {
+            found = true;
+            break;
+        }
+
+        for (int i = 0; i < 4; ++i) { // uniquement H/V
+            int nx = curr.x + dx[i];
+            int ny = curr.y + dy[i];
+            if (nx >= 0 && ny >= 0 && nx < width && ny < height && !visited[ny][nx]) {
+                tileType type = map.accessTile(nx, ny).getType();
+                if (type == tileType::path || type == tileType::goal) {
+                    visited[ny][nx] = true;
+                    parent[ny][nx] = curr;
+                    q.push({nx, ny});
+                }
+            }
+        }
+    }
+
+    // --- Reconstruire le chemin start → goal ---
+    std::vector<sf::Vector2i> pathTiles;
+    if (found) {
+        sf::Vector2i cur = goal;
+        while (cur != start) {
+            pathTiles.push_back(cur);
+            cur = parent[cur.y][cur.x];
+        }
+        pathTiles.push_back(start);
+        std::reverse(pathTiles.begin(), pathTiles.end());
+    } else {
+        std::cerr << "aucun chemin trouve entre start et goal\n";
+    }
+
+    return pathTiles;
 }

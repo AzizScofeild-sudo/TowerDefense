@@ -154,6 +154,30 @@ src/creature.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.s
 .PHONY : src/creature.cpp.s
 
+src/hpBar.o: src/hpBar.cpp.o
+.PHONY : src/hpBar.o
+
+# target to build an object file
+src/hpBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.o
+.PHONY : src/hpBar.cpp.o
+
+src/hpBar.i: src/hpBar.cpp.i
+.PHONY : src/hpBar.i
+
+# target to preprocess a source file
+src/hpBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.i
+.PHONY : src/hpBar.cpp.i
+
+src/hpBar.s: src/hpBar.cpp.s
+.PHONY : src/hpBar.s
+
+# target to generate assembly for a file
+src/hpBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.s
+.PHONY : src/hpBar.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -430,6 +454,9 @@ help:
 	@echo "... src/creature.o"
 	@echo "... src/creature.i"
 	@echo "... src/creature.s"
+	@echo "... src/hpBar.o"
+	@echo "... src/hpBar.i"
+	@echo "... src/hpBar.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
