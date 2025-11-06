@@ -6,10 +6,7 @@ Window::Window(const std::string window_name, unsigned width_window, unsigned he
 sf::RenderWindow(sf::VideoMode(width_window, height_window), window_name),
 window_name_(window_name),
 width_window_(width_window),
-height_window_(height_window),
-map_(width_window, height_window),
-editor_(map_),
-towerManager(map_)
+height_window_(height_window)
 {
 
     this->setFramerateLimit(60);
@@ -45,164 +42,51 @@ sf::View Window::manageWindow(sf::View view , unsigned width_window , unsigned h
 }
 
 
-void Window::play_mode(sf::Event& event)
+
+void Window::run()
 {
-    if(!playLoaded_)
+    while (this->isOpen())
     {
-    std::cout << "play mode.... " << std::endl ;
-    if (mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
-        std::cout << "[OK] Map chargee depuis maps/level1.json\n";
-    else
-    std::cout << "[ERR] Echec du chargement\n";
-    }
-    playLoaded_ = true ;
-    
-
-
-    //Placement des tours : 
-
-    editor_.keyBoardManager();
-        if (editor_.isBuilding() && event.type == sf::Event::MouseButtonPressed &&
-        event.mouseButton.button == sf::Mouse::Left) {
-
-        auto mouse = sf::Mouse::getPosition(*this);
-        auto [gx, gy] = worldToGrid(mouse, *this, map_.getSizeTile());
-
-        // Bornes à vérifier selon ta map (par ex. map.getWidth(), map.getHeight()) :
-        // if (gx >= map.getWidth() || gy >= map.getHeight()) continue;
-
-        if (towerManager.addTower({gx, gy})) {
-            // placé avec succès
-            std ::cout << "Tour construite en (" << gx << ", " << gy << ")" << std::endl ;
-        } else {
-            // son / message “impossible de construire ici”
-            std::cout << "Impossible de construire une tour ici !" << std::endl ;
-        }
-
-    }
-
-    
-
-
-}
-
-void Window::edit_mode(sf::Event& event)
-{   
-    if(playLoaded_) std::cout << "edit mode.... " << std::endl ;
-        editor_.keyBoardManager();
-        editor_.eventManager(*this, event);
-        
-        
-                    // ------------------------------
-            // Raccourcis save (F5) / load (F9)
-            // ------------------------------
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::F5) {
-                    if (mapManager::saveJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
-                        std::cout << "[OK] Map sauvegardee dans maps/level1.json\n";
-                    else
-                        std::cout << "[ERR] Echec de la sauvegarde\n";
-                }
-                if (event.key.code == sf::Keyboard::F9) {
-                    if (mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
-                        std::cout << "[OK] Map chargee depuis maps/level1.json\n";
-                    else
-                        std::cout << "[ERR] Echec du chargement\n";
-                }
-
-            }
-    playLoaded_ = false ;
-      
-}
-
-
-
-
-
-
-void Window::start_window()
-{
-    // Un “ghost” de prévisualisation (facultatif mais très pratique)
-sf::RectangleShape ghost;
-ghost.setSize({static_cast<float>(3*map_.getSizeTile()), static_cast<float>(3*map_.getSizeTile())});
-ghost.setFillColor(sf::Color(0, 255, 0, 70));        // vert translucide si OK
-ghost.setOutlineThickness(1.f);
-ghost.setOutlineColor(sf::Color::Black);
-
-
-while (this->isOpen())
-{
-    sf::Event event;
-    while (this->pollEvent(event))
-    {
-        if (event.type == sf::Event::Closed) this->close();  
-
-        if (event.type == sf::Event::Resized)
+        sf::Event event;
+        while (this->pollEvent(event))
         {
+            if (event.type == sf::Event::Closed) this->close();
+            if (event.type == sf::Event::Resized)
+        {   
+            // A faire : en capsuler cette partie !
             view_ = manageWindow(view_, event.size.width, event.size.height);
             this->setView(view_);
+            // 
         }
-
-        editor_.keyBoardManager();
-
-            // Gestion des modes de jeu
-
-        switch (editor_.getMode())
-        {
-        case modeJeuEditor::Edit: 
-            this->edit_mode(event); 
-            break;
-        case modeJeuEditor::PLay:
-            this->play_mode(event);
-            if (editor_.isBuilding()) {
-    auto mouse = sf::Mouse::getPosition(*this);
-    auto [gx, gy] = worldToGrid(mouse, *this, map_.getSizeTile());
-    ghost.setPosition(gridToWorld(gx, gy, map_.getSizeTile()));
-
-    // Couleur selon possibilité de build
-    if (towerManager.buildable({gx, gy})) {
-        ghost.setFillColor(sf::Color(0, 255, 0, 70));   // vert si OK
-    } else {
-        ghost.setFillColor(sf::Color(255, 0, 0, 70));   // rouge si interdit
-    }
-} 
-            break;
-        default:
-            break;
         }
+    unsigned sizeTile = map_.getSizeTile();
+    // Capturer la position de la souris e en coordonnees window (int) : 
+    sf::Vector2i mouse = sf::Mouse::getPosition(); 
+    //convertir les coordonnees window en coordonnees world (float):
+    sf::Vector2f world = window.mapPixelToCoords(pixel, window.getView());
+    //convertir les coordonnees world en coordonnees map (grid) (unsigned ou int)  pour les utiliser pour la logique du jeu : 
+    sf::Vector2i cell = Grid::worldToGrid(world, sizeTile);
+    sf::Vector2u cell_unsigned = {static_cast<unsigned>(cell.x),static_cast<unsigned>(cell.y)};
+
+    // 1)gestion des evenemeents du jeu hors resize et close !!!!
+        if (onEvent_) onEvent_(event);
+
+    // 2) Ici on  implemente la logie du jeu avec le meme proceder callBack !!!!
+        if (onGame_) onGame_(event); // un truc comme ca !!!!
+
+
+
+    // 3) gestion de l'affichage de la fenetre////
+        this->clear(sf::Color::Black);
+
+        if (onRender_) onRender_(*this);
+
+        this->display();
     }
-    
-     // fin pollEvent
-
-    // ---- Rendu (une seule fois par frame) ----
-    this->clear(sf::Color::Black);
-    map_.draw(*this);
-    towerManager.draw(*this);
-    if (editor_.isBuilding()) this->draw(ghost);
-    this->display();
-    this->display();
-}
 }
 
 
 
-
-
-
-
-
-
-
-// fonction temporaire UTILES : 
-
-
- sf::Vector2u Window::worldToGrid(sf::Vector2i mousePixel, const sf::RenderWindow& win, int cellSize) {
-    // (si tu utilises une view, transforme les coords pixel → monde)
-    sf::Vector2f world = win.mapPixelToCoords(mousePixel);
-    unsigned gx = static_cast<unsigned>(std::max(0, int(world.x) / cellSize));
-    unsigned gy = static_cast<unsigned>(std::max(0, int(world.y) / cellSize));
-    return {gx, gy};
-}
- sf::Vector2f Window::gridToWorld(unsigned gx, unsigned gy, int cellSize) {
-    return {(gx-1)* static_cast<float>(cellSize), (gy-1) * static_cast<float>(cellSize)};
-}
+// Mon organisation est temporaire, j'essaie d'utiliser des callBack quej'ai vu en faisant du ROS2
+// pour separer les differentes parties de la boucle de jeu ( gestion des evenements , logique du jeu , affichage )
+//pour rendre la cllass window plus generique et plus modulaire celon le pragmatisme de la programmation orienter objet !!!!

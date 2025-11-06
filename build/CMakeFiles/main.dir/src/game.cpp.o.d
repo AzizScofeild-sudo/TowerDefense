@@ -1,7 +1,6 @@
-CMakeFiles/main.dir/src/towerManager.cpp.o: \
- /home/aziz-scofeild/TowerDedense/src/towerManager.cpp \
- /usr/include/stdc-predef.h \
- /home/aziz-scofeild/TowerDedense/include/towerManager.hpp \
+CMakeFiles/main.dir/src/game.cpp.o: \
+ /home/aziz-scofeild/TowerDedense/src/game.cpp /usr/include/stdc-predef.h \
+ /home/aziz-scofeild/TowerDedense/include/game.hpp \
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -236,15 +235,27 @@ CMakeFiles/main.dir/src/towerManager.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
+ /home/aziz-scofeild/TowerDedense/include/mapEditor.hpp \
+ /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+ /usr/include/c++/13/cstdint \
+ /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
+ /home/aziz-scofeild/TowerDedense/include/window.hpp \
+ /usr/include/c++/13/iostream /usr/include/c++/13/istream \
+ /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/fstream \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/functional \
+ /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/array /usr/include/c++/13/compare \
+ /home/aziz-scofeild/TowerDedense/include/towerManager.hpp \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
  /home/aziz-scofeild/TowerDedense/include/tower.hpp \
- /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
- /home/aziz-scofeild/TowerDedense/include/tile.hpp \
- /usr/include/c++/13/cstdint \
  /home/aziz-scofeild/TowerDedense/include/utils.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -268,5 +279,5 @@ CMakeFiles/main.dir/src/towerManager.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/iostream \
- /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /home/aziz-scofeild/TowerDedense/include/mapManager.hpp

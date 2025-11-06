@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/aziz-scofeild/TowerDedense/src/game.cpp" "CMakeFiles/main.dir/src/game.cpp.o" "gcc" "CMakeFiles/main.dir/src/game.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/mapEditor.cpp" "CMakeFiles/main.dir/src/mapEditor.cpp.o" "gcc" "CMakeFiles/main.dir/src/mapEditor.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/mapManager.cpp" "CMakeFiles/main.dir/src/mapManager.cpp.o" "gcc" "CMakeFiles/main.dir/src/mapManager.cpp.o.d"

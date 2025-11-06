@@ -16,22 +16,21 @@ enum class modeJeuEditor : std::uint8_t
 class mapEditor {
 
 public:
-    mapEditor(tileMap& map);
+    mapEditor(tileMap& map); // REtirer le constructeru et passer les methodes en static !!!!
     ~mapEditor() = default;
-    void keyBoardManager();
+    void keyBoardManager();  // Passer cette methode sur une class CLavier ! 
     void eventManager(sf::RenderWindow& window, sf ::Event& event); 
     sf::Vector2i worldToCell(sf::RenderWindow& window, sf::Vector2i pixel); 
     void paint(sf::Vector2i cell) ; 
-    modeJeuEditor getMode() const noexcept ; 
-    bool isBuilding() const noexcept { return building ;}
+
 
 private:
 
     tileMap& map_;
     bool isPainting_ = false;
     tileType paintType_ = tileType::path;
-    modeJeuEditor mode_ = modeJeuEditor:: Edit ;
-    bool building = false ;
+    
+    
 };
 
 #endif

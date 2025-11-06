@@ -13,13 +13,13 @@ tile::tile()
 void tile::setType(tileType newType) noexcept
 {
     type_ = newType ;
-    buildable_ = (newType == tileType::ground) ;
+   //buildable_ = (newType == tileType::ground) ;
 }
 
-bool tile::walkable() const noexcept
+/*bool tile::walkable() const noexcept
 {
     return (type_ == tileType::path || type_ == tileType::start || type_ == tileType::goal);
-}
+}*/
 
 
 sf::Color tile::displayColor() const  noexcept
@@ -42,5 +42,4 @@ tileType tile::getType() const noexcept
 {
     return type_ ;
 }
-
 

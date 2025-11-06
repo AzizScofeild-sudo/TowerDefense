@@ -5,6 +5,7 @@ cmake_policy(SET CMP0009 NEW)
 # SOURCES at CMakeLists.txt:13 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/aziz-scofeild/TowerDedense/src/*.cpp")
 set(OLD_GLOB
+  "/home/aziz-scofeild/TowerDedense/src/game.cpp"
   "/home/aziz-scofeild/TowerDedense/src/main.cpp"
   "/home/aziz-scofeild/TowerDedense/src/mapEditor.cpp"
   "/home/aziz-scofeild/TowerDedense/src/mapManager.cpp"
