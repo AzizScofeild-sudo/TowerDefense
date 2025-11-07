@@ -1,58 +1,60 @@
 #include "projectile.hpp"
 #include "tower.hpp"
+#include "creature.hpp"
 #include <cmath>
+#include <iostream>
 
-Projectile::Projectile(const Tower& tower, Creature& target, float speed, int damage)
-    : towerPosition(tower), targetCreature(target), speed(speed), damage(damage), hit(false)
+Projectile::Projectile(const Tower& tower, std::shared_ptr<Creature> target, float speed, int damage)
+    : targetCreature(target), speed(speed), damage(damage), hit(false)
 {
-    // initialiser le membre position
-    position = tower.getTowerPosition(); 
+    position = tower.getTowerPosition();
 
-    // cercle du projectile
     shape.setRadius(5.f);
     shape.setFillColor(sf::Color::White);
+    shape.setOrigin(5.f, 5.f);
     shape.setPosition(position);
 
-    // direction vers la position initiale de la créature (ligne droite)
-    sf::Vector2f targetPos = targetCreature.getCreaturePosition();
-    sf::Vector2f dirVec = targetPos - position;
-    float distance = std::sqrt(dirVec.x*dirVec.x + dirVec.y*dirVec.y);
-    if (distance != 0.f)
-        direction = dirVec / distance;
-    else
-        direction = sf::Vector2f(0.f, 0.f);
+
+    //lock transforme le weak_ptr en shared_ptr temporaire
+    if (auto tgt = targetCreature.lock()) {
+        sf::Vector2f targetPos = tgt->getCreaturePosition();
+        sf::Vector2f dirVec = targetPos - position;
+        float distance = std::sqrt(dirVec.x * dirVec.x + dirVec.y * dirVec.y);
+        if (distance != 0.f)
+            direction = dirVec / distance; //vecteur unitaire pour que le deplacement soit proportionnel à speed*deltaTime
+        else
+            direction = sf::Vector2f(0.f, 0.f);
+    }
 }
 
 void Projectile::moveProjectile(float deltaTime) {
     if (hit) return;
 
-    // déplacement projectile
+    auto tgt = targetCreature.lock();
+    if (!tgt || !tgt->isAlive()) {
+        hit = true;
+        return;
+    }
+
+    // mise à jour de la position
     position += direction * speed * deltaTime;
     shape.setPosition(position);
 
-    // vérifier collision avec la créature
-    sf::Vector2f targetPos = targetCreature.getCreaturePosition();
+    // calcul distance à la cible
+    sf::Vector2f targetPos = tgt->getCreaturePosition();
     sf::Vector2f diff = targetPos - position;
-    float distance = std::sqrt(diff.x*diff.x + diff.y*diff.y);
+    float distance = std::sqrt(diff.x * diff.x + diff.y * diff.y);
 
-    float hitDistance = shape.getRadius() + targetCreature.getCreatureRadius();
-    if (distance < hitDistance) 
-    hit = true;
-}
+    // verifier la collision entre projectile et creature
+    float hitDistance = shape.getRadius() + tgt->getCreatureRadius();
 
-void Projectile::draw(sf::RenderWindow& window){
-    if(hit) return;
-    window.draw(shape);
-}
-
-// utilise dans tower.cpp pour nettoyer les projectiles
-bool Projectile::hasHitTarget()const{
-    return hit;
-}
-
-// utilise dans tower.cpp pour appliquer les dégats
-void Projectile::applyDamage(){
-    if(hit){
-        targetCreature.takeDamage(damage);
+    if (distance < hitDistance) {
+        hit = true;
+        tgt->takeDamage(damage);
     }
+}
+
+void Projectile::draw(sf::RenderWindow& window) {
+    if (!hit)
+        window.draw(shape);
 }

@@ -1,13 +1,8 @@
-#ifndef WEAKTOWER_HPP
-#define WEAKTOWER_HPP
+#pragma once
 #include "tower.hpp"
 
 class WeakTower : public Tower {
 public:
     WeakTower(int gridX, int gridY, tileMap& map);
-
-    void shoot(Creature& target) override;       
-    void draw(sf::RenderWindow& window) override;
+    ~WeakTower() = default;
 };
-
-#endif

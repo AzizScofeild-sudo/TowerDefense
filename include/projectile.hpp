@@ -1,28 +1,25 @@
-#ifndef PROJECTILE_HPP
-#define PROJECTILE_HPP
-
+#pragma once
 #include <SFML/Graphics.hpp>
-#include "creature.hpp"
+#include <memory>
 
-class Tower; // déclaration anticipée parceque on a un membre référence vers Tower et pour dire au compilateur que la classe existe
+class Tower;
+class Creature;
 
 class Projectile {
 public:
-    Projectile(const Tower& towerPosition, Creature& target,float speed, int damage);
+    Projectile(const Tower& tower, std::shared_ptr<Creature> target, float speed, int damage);
+
     void moveProjectile(float deltaTime);
     void draw(sf::RenderWindow& window);
-    bool hasHitTarget()const;
-    void applyDamage();
+    bool hasHitTarget() const { return hit; }
 
 private:
-    const Tower& towerPosition;
     sf::CircleShape shape;
     sf::Vector2f position;
-    Creature& targetCreature;
+    sf::Vector2f direction;
     float speed;
     int damage;
     bool hit;
-    sf::Vector2f direction;
-};
 
-#endif
+    std::weak_ptr<Creature> targetCreature;
+};

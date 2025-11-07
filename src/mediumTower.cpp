@@ -1,25 +1,9 @@
 #include "mediumTower.hpp"
-#include <iostream>
-
+#include <SFML/Graphics.hpp>
 
 MediumTower::MediumTower(int gridX, int gridY, tileMap& map)
-    : Tower(gridX, gridY, map)
+    : Tower(gridX, gridY, map, 150.f, 5, 0.6f, 400.f) // range, damage, fireRate, projectileSpeed
 {
-    damage = 10;
-    range = 100;
-    shape.setFillColor(sf::Color::Blue);
-
-    rangeCircle.setRadius(range);
-    rangeCircle.setOutlineColor(sf::Color::Blue);
-    rangeCircle.setOrigin(range, range);
-}
-
-void MediumTower::shoot(Creature& target)
-{
-    projectiles.push_back(std::make_unique<Projectile>(*this, target, 300.f, damage));
-}
-
-void MediumTower::draw(sf::RenderWindow& window)
-{
-    Tower::draw(window);
+    shape.setFillColor(sf::Color::Green); 
+    rangeCircle.setOutlineColor(sf::Color::Yellow); 
 }

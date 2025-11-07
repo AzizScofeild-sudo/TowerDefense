@@ -1,25 +1,10 @@
 #include "weakTower.hpp"
-#include <iostream>
+#include <SFML/Graphics.hpp>
 
 
 WeakTower::WeakTower(int gridX, int gridY, tileMap& map)
-    : Tower(gridX, gridY, map)
+    : Tower(gridX, gridY, map, 100.f, 2, 0.8f, 300.f) // range, damage, fireRate, projectileSpeed
 {
-    damage = 5;
-    range = 50;
-    shape.setFillColor(sf::Color::Green);
-
-    rangeCircle.setRadius(range);
-    rangeCircle.setOutlineColor(sf::Color::Green);
-    rangeCircle.setOrigin(range, range);
-}
-
-void WeakTower::shoot(Creature& target)
-{
-    projectiles.push_back(std::make_unique<Projectile>(*this, target, 200.f, damage));
-}
-
-void WeakTower::draw(sf::RenderWindow& window)
-{
-    Tower::draw(window); 
+    shape.setFillColor(sf::Color::Cyan); 
+    rangeCircle.setOutlineColor(sf::Color::Blue); 
 }

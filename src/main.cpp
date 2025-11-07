@@ -79,9 +79,8 @@ int main() {
     int towerType;
 
     sf::Clock spawnTimer, deltaClock;
-    const float spawnInterval = 5.f;
+    const float spawnInterval = 2.f;
 
-    // --- Boucle principale ---
     while (window.isOpen()) {
         float frameTime = deltaClock.restart().asSeconds();
 
@@ -93,7 +92,7 @@ int main() {
                 window.setView(view);
             }
 
-            // --- Gestion des touches ---
+            // gestion des evenement
             if (event.type == sf::Event::KeyPressed) {
                 switch (event.key.code) {
                     case sf::Keyboard::Num1: towerType = 1; break;
@@ -115,7 +114,7 @@ int main() {
                 }
             }
 
-            // --- Placement de tours ou peinture ---
+            // placement de tours ou peinture
             if (event.type == sf::Event::MouseButtonPressed &&
                 event.mouseButton.button == sf::Mouse::Left) {
                 isPainting = true;
@@ -153,51 +152,33 @@ int main() {
                 isPainting = false;
         }
 
-        // --- Spawn d'une créature ---
+        // spawn des creatures
         if (!path.empty() && spawnTimer.getElapsedTime().asSeconds() >= spawnInterval) {
             creatures.push_back(std::make_shared<Creature>(
-                path.front().x, path.front().y, map, 100, 100.f));
+                path.front().x, path.front().y, map, 70, 100.f)); // gridX, gridY, map, health, speed
             spawnTimer.restart();
         }
 
-        // --- Déplacement des créatures ---
+        // deplacement des creatures
         for (auto& c : creatures)
             c->move(path, frameTime);
 
-        // --- Tours tirent et mettent à jour leurs projectiles ---
+        // tours tirent et mettent à jour leurs projectiles
         for (auto& t : towers) {
-            for (auto& c : creatures) {
-                if (c->isAlive()) {
-                    sf::Vector2f towerPos = t->getTowerPosition();
-                    sf::Vector2f creaturePos = c->getCreaturePosition();
-                    float dx = towerPos.x - creaturePos.x;
-                    float dy = towerPos.y - creaturePos.y;
-                    float dist = std::sqrt(dx * dx + dy * dy);
-
-                    if (dist <= t->getRange()) {
-                        t->shoot(*c);
-                        break; // une seule cible par tour
-                    }
-                }
-            }
-            t->updateFrame(frameTime);
+            t->update(frameTime,creatures);
         }
 
-        // --- Nettoyage des créatures mortes ---
+        // supprimer les creatures mort
         creatures.erase(std::remove_if(creatures.begin(), creatures.end(),
             [](const std::shared_ptr<Creature>& c) { return !c->isAlive(); }),
             creatures.end());
 
-        // --- Rendu ---
+
         window.clear();
         map.draw(window);
         for (auto& t : towers) t->draw(window);
         for (auto& c : creatures) c->draw(window);
-        for (auto& t : towers) {
-            for (const auto& p : t->getProjectiles()) {
-                p->draw(window);
-            }
-        }
+
         window.display();
     }
 

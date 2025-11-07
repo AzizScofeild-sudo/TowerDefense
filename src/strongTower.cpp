@@ -1,24 +1,9 @@
 #include "strongTower.hpp"
-#include <iostream>
+#include <SFML/Graphics.hpp>
 
 StrongTower::StrongTower(int gridX, int gridY, tileMap& map)
-    : Tower(gridX, gridY, map)
+    : Tower(gridX, gridY, map, 200.f, 10, 0.4f, 500.f) // range, damage, fireRate, projectileSpeed
 {
-    damage = 20;
-    range = 150;
-    shape.setFillColor(sf::Color::Red);
-
-    rangeCircle.setRadius(range);
-    rangeCircle.setOutlineColor(sf::Color::Red);
-    rangeCircle.setOrigin(range, range);
-}
-
-void StrongTower::shoot(Creature& target)
-{
-    projectiles.push_back(std::make_unique<Projectile>(*this, target, 400.f, damage));
-}
-
-void StrongTower::draw(sf::RenderWindow& window)
-{
-    Tower::draw(window);
+    shape.setFillColor(sf::Color::Red); 
+    rangeCircle.setOutlineColor(sf::Color::Magenta); 
 }
