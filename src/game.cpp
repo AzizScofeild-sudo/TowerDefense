@@ -13,10 +13,30 @@ towerManager_ (map_)
 }
 
 void Game::editMode(const sf::Event& event) {
+    //1)Gestion du mode (Edit,Play) via le clavier : 
+    if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::E)
+    {
+        mode_ = GameMode::Edit;
+        std::cout<<"Edit mode !" << std::endl;
 
+    }
+    if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::J )
+    {
+        mode_ = GameMode::Play;
+        std::cout<<"Play mode !" << std::endl;
+
+    }
+    //
+    //2)Gestion de mode isBuilding : 
+    //Remarque on ne doit plus construire quand n'appuis plus sur la touche "B"
+    if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::B ) isBuilding_ = true ; 
+    else if(event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::B) isBuilding_ = false ;
+    //
+    if(mode_ == GameMode::Edit){
+    loaded_ = false ; 
     editor_.keyBoardManager();
-    sf::Event e = event;              // copie locale non-const pour l’éditeur
-    editor_.eventManager(window_, e); // OK
+    sf::Event e = event;              
+    editor_.eventManager(window_, e); 
 
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::F5) 
@@ -29,45 +49,33 @@ void Game::editMode(const sf::Event& event) {
             std::cout<<"Map chargee avec succeeeeey !"<<std::endl;
         }
     }
+    }
+    else return ; 
 }
 
-void Game::playMode(const sf::Event& event)
-{
-    
-if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::J) {
-    mode_ = Game_mode::Play;
-    if (!loaded_) {
+void Game::playMode(sf::Vector2i cell_pos)
+{ 
+    if (mode_ == GameMode::Play) {
+
+       if(loaded_ == false){
         if (mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
             std::cout << "[OK] Map chargee (Play)\n";
         else
             std::cout << "[ERR] Echec chargement (Play)\n";
-        loaded_ = true;
-    }
-}
-   
-   
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) isBuilding_ = true ; 
+       }
+       loaded_ = true ; 
+
     if(isBuilding_ == true ){
 
-        auto mouse = sf::Mouse::getPosition(window_);
-        sf::Vector2f world = window_.mapPixelToCoords(mouse, window_.getView());
-        auto [gx, gy] = Grid::worldToGrid(world,map_.getSizeTile());
-
         towerManager_.Ghost();
-        towerManager_.updateGhost(window_, mouse);
+        towerManager_.updateGhost(window_, cell_pos);
 
-        if (event.type == sf::Event::MouseButtonPressed &&
-        event.mouseButton.button == sf::Mouse::Left) {
-
-        // Bornes à vérifier selon ta map (par ex. map.getWidth(), map.getHeight()) :
-        // if (gx >= map.getWidth() || gy >= map.getHeight()) continue;
-
-        
-        if(gx >= 0 || gx <= window_.getWidth_window() || gy>=0 || gy<=window_.getHeight_window())
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {        
+        if(cell_pos.x >= 0 || static_cast<unsigned>(cell_pos.x) <= window_.getWidth_window()/map_.getSizeTile() || cell_pos.y >= 0 || static_cast<unsigned>(cell_pos.y) <= window_.getHeight_window()/map_.getSizeTile())
         {
-        if (towerManager_.addTower(window_, mouse)){
-            // placé avec succès
-            std ::cout << "Tour construite en (" << gx << ", " << gy << ")" << std::endl ;
+        if (towerManager_.addTower(window_, cell_pos)){
+            // placé avec succès           
+            std ::cout << "Tour construite en (" << cell_pos.x << ", " << cell_pos.y << ")" << std::endl ;
         } else {
             // son / message “impossible de construire ici”
             std::cout << "Impossible de construire une tour ici !" << std::endl ;
@@ -75,49 +83,31 @@ if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::J) {
         }
         else std::cout<<"Impossible de construire une tour ici"<<std::endl;
 
-    } 
-
+           } 
+       }
     }
-
-
-
-
+    else return ; 
 }
 
-void Game::gamePlayManager(const sf::Event& event)
-{
-    if (event.type == sf::Event::KeyPressed) {
-        if (event.key.code == sf::Keyboard::E) {
-            mode_ = Game_mode::Edit;
-            loaded_ = false;        // prêt à recharger la prochaine fois qu’on passe en Play
-            std::cout << "Mode EDIT\n";
-        }
-        if (event.key.code == sf::Keyboard::J) {
-            mode_ = Game_mode::Play;
-            std::cout << "Mode PLAY\n";
-        }
-    }
-
-    if (mode_ == Game_mode::Edit) editMode(event);
-    if (mode_ == Game_mode::Play) playMode(event);
-}
 
 void Game::renderCommon(sf::RenderTarget& rt) 
 {
     map_.draw(rt); // NE PAS faire clear/display ici. Juste draw.
     towerManager_.draw(window_);
-    towerManager_.drawGhost(window_);
+    if(isBuilding_) towerManager_.drawGhost(window_);
 }
-
-
-
 void Game::run()
 {
-
     // ici on doit definir les different callBack 
-    window_.setEventCallback([this](const sf::Event& e){ this->gamePlayManager(e); } );
+    window_.setEventCallback([this](const sf::Event& e){ this->editMode(e); });
+    window_.setGameLoopCallback([this](sf::Vector2i cell_pos){ this->playMode(cell_pos); } );
     window_.setRenderCallback([this](sf::RenderTarget& rt){ this->renderCommon(rt); });
-  
-    
+
     window_.run(); 
 }
+
+// Creer une partie sur onEvent() qui s'occupe des different mode (edit or play) , isBuilding, buildTowerNow 'mdr'
+
+// Important : je veux esseyer un petit truc : 
+// je veux qu on maintient al touche "B" on construit et une fois relache on ne construit plus
+// ce qui m'obligera a supprimer l'attribut "bool isBuilding"

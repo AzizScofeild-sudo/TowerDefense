@@ -4,7 +4,7 @@
 
 
 
-inline bool TowerManager::inBound(int  grid_x, int grid_y) const 
+inline bool TowerManager::inBound(int  grid_x, int grid_y) const  
 {
     return (grid_x>=0 && grid_y>=0 && static_cast<unsigned>(grid_x)< map_.getWidth() && static_cast<unsigned>(grid_y)<map_.getHeight() );
 }
@@ -58,12 +58,11 @@ bool TowerManager::buildable(sf::Vector2u gridPos) const
 }
 
 
-bool TowerManager::addTower(sf::RenderTarget& window,  sf::Vector2i pixel)
+
+bool TowerManager::addTower(sf::RenderTarget& window,  sf::Vector2i cell_pos)
 {
-    unsigned sizeTile = map_.getSizeTile();
-    sf::Vector2f world = window.mapPixelToCoords(pixel, window.getView());
-    sf::Vector2i cell = Grid::worldToGrid(world, sizeTile);
-    sf::Vector2u cell_unsigned = {static_cast<unsigned>(cell.x),static_cast<unsigned>(cell.y)};
+
+    sf::Vector2u cell_unsigned = {static_cast<unsigned>(cell_pos.x),static_cast<unsigned>(cell_pos.y)};
 
     if(!buildable(cell_unsigned)) return false ; 
     towers_.emplace_back(cell_unsigned , map_) ;
@@ -95,22 +94,20 @@ void TowerManager::Ghost()
 }
 
 
-void TowerManager::updateGhost(sf::RenderWindow& window, sf::Vector2i pixel)
+void TowerManager::updateGhost(sf::RenderWindow& window, sf::Vector2i cell_pos)
 {
-    unsigned sizeTile = map_.getSizeTile();
-    sf::Vector2f world = window.mapPixelToCoords(pixel, window.getView());
-    sf::Vector2i cell = Grid::worldToGrid(world, sizeTile);
-     if (cell.x < 0 || cell.y < 0) {
+
+     if (cell_pos.x < 0 || cell_pos.y < 0) {
       ghostGridPos_ = {-1,-1};
       return;
     }
-    ghostGridPos_ = {cell.x, cell.y};   
+    ghostGridPos_ = {cell_pos.x, cell_pos.y};   
     
     // Set la position du Ghost : 
-    ghost_.setPosition(Grid::gridToWorld(cell.x-1, cell.y-1 ,sizeTile));
+    ghost_.setPosition(Grid::gridToWorld(cell_pos.x-1, cell_pos.y-1));
 
     //Donner une couleur au Ghost : 
-    sf::Vector2u center{ static_cast<unsigned>(cell.x), static_cast<unsigned>(cell.y) };
+    sf::Vector2u center{ static_cast<unsigned>(cell_pos.x), static_cast<unsigned>(cell_pos.y) };
     if (buildable(center)) ghost_.setFillColor(sf::Color(0,255,0,70));
     else ghost_.setFillColor(sf::Color(255,0,0,70));
   }

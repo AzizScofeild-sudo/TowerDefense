@@ -6,15 +6,13 @@
 #include <iostream>
 #include <fstream>
 #include <functional>
-
+#include "utils.hpp"
 
 
 class Window : public sf::RenderWindow {
-
-    
-  using EventCallback  = std::function<void(const sf::Event&)>;          
+  using EventCallback  = std::function<void(const sf::Event& event)>;          
   using RenderCallback = std::function<void(sf::RenderTarget& target)>; 
-  using GameLoopCallback = std::function<void(const sf::Event&)>;
+  using GameLoopCallback = std::function<void(sf::Vector2i cell_pos)>;
     public : 
     Window(const std::string window_name, unsigned width_window, unsigned height_window); 
     ~Window() = default ;
@@ -40,8 +38,5 @@ class Window : public sf::RenderWindow {
     EventCallback  onEvent_;   //libre 
     RenderCallback onRender_; //libre 
     GameLoopCallback onGame_ ; //libre 
-
-
-
 };
 #endif 

@@ -58,23 +58,20 @@ void Window::run()
             this->setView(view_);
             // 
         }
-        }
-    unsigned sizeTile = map_.getSizeTile();
-    // Capturer la position de la souris e en coordonnees window (int) : 
-    sf::Vector2i mouse = sf::Mouse::getPosition(); 
-    //convertir les coordonnees window en coordonnees world (float):
-    sf::Vector2f world = window.mapPixelToCoords(pixel, window.getView());
-    //convertir les coordonnees world en coordonnees map (grid) (unsigned ou int)  pour les utiliser pour la logique du jeu : 
-    sf::Vector2i cell = Grid::worldToGrid(world, sizeTile);
-    sf::Vector2u cell_unsigned = {static_cast<unsigned>(cell.x),static_cast<unsigned>(cell.y)};
-
-    // 1)gestion des evenemeents du jeu hors resize et close !!!!
+        // 1)gestion des evenemeents du jeu hors resize et close !!!!
         if (onEvent_) onEvent_(event);
+        }
+        
+    // Capturer la position de la souris e en coordonnees window (int) : 
+    sf::Vector2i mouse = sf::Mouse::getPosition(*this); 
+    //convertir les coordonnees window en coordonnees world (float):
+    sf::Vector2f world = this->mapPixelToCoords(mouse, this->getView());
+    //convertir les coordonnees world en coordonnees map (grid) (unsigned ou int)  pour les utiliser pour la logique du jeu : 
+    sf::Vector2i cell = Grid::worldToGrid(world);
+        
 
     // 2) Ici on  implemente la logie du jeu avec le meme proceder callBack !!!!
-        if (onGame_) onGame_(event); // un truc comme ca !!!!
-
-
+    if(onGame_) onGame_(cell); // un truc comme ca !!!!
 
     // 3) gestion de l'affichage de la fenetre////
         this->clear(sf::Color::Black);
@@ -87,6 +84,11 @@ void Window::run()
 
 
 
-// Mon organisation est temporaire, j'essaie d'utiliser des callBack quej'ai vu en faisant du ROS2
+// Mon organisation est temporaire, j'essaie d'utiliser des callBack que j'ai vu en faisant du ROS2
 // pour separer les differentes parties de la boucle de jeu ( gestion des evenements , logique du jeu , affichage )
 //pour rendre la cllass window plus generique et plus modulaire celon le pragmatisme de la programmation orienter objet !!!!
+// Important : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Modiefier l'architecture de programme : 
+// le callBack ----> onEvent doit de s'occuper des entrer de l'utilisateur, en mode edition(modification est creation des map) et en mode jeu, on
+//devra donc ajouter un controle du mode pour definir comme se deroulera le callBack
+// Remarque : la capture de la position de la souris doit n'est pas un Event donc elle doit etre presente dans la l'update,  
