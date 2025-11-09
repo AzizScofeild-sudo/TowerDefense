@@ -1,5 +1,5 @@
 #include "creature.hpp"
-#include "tileMap.hpp"
+#include "hpBar.hpp"
 #include <cmath>
 
 Creature::Creature(int gridX, int gridY, tileMap& map, int health, float speed)
@@ -11,6 +11,8 @@ Creature::Creature(int gridX, int gridY, tileMap& map, int health, float speed)
     shape.setFillColor(sf::Color::Red);
     shape.setOrigin(cellSize / 2.f, cellSize / 2.f); 
     shape.setPosition(position);
+
+    healthBar = std::make_unique<hpBar>(*this);
 }
 
 void Creature::move(const std::vector<sf::Vector2i>& pathTiles, float deltaTime)
@@ -35,25 +37,31 @@ void Creature::move(const std::vector<sf::Vector2i>& pathTiles, float deltaTime)
     if (distance < 2.f)
         currentPathIndex++;
 
-    if (currentPathIndex >= pathTiles.size())
+    if (currentPathIndex >= static_cast<int>(pathTiles.size()))
         alive = false;
 }
 
 void Creature::draw(sf::RenderWindow& window)
 {
     if (!alive) return;
+
     window.draw(shape);
+
+    // update et mise a jour hpBar
+    healthBar->update();
+    healthBar->draw(window);
 }
 
 sf::Vector2f Creature::getCreaturePosition() const
 {
-    return position+sf::Vector2f(map.getSizeTile()/2.f,map.getSizeTile()/2.f);
+    return position;
 }
 
 bool Creature::isAlive() const
 {
     return alive;
 }
+
 
 void Creature::takeDamage(int damage)
 {

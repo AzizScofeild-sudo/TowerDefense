@@ -3,25 +3,19 @@
 
 #include <SFML/Graphics.hpp>
 
+class Creature;
+
 class hpBar {
 public:
-    hpBar();
-    ~hpBar();
+    hpBar(Creature& creature);
 
-    void setPosition(sf::Vector2f position);
-    void move(sf::Vector2f movement);
-
-    void setFullHp(int hp);
-    void increaseBar(int hp);
-    bool empty();
-    void draw(sf::RenderWindow window);
+    void update();
+    void draw(sf::RenderWindow& window);
 
 private:
-    sf::RectangleShape border;
+    Creature& creature;
+    float fullHp;
     sf::RectangleShape bar;
-    int fullHp;
-    int currentHp;
-
 };
 
 #endif

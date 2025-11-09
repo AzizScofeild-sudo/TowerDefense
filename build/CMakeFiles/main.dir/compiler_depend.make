@@ -3,6 +3,7 @@
 
 CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/creature.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
   /home/achraf/project/TowerDefense/include/tileMap.hpp \
   /usr/include/SFML/Config.hpp \
@@ -85,11 +86,16 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -132,6 +138,9 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/specfun.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algo.h \
@@ -146,6 +155,7 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -156,6 +166,7 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
@@ -177,6 +188,7 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -187,10 +199,12 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/limits \
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
@@ -326,7 +340,10 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar.cpp \
+  /home/achraf/project/TowerDefense/include/creature.hpp \
   /home/achraf/project/TowerDefense/include/hpBar.hpp \
+  /home/achraf/project/TowerDefense/include/tile.hpp \
+  /home/achraf/project/TowerDefense/include/tileMap.hpp \
   /usr/include/SFML/Config.hpp \
   /usr/include/SFML/Graphics.hpp \
   /usr/include/SFML/Graphics/BlendMode.hpp \
@@ -407,11 +424,16 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -454,6 +476,9 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_atomic.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -467,6 +492,7 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -477,6 +503,7 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
@@ -485,6 +512,7 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cstddef \
+  /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/ctime \
@@ -496,6 +524,7 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
@@ -505,10 +534,12 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
+  /usr/include/c++/13/memory \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
@@ -623,6 +654,7 @@ CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar
 
 CMakeFiles/main.dir/src/main.cpp.o: /home/achraf/project/TowerDefense/src/main.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/mapManager.hpp \
   /home/achraf/project/TowerDefense/include/mediumTower.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
@@ -982,6 +1014,7 @@ CMakeFiles/main.dir/src/main.cpp.o: /home/achraf/project/TowerDefense/src/main.c
 
 CMakeFiles/main.dir/src/mapEditor.cpp.o: /home/achraf/project/TowerDefense/src/mapEditor.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/mapEditor.hpp \
   /home/achraf/project/TowerDefense/include/mediumTower.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
@@ -1741,6 +1774,7 @@ CMakeFiles/main.dir/src/mapManager.cpp.o: /home/achraf/project/TowerDefense/src/
 
 CMakeFiles/main.dir/src/mediumTower.cpp.o: /home/achraf/project/TowerDefense/src/mediumTower.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/mediumTower.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
@@ -2056,6 +2090,7 @@ CMakeFiles/main.dir/src/mediumTower.cpp.o: /home/achraf/project/TowerDefense/src
 
 CMakeFiles/main.dir/src/projectile.cpp.o: /home/achraf/project/TowerDefense/src/projectile.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
   /home/achraf/project/TowerDefense/include/tileMap.hpp \
@@ -2398,6 +2433,7 @@ CMakeFiles/main.dir/src/projectile.cpp.o: /home/achraf/project/TowerDefense/src/
 
 CMakeFiles/main.dir/src/strongTower.cpp.o: /home/achraf/project/TowerDefense/src/strongTower.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
   /home/achraf/project/TowerDefense/include/strongTower.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
@@ -3210,6 +3246,7 @@ CMakeFiles/main.dir/src/tileMap.cpp.o: /home/achraf/project/TowerDefense/src/til
 
 CMakeFiles/main.dir/src/tower.cpp.o: /home/achraf/project/TowerDefense/src/tower.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
   /home/achraf/project/TowerDefense/include/tileMap.hpp \
@@ -3549,6 +3586,7 @@ CMakeFiles/main.dir/src/tower.cpp.o: /home/achraf/project/TowerDefense/src/tower
 
 CMakeFiles/main.dir/src/weakTower.cpp.o: /home/achraf/project/TowerDefense/src/weakTower.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/projectile.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
   /home/achraf/project/TowerDefense/include/tileMap.hpp \
@@ -3864,6 +3902,7 @@ CMakeFiles/main.dir/src/weakTower.cpp.o: /home/achraf/project/TowerDefense/src/w
 
 CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/window.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
+  /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/mapEditor.hpp \
   /home/achraf/project/TowerDefense/include/mapManager.hpp \
   /home/achraf/project/TowerDefense/include/mediumTower.hpp \
@@ -4294,15 +4333,7 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/filesystem:
 
-/usr/include/c++/13/ext/concurrence.h:
-
 /usr/include/c++/13/codecvt:
-
-/usr/include/nlohmann/detail/json_custom_base_class.hpp:
-
-/usr/include/c++/13/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/13/bits/shared_ptr.h:
 
 /usr/include/nlohmann/detail/iterators/iterator_traits.hpp:
 
@@ -4316,16 +4347,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/fs_fwd.h:
 
-/usr/include/c++/13/bits/valarray_array.h:
-
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/13/bits/atomic_base.h:
-
-/usr/include/c++/13/bits/align.h:
-
-/usr/include/c++/13/backward/auto_ptr.h:
-
 /home/achraf/project/TowerDefense/include/tower.hpp:
 
 /home/achraf/project/TowerDefense/include/projectile.hpp:
@@ -4333,10 +4354,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /home/achraf/project/TowerDefense/include/mapManager.hpp:
 
 /home/achraf/project/TowerDefense/src/main.cpp:
-
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
-
-/home/achraf/project/TowerDefense/src/hpBar.cpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
@@ -4394,10 +4411,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
-/usr/include/c++/13/bits/unique_ptr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/c++/13/bits/hashtable.h:
@@ -4434,25 +4447,29 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
-/usr/include/c++/13/bits/predefined_ops.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/c++/13/iosfwd:
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/c++/13/bits/ostream.tcc:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/include/nlohmann/detail/conversions/to_chars.hpp:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/include/c++/13/bits/uses_allocator_args.h:
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/c++/13/bits/postypes.h:
+/usr/include/c++/13/bits/stl_relops.h:
 
-/usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/c++/13/bits/uses_allocator.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/home/achraf/project/TowerDefense/include/mapEditor.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
@@ -4466,25 +4483,13 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/locale_classes.h:
 
-/usr/include/c++/13/bits/stl_relops.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
 /usr/include/SFML/Graphics/RenderStates.hpp:
-
-/usr/include/c++/13/bits/shared_ptr_base.h:
-
-/usr/include/wchar.h:
 
 /usr/include/c++/13/bits/invoke.h:
 
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/SFML/Graphics/RenderTarget.hpp:
-
-/home/achraf/project/TowerDefense/include/hpBar.hpp:
-
-/usr/include/SFML/Window/Touch.hpp:
 
 /usr/include/errno.h:
 
@@ -4518,10 +4523,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
-/usr/include/c++/13/bits/concept_check.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
 /usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/SFML/System/Vector3.inl:
@@ -4540,19 +4541,53 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/basic_ios.h:
 
+/usr/include/c++/13/bits/valarray_array.h:
+
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/usr/include/nlohmann/detail/meta/type_traits.hpp:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/nlohmann/detail/conversions/to_chars.hpp:
+
+/usr/include/c++/13/bits/uses_allocator_args.h:
+
+/usr/include/SFML/Window/Touch.hpp:
+
+/home/achraf/project/TowerDefense/include/hpBar.hpp:
+
 /usr/include/c++/13/unordered_map:
 
 /usr/include/c++/13/bits/allocator.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
 
+/usr/include/SFML/System/Clock.hpp:
+
+/usr/include/c++/13/clocale:
+
+/usr/include/c++/13/bits/align.h:
+
+/usr/include/c++/13/deque:
+
+/usr/include/SFML/System/ThreadLocalPtr.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/c++/13/bits/unique_ptr.h:
+
 /usr/include/c++/13/backward/binders.h:
 
+/usr/include/c++/13/backward/auto_ptr.h:
+
 /usr/include/c++/13/bits/hash_bytes.h:
-
-/home/achraf/project/TowerDefense/include/mapEditor.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
@@ -4564,6 +4599,10 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/memoryfwd.h:
 
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/time.h:
+
 /usr/include/SFML/Window/WindowStyle.hpp:
 
 /usr/include/nlohmann/detail/conversions/to_json.hpp:
@@ -4571,8 +4610,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/SFML/Window/WindowHandle.hpp:
 
 /usr/include/SFML/System/ThreadLocalPtr.inl:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/SFML/Window/Sensor.hpp:
 
@@ -4597,12 +4634,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/c++/13/bits/ios_base.h:
 
 /usr/include/c++/13/iterator:
-
-/usr/include/c++/13/bits/stl_numeric.h:
-
-/usr/include/SFML/Window/Joystick.hpp:
-
-/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
@@ -4640,9 +4671,35 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/system_error:
 
-/usr/include/c++/13/deque:
+/usr/include/assert.h:
 
-/usr/include/SFML/System/ThreadLocalPtr.hpp:
+/usr/include/SFML/Window/VideoMode.hpp:
+
+/usr/include/SFML/Graphics/Font.hpp:
+
+/usr/include/nlohmann/detail/meta/call_std/end.hpp:
+
+/usr/include/nlohmann/detail/input/json_sax.hpp:
+
+/usr/include/c++/13/bits/functexcept.h:
+
+/home/achraf/project/TowerDefense/src/creature.cpp:
+
+/usr/include/c++/13/bits/erase_if.h:
+
+/usr/include/SFML/Graphics/VertexBuffer.hpp:
+
+/home/achraf/project/TowerDefense/src/hpBar.cpp:
+
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/13/vector:
+
+/home/achraf/project/TowerDefense/include/tile.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/home/achraf/project/TowerDefense/include/creature.hpp:
 
 /usr/include/SFML/System/Mutex.hpp:
 
@@ -4684,41 +4741,25 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/SFML/System/String.inl:
 
-/usr/include/c++/13/algorithm:
+/usr/include/c++/13/bits/stl_numeric.h:
 
-/home/achraf/project/TowerDefense/include/tileMap.hpp:
+/usr/include/SFML/Window/Joystick.hpp:
+
+/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/SFML/System/Vector3.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/SFML/Graphics/PrimitiveType.hpp:
 
 /usr/include/c++/13/memory:
 
 /usr/include/SFML/System/Sleep.hpp:
 
 /usr/include/features.h:
-
-/usr/include/c++/13/bits/erase_if.h:
-
-/usr/include/SFML/Graphics/VertexBuffer.hpp:
-
-/usr/include/c++/13/vector:
-
-/home/achraf/project/TowerDefense/include/tile.hpp:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/node_handle.h:
-
-/usr/include/nlohmann/detail/meta/call_std/end.hpp:
-
-/usr/include/nlohmann/detail/input/json_sax.hpp:
-
-/usr/include/c++/13/bits/functexcept.h:
-
-/home/achraf/project/TowerDefense/include/creature.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/home/achraf/project/TowerDefense/src/creature.cpp:
 
 /home/achraf/project/TowerDefense/src/tower.cpp:
 
@@ -4727,12 +4768,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
 /usr/include/c++/13/bits/char_traits.h:
-
-/usr/include/assert.h:
-
-/usr/include/SFML/Window/VideoMode.hpp:
-
-/usr/include/SFML/Graphics/Font.hpp:
 
 /usr/include/c++/13/bits/hashtable_policy.h:
 
@@ -4749,8 +4784,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/c++/13/bits/locale_facets.h:
 
 /usr/include/SFML/System/MemoryInputStream.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/SFML/Graphics/Rect.hpp:
 
@@ -4788,9 +4821,9 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/math.h:
 
-/usr/include/SFML/System/Clock.hpp:
+/usr/include/c++/13/algorithm:
 
-/usr/include/c++/13/clocale:
+/home/achraf/project/TowerDefense/include/tileMap.hpp:
 
 /usr/include/SFML/Window/Cursor.hpp:
 
@@ -4854,19 +4887,11 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/SFML/System/InputStream.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
 /usr/include/SFML/System/Lock.hpp:
 
 /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/SFML/Graphics/PrimitiveType.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /usr/include/SFML/Graphics.hpp:
 
@@ -4898,11 +4923,35 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/SFML/System/Vector2.hpp:
 
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/13/bits/node_handle.h:
+
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/c++/13/bits/postypes.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/c++/13/bits/predefined_ops.h:
+
+/usr/include/c++/13/iosfwd:
+
 /usr/include/SFML/Graphics/Text.hpp:
 
 /usr/include/c++/13/bits/ptr_traits.h:
 
 /usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
 
 /usr/include/c++/13/bits/streambuf.tcc:
 
@@ -4927,6 +4976,10 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/c++/13/utility:
 
 /usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/nlohmann/detail/json_custom_base_class.hpp:
+
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
@@ -4996,6 +5049,12 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/new:
 
+/usr/include/c++/13/ext/concurrence.h:
+
+/usr/include/SFML/System/Err.hpp:
+
+/usr/include/c++/13/pstl/glue_algorithm_defs.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/c++/13/bits/stl_iterator.h:
@@ -5006,11 +5065,11 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/ext/type_traits.h:
 
+/usr/include/c++/13/tr1/bessel_function.tcc:
+
+/usr/include/c++/13/initializer_list:
+
 /usr/include/c++/13/ios:
-
-/usr/include/SFML/System/Err.hpp:
-
-/usr/include/c++/13/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/13/bits/mask_array.h:
 
@@ -5025,10 +5084,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/c++/13/string:
 
 /usr/include/features-time64.h:
-
-/usr/include/c++/13/initializer_list:
-
-/usr/include/c++/13/tr1/bessel_function.tcc:
 
 /usr/include/c++/13/tr1/ell_integral.tcc:
 
@@ -5052,9 +5107,9 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/nested_exception.h:
 
-/usr/include/SFML/System/Thread.inl:
-
 /usr/include/SFML/System/Vector2.inl:
+
+/usr/include/SFML/System/Thread.inl:
 
 /usr/include/c++/13/tuple:
 
@@ -5076,10 +5131,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/stdlib.h:
 
-/usr/include/nlohmann/detail/meta/type_traits.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
 /usr/include/nlohmann/detail/input/position_t.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
@@ -5099,15 +5150,3 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/c++/13/string_view:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
-
-/usr/include/x86_64-linux-gnu/bits/sched.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:

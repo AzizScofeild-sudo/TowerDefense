@@ -28,7 +28,10 @@ Projectile::Projectile(const Tower& tower, std::shared_ptr<Creature> target, flo
 }
 
 void Projectile::moveProjectile(float deltaTime) {
-    if (hit) return;
+    if (hit) {
+        auto target=targetCreature.lock();
+        std::cout<<"health = "<<target->getHealth()<<std::endl;
+    }
 
     auto tgt = targetCreature.lock();
     if (!tgt || !tgt->isAlive()) {

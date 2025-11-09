@@ -163,10 +163,19 @@ int main() {
         for (auto& c : creatures)
             c->move(path, frameTime);
 
+        for(auto& c : creatures)
+            c->getHealth();
+
         // tours tirent et mettent à jour leurs projectiles
         for (auto& t : towers) {
             t->update(frameTime,creatures);
         }
+
+        ////////////
+/*         for (auto& c : creatures) {
+            std::cout << "health = "<< c->getHealth() << std::endl;
+        }   */ 
+
 
         // supprimer les creatures mort
         creatures.erase(std::remove_if(creatures.begin(), creatures.end(),

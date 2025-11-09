@@ -252,4 +252,5 @@ CMakeFiles/main.dir/src/strongTower.cpp.o: \
  /home/achraf/project/TowerDefense/include/tileMap.hpp \
  /home/achraf/project/TowerDefense/include/tile.hpp \
  /usr/include/c++/13/cstdint \
+ /home/achraf/project/TowerDefense/include/hpBar.hpp \
  /home/achraf/project/TowerDefense/include/projectile.hpp
