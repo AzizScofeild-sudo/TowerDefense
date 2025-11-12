@@ -8,6 +8,7 @@
 tileMap::tileMap(unsigned width ,unsigned height ,unsigned cell_size):width_(width),height_(height),cell_size_(cell_size)   
 {
     tiles_.resize(width * height);
+    Grid::setTileSize(cell_size_);
 }
 
 
@@ -15,6 +16,7 @@ tileMap::tileMap(float width_window , float height_window)
 {
     setDimenssion(width_window , height_window);
     tiles_.resize(width_ * height_);
+    Grid::setTileSize(cell_size_);
 }
 
 

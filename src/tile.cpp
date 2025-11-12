@@ -6,26 +6,20 @@
 
 tile::tile()
 {
+    //std::cout << " ON EST LAAAA !!!!" << std::endl;
 }
 
 
 void tile::setType(tileType newType) noexcept
 {
     type_ = newType ;
-    //buildable = (newType == tileType::ground) ;
+   //buildable_ = (newType == tileType::ground) ;
 }
 
-bool tile::walkable() const noexcept
+/*bool tile::walkable() const noexcept
 {
     return (type_ == tileType::path || type_ == tileType::start || type_ == tileType::goal);
-}
-
-bool tile::buildable() const noexcept
-{
-    return (type_ == tileType::ground);
-}
-
-
+}*/
 
 
 sf::Color tile::displayColor() const  noexcept
@@ -42,6 +36,7 @@ sf::Color tile::displayColor() const  noexcept
             return sf::Color::Magenta; // fallback, ne devrait pas arriver
     };
 }
+
 
 tileType tile::getType() const noexcept
 {

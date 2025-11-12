@@ -111,3 +111,5 @@ void Tower::shoot(std::shared_ptr<Creature> target) {
 int Tower::getDamage() const {
     return damage;
 } */
+
+//hit attribue _  deltatime shared ptr

@@ -4,6 +4,7 @@
 #include "tile.hpp"
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include "utils.hpp"
 
 class tileMap
 {
@@ -25,7 +26,7 @@ class tileMap
    unsigned getWidth() const noexcept ;
    unsigned getHeight() const noexcept ;
    unsigned getSizeTile() const noexcept ; 
-
+  
     private : 
 
     void setDimenssion(float width_window , float height_window);

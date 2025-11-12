@@ -1,13 +1,12 @@
 #include <window.hpp>
+#include <algorithm>
 
 
 Window::Window(const std::string window_name, unsigned width_window, unsigned height_window) : 
 sf::RenderWindow(sf::VideoMode(width_window, height_window), window_name),
 window_name_(window_name),
 width_window_(width_window),
-height_window_(height_window),
-map_(width_window, height_window),
-editor_(map_)
+height_window_(height_window)
 {
 
     this->setFramerateLimit(60);
@@ -43,92 +42,52 @@ sf::View Window::manageWindow(sf::View view , unsigned width_window , unsigned h
 }
 
 
-void Window::play_mode()
+
+void Window::run()
 {
-    if(!playLoaded_)
+
+    while (this->isOpen())
     {
-    std::cout << "play mode.... " << std::endl ;
-    if (mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
-        std::cout << "[OK] Map chargee depuis maps/level1.json\n";
-    else
-    std::cout << "[ERR] Echec du chargement\n";
-    }
-    playLoaded_ = true ;
-
-}
-
-void Window::edit_mode(sf::Event& event)
-{   
-    if(playLoaded_) std::cout << "edit mode.... " << std::endl ;
-              editor_.keyBoardManager();
-        editor_.eventManager(*this, event);
-        
-        
-                    // ------------------------------
-            // Raccourcis save (F5) / load (F9)
-            // ------------------------------
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::F5) {
-                    if (mapManager::saveJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
-                        std::cout << "[OK] Map sauvegardee dans maps/level1.json\n";
-                    else
-                        std::cout << "[ERR] Echec de la sauvegarde\n";
-                }
-                if (event.key.code == sf::Keyboard::F9) {
-                    if (mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", map_))
-                        std::cout << "[OK] Map chargee depuis maps/level1.json\n";
-                    else
-                        std::cout << "[ERR] Echec du chargement\n";
-                }
-
-            }
-    playLoaded_ = false ;
-      
-}
-
-
-
-
-
-
-void Window::start_window()
-{
-
-while (this->isOpen())
-{
-    sf::Event event;
-    while (this->pollEvent(event))
-    {
-        if (event.type == sf::Event::Closed) this->close();  
-
-        if (event.type == sf::Event::Resized)
+        sf::Event event;
+        while (this->pollEvent(event))
         {
+            if (event.type == sf::Event::Closed) this->close();
+            if (event.type == sf::Event::Resized)
+        {   
+            // A faire : en capsuler cette partie !
             view_ = manageWindow(view_, event.size.width, event.size.height);
             this->setView(view_);
+            // 
+        }
+        // 1)gestion des evenemeents du jeu hors resize et close !!!!
+        sf::Vector2i cell_pos = mouseToCell(); 
+        if (onEvent_) onEvent_(event, cell_pos);
         }
 
-        editor_.keyBoardManager();
 
-            // Gestion des modes de jeu
 
-        switch (editor_.getMode())
-        {
-        case modeJeuEditor::Edit: 
-            this->edit_mode(event); 
-            break;
-        case modeJeuEditor::PLay:
-            this->play_mode(); 
-            break;
-        default:
-            break;
-        }
+
+
+    // 2) Ici on  implemente la logie du jeu avec le meme proceder callBack !!!!
+    sf::Vector2i cell_pos = mouseToCell();
+    if(onGame_) onGame_(cell_pos); // un truc comme ca !!!!
+
+    // 3) gestion de l'affichage de la fenetre////
+        this->clear(sf::Color::Black);
+
+        if (onRender_) onRender_(*this);
+
+        this->display();
     }
-    
-     // fin pollEvent
+}
 
-    // ---- Rendu (une seule fois par frame) ----
-    this->clear(sf::Color::Black);
-    map_.draw(*this);
-    this->display();
-}
-}
+
+
+// Mon organisation est temporaire, j'essaie d'utiliser des callBack que j'ai vu en faisant du ROS2
+// pour separer les differentes parties de la boucle de jeu ( gestion des evenements , logique du jeu , affichage )
+//pour rendre la cllass window plus generique et plus modulaire celon le pragmatisme de la programmation orienter objet !!!!
+// Important : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Modiefier l'architecture de programme : 
+// le callBack ----> onEvent doit de s'occuper des entrer de l'utilisateur, en mode edition(modification est creation des map) et en mode jeu, on
+//devra donc ajouter un controle du mode pour definir comme se deroulera le callBack
+// Remarque : la capture de la position de la souris doit n'est pas un Event donc elle doit etre presente dans la l'update,  
