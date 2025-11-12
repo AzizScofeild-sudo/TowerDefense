@@ -10,9 +10,9 @@
 
 
 class Window : public sf::RenderWindow {
-  using EventCallback  = std::function<void(const sf::Event& event)>;          
+  using EventCallback  = std::function<void(const sf::Event& event, sf::Vector2i cell_pos)>; 
+  using GameLoopCallback = std::function<void(sf::Vector2i cell_pos)>;         
   using RenderCallback = std::function<void(sf::RenderTarget& target)>; 
-  using GameLoopCallback = std::function<void(sf::Vector2i cell_pos)>;
     public : 
     Window(const std::string window_name, unsigned width_window, unsigned height_window); 
     ~Window() = default ;
@@ -27,6 +27,15 @@ class Window : public sf::RenderWindow {
 
     private : 
     sf::View manageWindow(sf::View view , unsigned width_window , unsigned height_window);
+    sf::Vector2i mouseToCell() {
+        // Capturer la position de la souris e en coordonnees window (int) : 
+        sf::Vector2i mouse = sf::Mouse::getPosition(*this); 
+        //convertir les coordonnees window en coordonnees world (float):
+        sf::Vector2f world = this->mapPixelToCoords(mouse, this->getView());
+        //convertir les coordonnees world en coordonnees map (grid) (unsigned ou int)  pour les utiliser pour la logique du jeu : 
+        sf::Vector2i cell = Grid::worldToGrid(world);
+        return cell; 
+    }
 
     private : 
     std::string window_name_ ; 
@@ -35,8 +44,9 @@ class Window : public sf::RenderWindow {
     sf::View view_ ;
 
     private : 
-    EventCallback  onEvent_;   //libre 
-    RenderCallback onRender_; //libre 
+    EventCallback  onEvent_;   //libre
     GameLoopCallback onGame_ ; //libre 
+    RenderCallback onRender_; //libre  
+
 };
 #endif 

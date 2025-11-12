@@ -59,7 +59,7 @@ bool TowerManager::buildable(sf::Vector2u gridPos) const
 
 
 
-bool TowerManager::addTower(sf::RenderTarget& window,  sf::Vector2i cell_pos)
+bool TowerManager::addTower(sf::Vector2i cell_pos)
 {
 
     sf::Vector2u cell_unsigned = {static_cast<unsigned>(cell_pos.x),static_cast<unsigned>(cell_pos.y)};
@@ -94,7 +94,7 @@ void TowerManager::Ghost()
 }
 
 
-void TowerManager::updateGhost(sf::RenderWindow& window, sf::Vector2i cell_pos)
+void TowerManager::updateGhost(sf::Vector2i cell_pos)
 {
 
      if (cell_pos.x < 0 || cell_pos.y < 0) {

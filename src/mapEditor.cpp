@@ -15,37 +15,29 @@ void mapEditor::keyBoardManager()
 
 }
 
-sf::Vector2i mapEditor::worldToCell(sf::RenderWindow& window, sf::Vector2i pixel)
-{
-    sf::Vector2f world = window.mapPixelToCoords(pixel, window.getView());
 
-    return map_.worldToCell(world);
-}
-
-void mapEditor::paint(sf::Vector2i cell) 
+void mapEditor::paint(sf::Vector2i cell_pos) 
 {
-    if(cell.x >= 0 && cell.y >= 0)
-    {map_.paint((unsigned)cell.x, (unsigned)cell.y , paintType_);}
+    if(cell_pos.x >= 0 && cell_pos.y >= 0)
+    {map_.paint((unsigned)cell_pos.x, (unsigned)cell_pos.y , paintType_);}
 }
 
 
 
 
-void mapEditor::eventManager(sf::RenderWindow& window, sf ::Event& event)
+void mapEditor::eventManager(sf ::Event& event, sf::Vector2i cell_pos)
 {
    
         if (event.type == sf::Event::MouseButtonPressed &&
             event.mouseButton.button == sf::Mouse::Left)
             {
                 isPainting_ = true ;
-                sf::Vector2i cell  = worldToCell(window,{ event.mouseButton.x, event.mouseButton.y }); // Modifier cell en posCell
-                paint(cell);
+                paint(cell_pos);
             }
 
         if (event.type == sf::Event::MouseMoved && isPainting_)
            {
-                sf::Vector2i cell = worldToCell(window,{ event.mouseMove.x, event.mouseMove.y });
-                paint(cell);           
+                paint(cell_pos);           
            }
     
         if (event.type == sf::Event::MouseButtonReleased &&

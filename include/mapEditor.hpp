@@ -19,9 +19,8 @@ public:
     mapEditor(tileMap& map); // REtirer le constructeru et passer les methodes en static !!!!
     ~mapEditor() = default;
     void keyBoardManager();  // Passer cette methode sur une class CLavier ! 
-    void eventManager(sf::RenderWindow& window, sf ::Event& event); 
-    sf::Vector2i worldToCell(sf::RenderWindow& window, sf::Vector2i pixel); 
-    void paint(sf::Vector2i cell) ; 
+    void eventManager(sf ::Event& event, sf::Vector2i cell_pos); 
+    void paint(sf::Vector2i cell_pos); 
 
 
 private:

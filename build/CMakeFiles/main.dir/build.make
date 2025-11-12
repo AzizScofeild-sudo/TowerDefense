@@ -69,10 +69,24 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
+CMakeFiles/main.dir/src/editMode.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/editMode.cpp.o: /home/aziz-scofeild/TowerDedense/src/editMode.cpp
+CMakeFiles/main.dir/src/editMode.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/editMode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/editMode.cpp.o -MF CMakeFiles/main.dir/src/editMode.cpp.o.d -o CMakeFiles/main.dir/src/editMode.cpp.o -c /home/aziz-scofeild/TowerDedense/src/editMode.cpp
+
+CMakeFiles/main.dir/src/editMode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/editMode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aziz-scofeild/TowerDedense/src/editMode.cpp > CMakeFiles/main.dir/src/editMode.cpp.i
+
+CMakeFiles/main.dir/src/editMode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/editMode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aziz-scofeild/TowerDedense/src/editMode.cpp -o CMakeFiles/main.dir/src/editMode.cpp.s
+
 CMakeFiles/main.dir/src/game.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/game.cpp.o: /home/aziz-scofeild/TowerDedense/src/game.cpp
 CMakeFiles/main.dir/src/game.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/game.cpp.o -MF CMakeFiles/main.dir/src/game.cpp.o.d -o CMakeFiles/main.dir/src/game.cpp.o -c /home/aziz-scofeild/TowerDedense/src/game.cpp
 
 CMakeFiles/main.dir/src/game.cpp.i: cmake_force
@@ -83,10 +97,24 @@ CMakeFiles/main.dir/src/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/game.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aziz-scofeild/TowerDedense/src/game.cpp -o CMakeFiles/main.dir/src/game.cpp.s
 
+CMakeFiles/main.dir/src/interfaceGameMode.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/interfaceGameMode.cpp.o: /home/aziz-scofeild/TowerDedense/src/interfaceGameMode.cpp
+CMakeFiles/main.dir/src/interfaceGameMode.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/interfaceGameMode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/interfaceGameMode.cpp.o -MF CMakeFiles/main.dir/src/interfaceGameMode.cpp.o.d -o CMakeFiles/main.dir/src/interfaceGameMode.cpp.o -c /home/aziz-scofeild/TowerDedense/src/interfaceGameMode.cpp
+
+CMakeFiles/main.dir/src/interfaceGameMode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/interfaceGameMode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aziz-scofeild/TowerDedense/src/interfaceGameMode.cpp > CMakeFiles/main.dir/src/interfaceGameMode.cpp.i
+
+CMakeFiles/main.dir/src/interfaceGameMode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/interfaceGameMode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aziz-scofeild/TowerDedense/src/interfaceGameMode.cpp -o CMakeFiles/main.dir/src/interfaceGameMode.cpp.s
+
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: /home/aziz-scofeild/TowerDedense/src/main.cpp
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /home/aziz-scofeild/TowerDedense/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 CMakeFiles/main.dir/src/mapEditor.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/mapEditor.cpp.o: /home/aziz-scofeild/TowerDedense/src/mapEditor.cpp
 CMakeFiles/main.dir/src/mapEditor.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/mapEditor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/mapEditor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/mapEditor.cpp.o -MF CMakeFiles/main.dir/src/mapEditor.cpp.o.d -o CMakeFiles/main.dir/src/mapEditor.cpp.o -c /home/aziz-scofeild/TowerDedense/src/mapEditor.cpp
 
 CMakeFiles/main.dir/src/mapEditor.cpp.i: cmake_force
@@ -114,7 +142,7 @@ CMakeFiles/main.dir/src/mapEditor.cpp.s: cmake_force
 CMakeFiles/main.dir/src/mapManager.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/mapManager.cpp.o: /home/aziz-scofeild/TowerDedense/src/mapManager.cpp
 CMakeFiles/main.dir/src/mapManager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/mapManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/mapManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/mapManager.cpp.o -MF CMakeFiles/main.dir/src/mapManager.cpp.o.d -o CMakeFiles/main.dir/src/mapManager.cpp.o -c /home/aziz-scofeild/TowerDedense/src/mapManager.cpp
 
 CMakeFiles/main.dir/src/mapManager.cpp.i: cmake_force
@@ -125,10 +153,24 @@ CMakeFiles/main.dir/src/mapManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/mapManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aziz-scofeild/TowerDedense/src/mapManager.cpp -o CMakeFiles/main.dir/src/mapManager.cpp.s
 
+CMakeFiles/main.dir/src/playMode.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/playMode.cpp.o: /home/aziz-scofeild/TowerDedense/src/playMode.cpp
+CMakeFiles/main.dir/src/playMode.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/playMode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/playMode.cpp.o -MF CMakeFiles/main.dir/src/playMode.cpp.o.d -o CMakeFiles/main.dir/src/playMode.cpp.o -c /home/aziz-scofeild/TowerDedense/src/playMode.cpp
+
+CMakeFiles/main.dir/src/playMode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/playMode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aziz-scofeild/TowerDedense/src/playMode.cpp > CMakeFiles/main.dir/src/playMode.cpp.i
+
+CMakeFiles/main.dir/src/playMode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/playMode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aziz-scofeild/TowerDedense/src/playMode.cpp -o CMakeFiles/main.dir/src/playMode.cpp.s
+
 CMakeFiles/main.dir/src/tile.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tile.cpp.o: /home/aziz-scofeild/TowerDedense/src/tile.cpp
 CMakeFiles/main.dir/src/tile.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/tile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/tile.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tile.cpp.o -MF CMakeFiles/main.dir/src/tile.cpp.o.d -o CMakeFiles/main.dir/src/tile.cpp.o -c /home/aziz-scofeild/TowerDedense/src/tile.cpp
 
 CMakeFiles/main.dir/src/tile.cpp.i: cmake_force
@@ -142,7 +184,7 @@ CMakeFiles/main.dir/src/tile.cpp.s: cmake_force
 CMakeFiles/main.dir/src/tileMap.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tileMap.cpp.o: /home/aziz-scofeild/TowerDedense/src/tileMap.cpp
 CMakeFiles/main.dir/src/tileMap.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/tileMap.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/tileMap.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tileMap.cpp.o -MF CMakeFiles/main.dir/src/tileMap.cpp.o.d -o CMakeFiles/main.dir/src/tileMap.cpp.o -c /home/aziz-scofeild/TowerDedense/src/tileMap.cpp
 
 CMakeFiles/main.dir/src/tileMap.cpp.i: cmake_force
@@ -156,7 +198,7 @@ CMakeFiles/main.dir/src/tileMap.cpp.s: cmake_force
 CMakeFiles/main.dir/src/tower.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tower.cpp.o: /home/aziz-scofeild/TowerDedense/src/tower.cpp
 CMakeFiles/main.dir/src/tower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/tower.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/tower.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tower.cpp.o -MF CMakeFiles/main.dir/src/tower.cpp.o.d -o CMakeFiles/main.dir/src/tower.cpp.o -c /home/aziz-scofeild/TowerDedense/src/tower.cpp
 
 CMakeFiles/main.dir/src/tower.cpp.i: cmake_force
@@ -170,7 +212,7 @@ CMakeFiles/main.dir/src/tower.cpp.s: cmake_force
 CMakeFiles/main.dir/src/towerManager.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/towerManager.cpp.o: /home/aziz-scofeild/TowerDedense/src/towerManager.cpp
 CMakeFiles/main.dir/src/towerManager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/towerManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/towerManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/towerManager.cpp.o -MF CMakeFiles/main.dir/src/towerManager.cpp.o.d -o CMakeFiles/main.dir/src/towerManager.cpp.o -c /home/aziz-scofeild/TowerDedense/src/towerManager.cpp
 
 CMakeFiles/main.dir/src/towerManager.cpp.i: cmake_force
@@ -184,7 +226,7 @@ CMakeFiles/main.dir/src/towerManager.cpp.s: cmake_force
 CMakeFiles/main.dir/src/window.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/window.cpp.o: /home/aziz-scofeild/TowerDedense/src/window.cpp
 CMakeFiles/main.dir/src/window.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/window.cpp.o -MF CMakeFiles/main.dir/src/window.cpp.o.d -o CMakeFiles/main.dir/src/window.cpp.o -c /home/aziz-scofeild/TowerDedense/src/window.cpp
 
 CMakeFiles/main.dir/src/window.cpp.i: cmake_force
@@ -197,10 +239,13 @@ CMakeFiles/main.dir/src/window.cpp.s: cmake_force
 
 # Object files for target main
 main_OBJECTS = \
+"CMakeFiles/main.dir/src/editMode.cpp.o" \
 "CMakeFiles/main.dir/src/game.cpp.o" \
+"CMakeFiles/main.dir/src/interfaceGameMode.cpp.o" \
 "CMakeFiles/main.dir/src/main.cpp.o" \
 "CMakeFiles/main.dir/src/mapEditor.cpp.o" \
 "CMakeFiles/main.dir/src/mapManager.cpp.o" \
+"CMakeFiles/main.dir/src/playMode.cpp.o" \
 "CMakeFiles/main.dir/src/tile.cpp.o" \
 "CMakeFiles/main.dir/src/tileMap.cpp.o" \
 "CMakeFiles/main.dir/src/tower.cpp.o" \
@@ -210,10 +255,13 @@ main_OBJECTS = \
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
+main: CMakeFiles/main.dir/src/editMode.cpp.o
 main: CMakeFiles/main.dir/src/game.cpp.o
+main: CMakeFiles/main.dir/src/interfaceGameMode.cpp.o
 main: CMakeFiles/main.dir/src/main.cpp.o
 main: CMakeFiles/main.dir/src/mapEditor.cpp.o
 main: CMakeFiles/main.dir/src/mapManager.cpp.o
+main: CMakeFiles/main.dir/src/playMode.cpp.o
 main: CMakeFiles/main.dir/src/tile.cpp.o
 main: CMakeFiles/main.dir/src/tileMap.cpp.o
 main: CMakeFiles/main.dir/src/tower.cpp.o
@@ -225,7 +273,7 @@ main: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 main: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 main: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/aziz-scofeild/TowerDedense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

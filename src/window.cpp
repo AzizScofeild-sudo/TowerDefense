@@ -45,6 +45,7 @@ sf::View Window::manageWindow(sf::View view , unsigned width_window , unsigned h
 
 void Window::run()
 {
+
     while (this->isOpen())
     {
         sf::Event event;
@@ -59,19 +60,17 @@ void Window::run()
             // 
         }
         // 1)gestion des evenemeents du jeu hors resize et close !!!!
-        if (onEvent_) onEvent_(event);
+        sf::Vector2i cell_pos = mouseToCell(); 
+        if (onEvent_) onEvent_(event, cell_pos);
         }
-        
-    // Capturer la position de la souris e en coordonnees window (int) : 
-    sf::Vector2i mouse = sf::Mouse::getPosition(*this); 
-    //convertir les coordonnees window en coordonnees world (float):
-    sf::Vector2f world = this->mapPixelToCoords(mouse, this->getView());
-    //convertir les coordonnees world en coordonnees map (grid) (unsigned ou int)  pour les utiliser pour la logique du jeu : 
-    sf::Vector2i cell = Grid::worldToGrid(world);
-        
+
+
+
+
 
     // 2) Ici on  implemente la logie du jeu avec le meme proceder callBack !!!!
-    if(onGame_) onGame_(cell); // un truc comme ca !!!!
+    sf::Vector2i cell_pos = mouseToCell();
+    if(onGame_) onGame_(cell_pos); // un truc comme ca !!!!
 
     // 3) gestion de l'affichage de la fenetre////
         this->clear(sf::Color::Black);

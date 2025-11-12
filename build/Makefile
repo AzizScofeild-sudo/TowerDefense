@@ -130,6 +130,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/editMode.o: src/editMode.cpp.o
+.PHONY : src/editMode.o
+
+# target to build an object file
+src/editMode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/editMode.cpp.o
+.PHONY : src/editMode.cpp.o
+
+src/editMode.i: src/editMode.cpp.i
+.PHONY : src/editMode.i
+
+# target to preprocess a source file
+src/editMode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/editMode.cpp.i
+.PHONY : src/editMode.cpp.i
+
+src/editMode.s: src/editMode.cpp.s
+.PHONY : src/editMode.s
+
+# target to generate assembly for a file
+src/editMode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/editMode.cpp.s
+.PHONY : src/editMode.cpp.s
+
 src/game.o: src/game.cpp.o
 .PHONY : src/game.o
 
@@ -153,6 +177,30 @@ src/game.s: src/game.cpp.s
 src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
+
+src/interfaceGameMode.o: src/interfaceGameMode.cpp.o
+.PHONY : src/interfaceGameMode.o
+
+# target to build an object file
+src/interfaceGameMode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/interfaceGameMode.cpp.o
+.PHONY : src/interfaceGameMode.cpp.o
+
+src/interfaceGameMode.i: src/interfaceGameMode.cpp.i
+.PHONY : src/interfaceGameMode.i
+
+# target to preprocess a source file
+src/interfaceGameMode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/interfaceGameMode.cpp.i
+.PHONY : src/interfaceGameMode.cpp.i
+
+src/interfaceGameMode.s: src/interfaceGameMode.cpp.s
+.PHONY : src/interfaceGameMode.s
+
+# target to generate assembly for a file
+src/interfaceGameMode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/interfaceGameMode.cpp.s
+.PHONY : src/interfaceGameMode.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -225,6 +273,30 @@ src/mapManager.s: src/mapManager.cpp.s
 src/mapManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.s
 .PHONY : src/mapManager.cpp.s
+
+src/playMode.o: src/playMode.cpp.o
+.PHONY : src/playMode.o
+
+# target to build an object file
+src/playMode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.o
+.PHONY : src/playMode.cpp.o
+
+src/playMode.i: src/playMode.cpp.i
+.PHONY : src/playMode.i
+
+# target to preprocess a source file
+src/playMode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.i
+.PHONY : src/playMode.cpp.i
+
+src/playMode.s: src/playMode.cpp.s
+.PHONY : src/playMode.s
+
+# target to generate assembly for a file
+src/playMode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.s
+.PHONY : src/playMode.cpp.s
 
 src/tile.o: src/tile.cpp.o
 .PHONY : src/tile.o
@@ -355,9 +427,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/editMode.o"
+	@echo "... src/editMode.i"
+	@echo "... src/editMode.s"
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/interfaceGameMode.o"
+	@echo "... src/interfaceGameMode.i"
+	@echo "... src/interfaceGameMode.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -367,6 +445,9 @@ help:
 	@echo "... src/mapManager.o"
 	@echo "... src/mapManager.i"
 	@echo "... src/mapManager.s"
+	@echo "... src/playMode.o"
+	@echo "... src/playMode.i"
+	@echo "... src/playMode.s"
 	@echo "... src/tile.o"
 	@echo "... src/tile.i"
 	@echo "... src/tile.s"
