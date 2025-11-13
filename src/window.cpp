@@ -2,6 +2,7 @@
 #include <algorithm>
 
 
+
 Window::Window(const std::string window_name, unsigned width_window, unsigned height_window) : 
 sf::RenderWindow(sf::VideoMode(width_window, height_window), window_name),
 window_name_(window_name),

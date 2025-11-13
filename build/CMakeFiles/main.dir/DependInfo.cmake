@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/aziz-scofeild/TowerDedense/src/creature.cpp" "CMakeFiles/main.dir/src/creature.cpp.o" "gcc" "CMakeFiles/main.dir/src/creature.cpp.o.d"
+  "/home/aziz-scofeild/TowerDedense/src/creatureManager.cpp" "CMakeFiles/main.dir/src/creatureManager.cpp.o" "gcc" "CMakeFiles/main.dir/src/creatureManager.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/editMode.cpp" "CMakeFiles/main.dir/src/editMode.cpp.o" "gcc" "CMakeFiles/main.dir/src/editMode.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/game.cpp" "CMakeFiles/main.dir/src/game.cpp.o" "gcc" "CMakeFiles/main.dir/src/game.cpp.o.d"
   "/home/aziz-scofeild/TowerDedense/src/interfaceGameMode.cpp" "CMakeFiles/main.dir/src/interfaceGameMode.cpp.o" "gcc" "CMakeFiles/main.dir/src/interfaceGameMode.cpp.o.d"

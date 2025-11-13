@@ -5,6 +5,8 @@ cmake_policy(SET CMP0009 NEW)
 # SOURCES at CMakeLists.txt:13 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/aziz-scofeild/TowerDedense/src/*.cpp")
 set(OLD_GLOB
+  "/home/aziz-scofeild/TowerDedense/src/creature.cpp"
+  "/home/aziz-scofeild/TowerDedense/src/creatureManager.cpp"
   "/home/aziz-scofeild/TowerDedense/src/editMode.cpp"
   "/home/aziz-scofeild/TowerDedense/src/game.cpp"
   "/home/aziz-scofeild/TowerDedense/src/interfaceGameMode.cpp"

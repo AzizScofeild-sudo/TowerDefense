@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <algorithm>  
 #include <cmath>      
-#include "tileMap.hpp"
+
 
 
 
@@ -23,8 +23,6 @@ inline sf::Vector2i worldToGrid(const sf::Vector2f& world) {
 
     return { gx, gy };
 }
-
-
 
 inline sf::Vector2f gridToWorld(unsigned gx, unsigned gy) {
     

@@ -280,6 +280,20 @@ CMakeFiles/main.dir/src/main.cpp.o: \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /home/aziz-scofeild/TowerDedense/include/tower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/creatureManager.hpp \
+ /home/aziz-scofeild/TowerDedense/include/creature.hpp \
+ /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
  /home/aziz-scofeild/TowerDedense/include/interfaceGameMode.hpp \
  /home/aziz-scofeild/TowerDedense/include/editMode.hpp \
  /home/aziz-scofeild/TowerDedense/include/playMode.hpp

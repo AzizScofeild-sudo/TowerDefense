@@ -6,6 +6,7 @@
 #include "tileMap.hpp"
 #include "mapEditor.hpp"
 #include "towerManager.hpp"
+#include "creatureManager.hpp"
 #include "interfaceGameMode.hpp"
 #include "editMode.hpp"
 #include "playMode.hpp"
@@ -35,6 +36,7 @@ Window window_ ;
 tileMap map_ ;
 mapEditor editor_ ; 
 TowerManager towerManager_ ; 
+CreatureManager creatureManager_ ; 
 GameObject obj_ ; 
 IGameMode* current_ = nullptr ; 
 EditMode editMode_ ; 

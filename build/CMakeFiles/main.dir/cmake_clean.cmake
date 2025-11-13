@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/main.dir/src/creature.cpp.o"
+  "CMakeFiles/main.dir/src/creature.cpp.o.d"
+  "CMakeFiles/main.dir/src/creatureManager.cpp.o"
+  "CMakeFiles/main.dir/src/creatureManager.cpp.o.d"
   "CMakeFiles/main.dir/src/editMode.cpp.o"
   "CMakeFiles/main.dir/src/editMode.cpp.o.d"
   "CMakeFiles/main.dir/src/game.cpp.o"

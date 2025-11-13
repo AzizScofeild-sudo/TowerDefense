@@ -130,6 +130,54 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/creature.o: src/creature.cpp.o
+.PHONY : src/creature.o
+
+# target to build an object file
+src/creature.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.o
+.PHONY : src/creature.cpp.o
+
+src/creature.i: src/creature.cpp.i
+.PHONY : src/creature.i
+
+# target to preprocess a source file
+src/creature.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.i
+.PHONY : src/creature.cpp.i
+
+src/creature.s: src/creature.cpp.s
+.PHONY : src/creature.s
+
+# target to generate assembly for a file
+src/creature.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.s
+.PHONY : src/creature.cpp.s
+
+src/creatureManager.o: src/creatureManager.cpp.o
+.PHONY : src/creatureManager.o
+
+# target to build an object file
+src/creatureManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creatureManager.cpp.o
+.PHONY : src/creatureManager.cpp.o
+
+src/creatureManager.i: src/creatureManager.cpp.i
+.PHONY : src/creatureManager.i
+
+# target to preprocess a source file
+src/creatureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creatureManager.cpp.i
+.PHONY : src/creatureManager.cpp.i
+
+src/creatureManager.s: src/creatureManager.cpp.s
+.PHONY : src/creatureManager.s
+
+# target to generate assembly for a file
+src/creatureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creatureManager.cpp.s
+.PHONY : src/creatureManager.cpp.s
+
 src/editMode.o: src/editMode.cpp.o
 .PHONY : src/editMode.o
 
@@ -427,6 +475,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/creature.o"
+	@echo "... src/creature.i"
+	@echo "... src/creature.s"
+	@echo "... src/creatureManager.o"
+	@echo "... src/creatureManager.i"
+	@echo "... src/creatureManager.s"
 	@echo "... src/editMode.o"
 	@echo "... src/editMode.i"
 	@echo "... src/editMode.s"
