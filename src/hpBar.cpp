@@ -37,7 +37,7 @@ void hpBar::update()
     bar.setPosition(pos.x-bar.getSize().x /2.f, pos.y-radius-15.f);
 }
 
-void hpBar::draw(sf::RenderWindow& window)
+void hpBar::draw(sf::RenderTarget& window)
 {
     if (!creature.isAlive()) return;
     window.draw(bar);

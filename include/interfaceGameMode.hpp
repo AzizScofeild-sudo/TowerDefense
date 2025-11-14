@@ -6,12 +6,15 @@ class Window;
 class tileMap;
 class mapEditor;
 class TowerManager;
+class CreatureManager;
+
 
 // Regroupe les objets du jeu que les modes utilisent
 struct GameObject {
     tileMap&      map_;
     mapEditor&    editor_;
     TowerManager& towerManager_;
+    CreatureManager& creatureManager_ ; 
     Window&       window_;
 };
 

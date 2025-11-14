@@ -15,7 +15,15 @@ Projectile::Projectile(const Tower& tower, std::shared_ptr<Creature> target, flo
     shape.setPosition(position);
 
 
-    //lock transforme le weak_ptr en shared_ptr temporaire
+}
+
+void Projectile::moveProjectile(float deltaTime) {
+    if (hit) {
+        auto target=targetCreature.lock();
+        std::cout<<"health = "<<target->getHealth()<<std::endl;
+    }
+
+        //lock transforme le weak_ptr en shared_ptr temporaire
     if (auto tgt = targetCreature.lock()) {
         sf::Vector2f targetPos = tgt->getCreaturePosition();
         sf::Vector2f dirVec = targetPos - position;
@@ -25,14 +33,6 @@ Projectile::Projectile(const Tower& tower, std::shared_ptr<Creature> target, flo
         else
             direction = sf::Vector2f(0.f, 0.f);
     }
-}
-
-void Projectile::moveProjectile(float deltaTime) {
-    if (hit) {
-        auto target=targetCreature.lock();
-        std::cout<<"health = "<<target->getHealth()<<std::endl;
-    }
-
     auto tgt = targetCreature.lock();
     if (!tgt || !tgt->isAlive()) {
         hit = true;
@@ -57,7 +57,7 @@ void Projectile::moveProjectile(float deltaTime) {
     }
 }
 
-void Projectile::draw(sf::RenderWindow& window) {
+void Projectile::draw(sf::RenderTarget& window) {
     if (!hit)
         window.draw(shape);
 }

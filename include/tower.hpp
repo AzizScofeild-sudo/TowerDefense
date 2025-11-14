@@ -1,31 +1,44 @@
-#pragma once
+#ifndef TOWER_HPP
+#define TOWER_HPP
+
+
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include <vector>
+#include "tileMap.hpp"
+#include "tile.hpp"
+
 #include "creature.hpp"
 #include "projectile.hpp"
-#include "tileMap.hpp"
+
+
+
 
 class Tower {
-public:
-    Tower(int gridX, int gridY, tileMap& map, float range, int damage, float fireRate, float projectileSpeed);
+public :
+    Tower(sf::Vector2u gridPos, tileMap& map, float range, int damage, float fireRate, float projectileSpeed); // ajout range ....
 
-    void update(float deltaTime, const std::vector<std::shared_ptr<Creature>>& creatures);
-    void draw(sf::RenderWindow& window);
+    void draw(sf::RenderTarget& window);              
+    sf::Vector2f getTowerPosition() const; 
+    sf::RectangleShape geTowerShape(){return tower_shape_;} ///??????
 
-    sf::Vector2f getTowerPosition() const;
-/*     float getRange() const;
-    int getDamage() const; */
+    void update(float deltaTime, const std::vector<std::shared_ptr<Creature>>& creatures); //////////
+    std::shared_ptr<Creature> findTarget(const std::vector<std::shared_ptr<Creature>>& creatures);//////////
+    void shoot(std::shared_ptr<Creature> target); //////
 
-protected:
-    void shoot(std::shared_ptr<Creature> target); 
-    std::shared_ptr<Creature> findTarget(const std::vector<std::shared_ptr<Creature>>& creatures);
 
-    tileMap& map;
-    sf::Vector2i gridPos;
-    sf::RectangleShape shape;
-    sf::CircleShape rangeCircle;
 
+
+private :
+
+    tileMap& map_ ;
+    sf::RectangleShape tower_shape_;
+    sf::CircleShape rangeCircle; ////////
+    sf::Vector2u gridPos_;
+    float size_tower  ;
+   
+
+    //
     float range;
     int damage;
     float fireRate;
@@ -34,4 +47,8 @@ protected:
 
     std::weak_ptr<Creature> currentTarget; //weak ptr parece que la tour ne possède pas la créature
     std::vector<std::unique_ptr<Projectile>> projectiles; //unique ptr parce que la tour possède les projectiles
+
+
 };
+
+#endif

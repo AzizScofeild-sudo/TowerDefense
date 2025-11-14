@@ -3,9 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include "tileMap.hpp"
-#include "hpBar.hpp"
 #include <vector>
 #include <memory>
+#include "hpBar.hpp"
 
 
 class Creature {
@@ -13,11 +13,11 @@ public:
     Creature(int gridX, int gridY, tileMap& map, int health, float speed);
 
     void move(const std::vector<sf::Vector2i>& pathTiles, float deltaTime);
-    void draw(sf::RenderWindow& window);
+    void draw(sf::RenderTarget& rt);
 
     sf::Vector2f getCreaturePosition() const;
     bool isAlive() const;
-    void takeDamage(int damage);
+    void takeDamage(int damage); // elle etait commentee par cheikh jamal
     int getHealth() const;
     float getCreatureRadius() const;
 
@@ -27,7 +27,7 @@ private:
     int health;
     float speed;
     int currentPathIndex;
-    tileMap& map;
+    tileMap map_ ; // Solution chatGPT !!!!
     bool alive;
 
     std::unique_ptr<hpBar> healthBar; // HP bar attachee a la créature

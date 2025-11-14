@@ -10,7 +10,7 @@ public:
     Projectile(const Tower& tower, std::shared_ptr<Creature> target, float speed, int damage);
 
     void moveProjectile(float deltaTime);
-    void draw(sf::RenderWindow& window);
+    void draw(sf::RenderTarget& window);
     bool hasHitTarget() const { return hit; }
 
 private:

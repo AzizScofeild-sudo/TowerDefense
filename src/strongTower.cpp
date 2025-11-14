@@ -1,4 +1,4 @@
-#include "strongTower.hpp"
+/* #include "strongTower.hpp"
 #include <SFML/Graphics.hpp>
 
 StrongTower::StrongTower(int gridX, int gridY, tileMap& map)
@@ -6,4 +6,4 @@ StrongTower::StrongTower(int gridX, int gridY, tileMap& map)
 {
     shape.setFillColor(sf::Color::Red); 
     rangeCircle.setOutlineColor(sf::Color::Magenta); 
-}
+} */

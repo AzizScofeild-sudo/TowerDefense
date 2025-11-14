@@ -1,4 +1,4 @@
-#include "weakTower.hpp"
+/* #include "weakTower.hpp"
 #include <SFML/Graphics.hpp>
 
 
@@ -7,4 +7,4 @@ WeakTower::WeakTower(int gridX, int gridY, tileMap& map)
 {
     shape.setFillColor(sf::Color::Cyan); 
     rangeCircle.setOutlineColor(sf::Color::Blue); 
-}
+} */

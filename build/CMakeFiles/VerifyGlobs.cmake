@@ -6,16 +6,21 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/achraf/project/TowerDefense/src/*.cpp")
 set(OLD_GLOB
   "/home/achraf/project/TowerDefense/src/creature.cpp"
+  "/home/achraf/project/TowerDefense/src/creatureManager.cpp"
+  "/home/achraf/project/TowerDefense/src/editMode.cpp"
+  "/home/achraf/project/TowerDefense/src/game.cpp"
   "/home/achraf/project/TowerDefense/src/hpBar.cpp"
   "/home/achraf/project/TowerDefense/src/main.cpp"
   "/home/achraf/project/TowerDefense/src/mapEditor.cpp"
   "/home/achraf/project/TowerDefense/src/mapManager.cpp"
   "/home/achraf/project/TowerDefense/src/mediumTower.cpp"
+  "/home/achraf/project/TowerDefense/src/playMode.cpp"
   "/home/achraf/project/TowerDefense/src/projectile.cpp"
   "/home/achraf/project/TowerDefense/src/strongTower.cpp"
   "/home/achraf/project/TowerDefense/src/tile.cpp"
   "/home/achraf/project/TowerDefense/src/tileMap.cpp"
   "/home/achraf/project/TowerDefense/src/tower.cpp"
+  "/home/achraf/project/TowerDefense/src/towerManager.cpp"
   "/home/achraf/project/TowerDefense/src/weakTower.cpp"
   "/home/achraf/project/TowerDefense/src/window.cpp"
   )

@@ -1,37 +1,56 @@
-#pragma once
-#include <SFML/Graphics.hpp>
-#include <algorithm>  
-#include <cmath>      
+#ifndef __TOWERMANAGER_HPP
+#define __TOWERMANAGER_HPP
+
+#include<SFML/Graphics.hpp>
+#include <vector>
+#include <unordered_set>
+#include "tower.hpp"
 #include "tileMap.hpp"
+#include "utils.hpp"
 
 
+class TowerManager {
+  
+    public : 
+    TowerManager(tileMap& map): map_(map) {}
 
-namespace Grid {
+    inline bool inBound(int grid_x ,int grid_y) const ; 
+    bool buildable(sf::Vector2u grisPos) const;
+    bool isOccupied(sf::Vector2u gridPos) const;
+    bool inGround(sf::Vector2u gridPos) const;
+    bool addTower(sf::Vector2i cell_pos); 
+    void draw(sf::RenderTarget& window) ; // jai enelever const
+    // std::vector<Tower> getTowers() const { return towers_ ;}
 
-    inline unsigned tileSize = 1 ;  
-    inline void setTileSize( unsigned tileSizeFromMap) { tileSize = tileSizeFromMap; }
+    void Ghost();
+    void updateGhost(sf::Vector2i cell_pos);
+    void drawGhost(sf::RenderTarget& window) const;
 
-inline sf::Vector2i worldToGrid(const sf::Vector2f& world) {
-    if (tileSize == 0) return { -1, -1 }; // sécurité contre une division par zéro
-
-    int gx = static_cast<int>(std::floor(world.x / static_cast<float>(tileSize)));
-    int gy = static_cast<int>(std::floor(world.y / static_cast<float>(tileSize)));
-
-
-    gx = std::max(0, gx);
-    gy = std::max(0, gy);
-
-    return { gx, gy };
-}
-
-
-
-inline sf::Vector2f gridToWorld(unsigned gx, unsigned gy) {
+    void Update(const std::vector<std::shared_ptr<Creature>>& creatures);
     
-    return {
-        static_cast<float>(gx * tileSize),
-        static_cast<float>(gy * tileSize)
-    };
-}
 
-}
+    private :
+
+   static uint64_t key(sf::Vector2u gridPos) { return (uint64_t(gridPos.x) << 32) ^ gridPos.y; }
+
+   private : 
+
+   tileMap& map_ ;
+   std::unordered_set<uint64_t> occupied_ ;
+    std::vector<std::unique_ptr<Tower>> towers_;
+    sf::RectangleShape ghost_;
+   sf::Vector2i ghostGridPos_ =  {-1, -1};
+
+
+   
+   sf::Clock deltaClock_; ///
+
+
+
+
+
+
+
+
+};
+#endif 

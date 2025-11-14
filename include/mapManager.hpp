@@ -15,5 +15,5 @@ public:
     // Variante pratique : charge et retourne par valeur. En cas d'échec, width=0.
     static tileMap loadJson(const std::string& path);
 
-    std::vector<sf::Vector2i> extractPathTiles(const tileMap& map);
+    static std::vector<sf::Vector2i> extractPathTiles(tileMap& map);
 };

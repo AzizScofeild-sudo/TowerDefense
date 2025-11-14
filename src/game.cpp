@@ -10,7 +10,8 @@ window_("Tower Defense", 1200, 800),
 map_(window_.getWidth_window(), window_.getHeight_window()),
 editor_(map_),
 towerManager_ (map_),
-obj_{map_, editor_, towerManager_, window_}
+creatureManager_(map_),
+obj_{map_, editor_, towerManager_, creatureManager_, window_}
 {
 
     switchMode(GameMode::Edit); // mode par default "Edit"
@@ -59,3 +60,10 @@ void Game::run()
 {
     window_.run();
 }
+
+
+
+//je dois ajouter pour le playMode.cpp une methode inBound que j'ajouterai surement dans utils .hpp pour 
+//ne pas dupliquer le code a chauqe fois, la methode devoir avoir accees a la taille de la fentre en cellule donc 
+//elle deverait y avoir accees sans probleme a partir de la classe tileMap en creeant un petit seteur pour faire 
+//les choses proprements !!!! 

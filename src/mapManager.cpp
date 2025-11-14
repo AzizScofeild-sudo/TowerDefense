@@ -127,7 +127,7 @@ tileMap mapManager::loadJson(const std::string& path) {
     return empty;
 }
 
-std::vector<sf::Vector2i> mapManager::extractPathTiles(const tileMap& map)
+std::vector<sf::Vector2i> mapManager::extractPathTiles(tileMap& map)
 {
     int width = map.getWidth();
     int height = map.getHeight();

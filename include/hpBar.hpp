@@ -10,7 +10,7 @@ public:
     hpBar(Creature& creature);
 
     void update();
-    void draw(sf::RenderWindow& window);
+    void draw(sf::RenderTarget& window);
 
 private:
     Creature& creature;

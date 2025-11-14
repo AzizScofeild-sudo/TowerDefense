@@ -154,6 +154,78 @@ src/creature.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.s
 .PHONY : src/creature.cpp.s
 
+src/creatureManager.o: src/creatureManager.cpp.o
+.PHONY : src/creatureManager.o
+
+# target to build an object file
+src/creatureManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creatureManager.cpp.o
+.PHONY : src/creatureManager.cpp.o
+
+src/creatureManager.i: src/creatureManager.cpp.i
+.PHONY : src/creatureManager.i
+
+# target to preprocess a source file
+src/creatureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creatureManager.cpp.i
+.PHONY : src/creatureManager.cpp.i
+
+src/creatureManager.s: src/creatureManager.cpp.s
+.PHONY : src/creatureManager.s
+
+# target to generate assembly for a file
+src/creatureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creatureManager.cpp.s
+.PHONY : src/creatureManager.cpp.s
+
+src/editMode.o: src/editMode.cpp.o
+.PHONY : src/editMode.o
+
+# target to build an object file
+src/editMode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/editMode.cpp.o
+.PHONY : src/editMode.cpp.o
+
+src/editMode.i: src/editMode.cpp.i
+.PHONY : src/editMode.i
+
+# target to preprocess a source file
+src/editMode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/editMode.cpp.i
+.PHONY : src/editMode.cpp.i
+
+src/editMode.s: src/editMode.cpp.s
+.PHONY : src/editMode.s
+
+# target to generate assembly for a file
+src/editMode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/editMode.cpp.s
+.PHONY : src/editMode.cpp.s
+
+src/game.o: src/game.cpp.o
+.PHONY : src/game.o
+
+# target to build an object file
+src/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game.cpp.o
+.PHONY : src/game.cpp.o
+
+src/game.i: src/game.cpp.i
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
+
+src/game.s: src/game.cpp.s
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
+
 src/hpBar.o: src/hpBar.cpp.o
 .PHONY : src/hpBar.o
 
@@ -273,6 +345,30 @@ src/mediumTower.s: src/mediumTower.cpp.s
 src/mediumTower.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.s
 .PHONY : src/mediumTower.cpp.s
+
+src/playMode.o: src/playMode.cpp.o
+.PHONY : src/playMode.o
+
+# target to build an object file
+src/playMode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.o
+.PHONY : src/playMode.cpp.o
+
+src/playMode.i: src/playMode.cpp.i
+.PHONY : src/playMode.i
+
+# target to preprocess a source file
+src/playMode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.i
+.PHONY : src/playMode.cpp.i
+
+src/playMode.s: src/playMode.cpp.s
+.PHONY : src/playMode.s
+
+# target to generate assembly for a file
+src/playMode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.s
+.PHONY : src/playMode.cpp.s
 
 src/projectile.o: src/projectile.cpp.o
 .PHONY : src/projectile.o
@@ -394,6 +490,30 @@ src/tower.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.s
 .PHONY : src/tower.cpp.s
 
+src/towerManager.o: src/towerManager.cpp.o
+.PHONY : src/towerManager.o
+
+# target to build an object file
+src/towerManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.o
+.PHONY : src/towerManager.cpp.o
+
+src/towerManager.i: src/towerManager.cpp.i
+.PHONY : src/towerManager.i
+
+# target to preprocess a source file
+src/towerManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.i
+.PHONY : src/towerManager.cpp.i
+
+src/towerManager.s: src/towerManager.cpp.s
+.PHONY : src/towerManager.s
+
+# target to generate assembly for a file
+src/towerManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.s
+.PHONY : src/towerManager.cpp.s
+
 src/weakTower.o: src/weakTower.cpp.o
 .PHONY : src/weakTower.o
 
@@ -454,6 +574,15 @@ help:
 	@echo "... src/creature.o"
 	@echo "... src/creature.i"
 	@echo "... src/creature.s"
+	@echo "... src/creatureManager.o"
+	@echo "... src/creatureManager.i"
+	@echo "... src/creatureManager.s"
+	@echo "... src/editMode.o"
+	@echo "... src/editMode.i"
+	@echo "... src/editMode.s"
+	@echo "... src/game.o"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
 	@echo "... src/hpBar.o"
 	@echo "... src/hpBar.i"
 	@echo "... src/hpBar.s"
@@ -469,6 +598,9 @@ help:
 	@echo "... src/mediumTower.o"
 	@echo "... src/mediumTower.i"
 	@echo "... src/mediumTower.s"
+	@echo "... src/playMode.o"
+	@echo "... src/playMode.i"
+	@echo "... src/playMode.s"
 	@echo "... src/projectile.o"
 	@echo "... src/projectile.i"
 	@echo "... src/projectile.s"
@@ -484,6 +616,9 @@ help:
 	@echo "... src/tower.o"
 	@echo "... src/tower.i"
 	@echo "... src/tower.s"
+	@echo "... src/towerManager.o"
+	@echo "... src/towerManager.i"
+	@echo "... src/towerManager.s"
 	@echo "... src/weakTower.o"
 	@echo "... src/weakTower.i"
 	@echo "... src/weakTower.s"

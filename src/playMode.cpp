@@ -3,6 +3,7 @@
 #include "mapManager.hpp"
 #include "towerManager.hpp"
 #include "window.hpp"
+#include "creatureManager.hpp"
 
 
 
@@ -10,8 +11,10 @@ void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
 {
     //Charger la map a partir du fichier level2.json
        if(loaded_ == false){
-        if (mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps//level2.json", obj.map_))
-            std::cout << "[OK] Map chargee (Play)\n";
+        if (mapManager::loadJson("../maps/level2.json", obj.map_))
+            {std::cout << "[OK] Map chargee (Play)\n";
+            obj.creatureManager_.buildPath();
+            }
         else
             std::cout << "[ERR] Echec chargement (Play)\n";
 
@@ -49,7 +52,9 @@ void PlayMode::onUpdate(GameObject& obj, sf::Vector2i cell_pos)
 
            } 
        }  
-
+       
+    obj.creatureManager_.update();
+    obj.towerManager_.Update(obj.creatureManager_.getCreatures());
 
 }
 
@@ -60,4 +65,5 @@ void PlayMode::onRender(GameObject& obj, sf::RenderTarget& rt)
     obj.map_.draw(rt);
     obj.towerManager_.draw(rt); 
     if(isBuilding_) obj.towerManager_.drawGhost(rt);
+    obj.creatureManager_.draw(rt);
 }

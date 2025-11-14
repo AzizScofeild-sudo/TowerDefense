@@ -1,38 +1,35 @@
-#include "tower.hpp"
+#include "TOWER.HPP"
 #include <cmath>
 #include <algorithm>
 
-
-Tower::Tower(sf::Vector2u gridPos, tileMap& map, float range, int damage, float fireRate, float projectileSpeed)
-    : gridPos_(gridPos), map_(map), range(range), damage(damage),fireRate(fireRate), cooldown(0.f), projectileSpeed(projectileSpeed)
+Tower::Tower(int gridX, int gridY, tileMap& map, float range, int damage, float fireRate, float projectileSpeed)
+    : map(map), gridPos(gridX, gridY), range(range), damage(damage),
+      fireRate(fireRate), cooldown(0.f), projectileSpeed(projectileSpeed)
 {
-    int cellSize = map_.getSizeTile(); // Retirer l'attribus map_ p
-    tower_shape_.setSize(sf::Vector2f(cellSize, cellSize));
-    tower_shape_.setPosition((gridPos.x) * cellSize, (gridPos.y) * cellSize);
+    int cellSize = map.getSizeTile();
+    shape.setSize(sf::Vector2f(cellSize, cellSize));
+    shape.setPosition(gridX * cellSize, gridY * cellSize);
+    shape.setFillColor(sf::Color::Blue);
 
     rangeCircle.setRadius(range);
     rangeCircle.setFillColor(sf::Color::Transparent);
     rangeCircle.setOutlineThickness(1.f);
     rangeCircle.setOutlineColor(sf::Color::White);
     rangeCircle.setOrigin(range, range);
-    rangeCircle.setPosition(tower_shape_.getPosition().x + cellSize / 2.f,
-                            tower_shape_.getPosition().y + cellSize / 2.f);
+    rangeCircle.setPosition(shape.getPosition().x + cellSize / 2.f,
+                            shape.getPosition().y + cellSize / 2.f);
 }
 
-// change getTowerPosition
-sf::Vector2f Tower::getTowerPosition() const
-{
-    //return gridPos_;
-    int cellSize = map_.getSizeTile();
-    return sf::Vector2f(gridPos_.x * cellSize + cellSize / 2.f,
-                        gridPos_.y * cellSize + cellSize / 2.f);
+// retourne la position au centre de la tour pour la utilise comme point de depart des projectiles
+sf::Vector2f Tower::getTowerPosition() const {
+    int cellSize = map.getSizeTile();
+    return sf::Vector2f(gridPos.x * cellSize + cellSize / 2.f,
+                        gridPos.y * cellSize + cellSize / 2.f);
 }
 
-
-void Tower::draw(sf::RenderTarget& window)
-{
-    window.draw(tower_shape_);
-    window.draw(rangeCircle); ////////
+void Tower::draw(sf::RenderWindow& window) {
+    window.draw(shape);
+    window.draw(rangeCircle);
     for (auto& p : projectiles)
         p->draw(window);
 }
@@ -106,3 +103,11 @@ void Tower::shoot(std::shared_ptr<Creature> target) {
     if (!target || !target->isAlive()) return;
     projectiles.push_back(std::make_unique<Projectile>(*this, target, projectileSpeed, damage));
 }
+
+
+/* float Tower::getRange() const {
+    return range;
+}
+int Tower::getDamage() const {
+    return damage;
+} */

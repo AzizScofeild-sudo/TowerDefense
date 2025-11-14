@@ -1,4 +1,4 @@
-#include "mediumTower.hpp"
+/* #include "mediumTower.hpp"
 #include <SFML/Graphics.hpp>
 
 MediumTower::MediumTower(int gridX, int gridY, tileMap& map)
@@ -6,4 +6,4 @@ MediumTower::MediumTower(int gridX, int gridY, tileMap& map)
 {
     shape.setFillColor(sf::Color::Green); 
     rangeCircle.setOutlineColor(sf::Color::Yellow); 
-}
+} */

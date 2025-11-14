@@ -83,10 +83,52 @@ CMakeFiles/main.dir/src/creature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/creature.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/creature.cpp -o CMakeFiles/main.dir/src/creature.cpp.s
 
+CMakeFiles/main.dir/src/creatureManager.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/creatureManager.cpp.o: /home/achraf/project/TowerDefense/src/creatureManager.cpp
+CMakeFiles/main.dir/src/creatureManager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/creatureManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/creatureManager.cpp.o -MF CMakeFiles/main.dir/src/creatureManager.cpp.o.d -o CMakeFiles/main.dir/src/creatureManager.cpp.o -c /home/achraf/project/TowerDefense/src/creatureManager.cpp
+
+CMakeFiles/main.dir/src/creatureManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/creatureManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/creatureManager.cpp > CMakeFiles/main.dir/src/creatureManager.cpp.i
+
+CMakeFiles/main.dir/src/creatureManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/creatureManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/creatureManager.cpp -o CMakeFiles/main.dir/src/creatureManager.cpp.s
+
+CMakeFiles/main.dir/src/editMode.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/editMode.cpp.o: /home/achraf/project/TowerDefense/src/editMode.cpp
+CMakeFiles/main.dir/src/editMode.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/editMode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/editMode.cpp.o -MF CMakeFiles/main.dir/src/editMode.cpp.o.d -o CMakeFiles/main.dir/src/editMode.cpp.o -c /home/achraf/project/TowerDefense/src/editMode.cpp
+
+CMakeFiles/main.dir/src/editMode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/editMode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/editMode.cpp > CMakeFiles/main.dir/src/editMode.cpp.i
+
+CMakeFiles/main.dir/src/editMode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/editMode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/editMode.cpp -o CMakeFiles/main.dir/src/editMode.cpp.s
+
+CMakeFiles/main.dir/src/game.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/game.cpp.o: /home/achraf/project/TowerDefense/src/game.cpp
+CMakeFiles/main.dir/src/game.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/game.cpp.o -MF CMakeFiles/main.dir/src/game.cpp.o.d -o CMakeFiles/main.dir/src/game.cpp.o -c /home/achraf/project/TowerDefense/src/game.cpp
+
+CMakeFiles/main.dir/src/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/game.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/game.cpp > CMakeFiles/main.dir/src/game.cpp.i
+
+CMakeFiles/main.dir/src/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/game.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/game.cpp -o CMakeFiles/main.dir/src/game.cpp.s
+
 CMakeFiles/main.dir/src/hpBar.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/hpBar.cpp.o: /home/achraf/project/TowerDefense/src/hpBar.cpp
 CMakeFiles/main.dir/src/hpBar.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/hpBar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/hpBar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/hpBar.cpp.o -MF CMakeFiles/main.dir/src/hpBar.cpp.o.d -o CMakeFiles/main.dir/src/hpBar.cpp.o -c /home/achraf/project/TowerDefense/src/hpBar.cpp
 
 CMakeFiles/main.dir/src/hpBar.cpp.i: cmake_force
@@ -100,7 +142,7 @@ CMakeFiles/main.dir/src/hpBar.cpp.s: cmake_force
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: /home/achraf/project/TowerDefense/src/main.cpp
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /home/achraf/project/TowerDefense/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
@@ -114,7 +156,7 @@ CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 CMakeFiles/main.dir/src/mapEditor.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/mapEditor.cpp.o: /home/achraf/project/TowerDefense/src/mapEditor.cpp
 CMakeFiles/main.dir/src/mapEditor.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/mapEditor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/mapEditor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/mapEditor.cpp.o -MF CMakeFiles/main.dir/src/mapEditor.cpp.o.d -o CMakeFiles/main.dir/src/mapEditor.cpp.o -c /home/achraf/project/TowerDefense/src/mapEditor.cpp
 
 CMakeFiles/main.dir/src/mapEditor.cpp.i: cmake_force
@@ -128,7 +170,7 @@ CMakeFiles/main.dir/src/mapEditor.cpp.s: cmake_force
 CMakeFiles/main.dir/src/mapManager.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/mapManager.cpp.o: /home/achraf/project/TowerDefense/src/mapManager.cpp
 CMakeFiles/main.dir/src/mapManager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/mapManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/mapManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/mapManager.cpp.o -MF CMakeFiles/main.dir/src/mapManager.cpp.o.d -o CMakeFiles/main.dir/src/mapManager.cpp.o -c /home/achraf/project/TowerDefense/src/mapManager.cpp
 
 CMakeFiles/main.dir/src/mapManager.cpp.i: cmake_force
@@ -142,7 +184,7 @@ CMakeFiles/main.dir/src/mapManager.cpp.s: cmake_force
 CMakeFiles/main.dir/src/mediumTower.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/mediumTower.cpp.o: /home/achraf/project/TowerDefense/src/mediumTower.cpp
 CMakeFiles/main.dir/src/mediumTower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/mediumTower.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/mediumTower.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/mediumTower.cpp.o -MF CMakeFiles/main.dir/src/mediumTower.cpp.o.d -o CMakeFiles/main.dir/src/mediumTower.cpp.o -c /home/achraf/project/TowerDefense/src/mediumTower.cpp
 
 CMakeFiles/main.dir/src/mediumTower.cpp.i: cmake_force
@@ -153,10 +195,24 @@ CMakeFiles/main.dir/src/mediumTower.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/mediumTower.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/mediumTower.cpp -o CMakeFiles/main.dir/src/mediumTower.cpp.s
 
+CMakeFiles/main.dir/src/playMode.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/playMode.cpp.o: /home/achraf/project/TowerDefense/src/playMode.cpp
+CMakeFiles/main.dir/src/playMode.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/playMode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/playMode.cpp.o -MF CMakeFiles/main.dir/src/playMode.cpp.o.d -o CMakeFiles/main.dir/src/playMode.cpp.o -c /home/achraf/project/TowerDefense/src/playMode.cpp
+
+CMakeFiles/main.dir/src/playMode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/playMode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/playMode.cpp > CMakeFiles/main.dir/src/playMode.cpp.i
+
+CMakeFiles/main.dir/src/playMode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/playMode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/playMode.cpp -o CMakeFiles/main.dir/src/playMode.cpp.s
+
 CMakeFiles/main.dir/src/projectile.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/projectile.cpp.o: /home/achraf/project/TowerDefense/src/projectile.cpp
 CMakeFiles/main.dir/src/projectile.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/projectile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/projectile.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/projectile.cpp.o -MF CMakeFiles/main.dir/src/projectile.cpp.o.d -o CMakeFiles/main.dir/src/projectile.cpp.o -c /home/achraf/project/TowerDefense/src/projectile.cpp
 
 CMakeFiles/main.dir/src/projectile.cpp.i: cmake_force
@@ -170,7 +226,7 @@ CMakeFiles/main.dir/src/projectile.cpp.s: cmake_force
 CMakeFiles/main.dir/src/strongTower.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/strongTower.cpp.o: /home/achraf/project/TowerDefense/src/strongTower.cpp
 CMakeFiles/main.dir/src/strongTower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/strongTower.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/strongTower.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/strongTower.cpp.o -MF CMakeFiles/main.dir/src/strongTower.cpp.o.d -o CMakeFiles/main.dir/src/strongTower.cpp.o -c /home/achraf/project/TowerDefense/src/strongTower.cpp
 
 CMakeFiles/main.dir/src/strongTower.cpp.i: cmake_force
@@ -184,7 +240,7 @@ CMakeFiles/main.dir/src/strongTower.cpp.s: cmake_force
 CMakeFiles/main.dir/src/tile.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tile.cpp.o: /home/achraf/project/TowerDefense/src/tile.cpp
 CMakeFiles/main.dir/src/tile.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/tile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/src/tile.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tile.cpp.o -MF CMakeFiles/main.dir/src/tile.cpp.o.d -o CMakeFiles/main.dir/src/tile.cpp.o -c /home/achraf/project/TowerDefense/src/tile.cpp
 
 CMakeFiles/main.dir/src/tile.cpp.i: cmake_force
@@ -198,7 +254,7 @@ CMakeFiles/main.dir/src/tile.cpp.s: cmake_force
 CMakeFiles/main.dir/src/tileMap.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tileMap.cpp.o: /home/achraf/project/TowerDefense/src/tileMap.cpp
 CMakeFiles/main.dir/src/tileMap.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/tileMap.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/src/tileMap.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tileMap.cpp.o -MF CMakeFiles/main.dir/src/tileMap.cpp.o.d -o CMakeFiles/main.dir/src/tileMap.cpp.o -c /home/achraf/project/TowerDefense/src/tileMap.cpp
 
 CMakeFiles/main.dir/src/tileMap.cpp.i: cmake_force
@@ -212,7 +268,7 @@ CMakeFiles/main.dir/src/tileMap.cpp.s: cmake_force
 CMakeFiles/main.dir/src/tower.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/tower.cpp.o: /home/achraf/project/TowerDefense/src/tower.cpp
 CMakeFiles/main.dir/src/tower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/tower.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/src/tower.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/tower.cpp.o -MF CMakeFiles/main.dir/src/tower.cpp.o.d -o CMakeFiles/main.dir/src/tower.cpp.o -c /home/achraf/project/TowerDefense/src/tower.cpp
 
 CMakeFiles/main.dir/src/tower.cpp.i: cmake_force
@@ -223,10 +279,24 @@ CMakeFiles/main.dir/src/tower.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/tower.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/tower.cpp -o CMakeFiles/main.dir/src/tower.cpp.s
 
+CMakeFiles/main.dir/src/towerManager.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/towerManager.cpp.o: /home/achraf/project/TowerDefense/src/towerManager.cpp
+CMakeFiles/main.dir/src/towerManager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/src/towerManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/towerManager.cpp.o -MF CMakeFiles/main.dir/src/towerManager.cpp.o.d -o CMakeFiles/main.dir/src/towerManager.cpp.o -c /home/achraf/project/TowerDefense/src/towerManager.cpp
+
+CMakeFiles/main.dir/src/towerManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/towerManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/achraf/project/TowerDefense/src/towerManager.cpp > CMakeFiles/main.dir/src/towerManager.cpp.i
+
+CMakeFiles/main.dir/src/towerManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/towerManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/achraf/project/TowerDefense/src/towerManager.cpp -o CMakeFiles/main.dir/src/towerManager.cpp.s
+
 CMakeFiles/main.dir/src/weakTower.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/weakTower.cpp.o: /home/achraf/project/TowerDefense/src/weakTower.cpp
 CMakeFiles/main.dir/src/weakTower.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/weakTower.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/src/weakTower.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/weakTower.cpp.o -MF CMakeFiles/main.dir/src/weakTower.cpp.o.d -o CMakeFiles/main.dir/src/weakTower.cpp.o -c /home/achraf/project/TowerDefense/src/weakTower.cpp
 
 CMakeFiles/main.dir/src/weakTower.cpp.i: cmake_force
@@ -240,7 +310,7 @@ CMakeFiles/main.dir/src/weakTower.cpp.s: cmake_force
 CMakeFiles/main.dir/src/window.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/window.cpp
 CMakeFiles/main.dir/src/window.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/src/window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/window.cpp.o -MF CMakeFiles/main.dir/src/window.cpp.o.d -o CMakeFiles/main.dir/src/window.cpp.o -c /home/achraf/project/TowerDefense/src/window.cpp
 
 CMakeFiles/main.dir/src/window.cpp.i: cmake_force
@@ -254,16 +324,21 @@ CMakeFiles/main.dir/src/window.cpp.s: cmake_force
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/src/creature.cpp.o" \
+"CMakeFiles/main.dir/src/creatureManager.cpp.o" \
+"CMakeFiles/main.dir/src/editMode.cpp.o" \
+"CMakeFiles/main.dir/src/game.cpp.o" \
 "CMakeFiles/main.dir/src/hpBar.cpp.o" \
 "CMakeFiles/main.dir/src/main.cpp.o" \
 "CMakeFiles/main.dir/src/mapEditor.cpp.o" \
 "CMakeFiles/main.dir/src/mapManager.cpp.o" \
 "CMakeFiles/main.dir/src/mediumTower.cpp.o" \
+"CMakeFiles/main.dir/src/playMode.cpp.o" \
 "CMakeFiles/main.dir/src/projectile.cpp.o" \
 "CMakeFiles/main.dir/src/strongTower.cpp.o" \
 "CMakeFiles/main.dir/src/tile.cpp.o" \
 "CMakeFiles/main.dir/src/tileMap.cpp.o" \
 "CMakeFiles/main.dir/src/tower.cpp.o" \
+"CMakeFiles/main.dir/src/towerManager.cpp.o" \
 "CMakeFiles/main.dir/src/weakTower.cpp.o" \
 "CMakeFiles/main.dir/src/window.cpp.o"
 
@@ -271,16 +346,21 @@ main_OBJECTS = \
 main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/src/creature.cpp.o
+main: CMakeFiles/main.dir/src/creatureManager.cpp.o
+main: CMakeFiles/main.dir/src/editMode.cpp.o
+main: CMakeFiles/main.dir/src/game.cpp.o
 main: CMakeFiles/main.dir/src/hpBar.cpp.o
 main: CMakeFiles/main.dir/src/main.cpp.o
 main: CMakeFiles/main.dir/src/mapEditor.cpp.o
 main: CMakeFiles/main.dir/src/mapManager.cpp.o
 main: CMakeFiles/main.dir/src/mediumTower.cpp.o
+main: CMakeFiles/main.dir/src/playMode.cpp.o
 main: CMakeFiles/main.dir/src/projectile.cpp.o
 main: CMakeFiles/main.dir/src/strongTower.cpp.o
 main: CMakeFiles/main.dir/src/tile.cpp.o
 main: CMakeFiles/main.dir/src/tileMap.cpp.o
 main: CMakeFiles/main.dir/src/tower.cpp.o
+main: CMakeFiles/main.dir/src/towerManager.cpp.o
 main: CMakeFiles/main.dir/src/weakTower.cpp.o
 main: CMakeFiles/main.dir/src/window.cpp.o
 main: CMakeFiles/main.dir/build.make
@@ -288,7 +368,7 @@ main: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 main: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 main: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/achraf/project/TowerDefense/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
