@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 #include "playMode.hpp"
 #include "mapManager.hpp"
 #include "towerManager.hpp"
@@ -7,7 +9,7 @@
 
 void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
 {
-    // Charger la map à partir du fichier level2.json
+    // Chargement de la map
     if (!loaded_) {
         if (mapManager::loadJson("../maps/level2.json", obj.map_)) {
             std::cout << "[OK] Map chargée (Play)\n";
@@ -15,16 +17,30 @@ void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
         } else {
             std::cout << "[ERR] Échec chargement (Play)\n";
         }
+
+        // INIT HUD MONEY
+    if (!font_.loadFromFile("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
+    {
+        std::cout << "ERREUR: police non chargée\n";
+    }
+
+
+
+        moneyText_.setFont(font_);
+        moneyText_.setCharacterSize(22);
+        moneyText_.setFillColor(sf::Color::Yellow);
+        moneyText_.setPosition(10.f, 10.f);
+
         loaded_ = true;
     }
 
-    // Gestion du mode construction
+    // Mode construction
     if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::B)
         isBuilding_ = true;
     else if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::B)
         isBuilding_ = false;
 
-    // Changer le type de tour avec les touches 1,2,3
+    // Sélection type de tour
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Num1) selectedTowerType_ = TowerType::Weak;
         if (event.key.code == sf::Keyboard::Num2) selectedTowerType_ = TowerType::Medium;
@@ -39,35 +55,30 @@ void PlayMode::onUpdate(GameObject& obj, sf::Vector2i cell_pos)
         obj.towerManager_.updateGhost(cell_pos);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-            // Vérification des limites de la grille
             if (cell_pos.x >= 0 && static_cast<unsigned>(cell_pos.x) < obj.map_.getWidth() &&
                 cell_pos.y >= 0 && static_cast<unsigned>(cell_pos.y) < obj.map_.getHeight())
             {
-                // Construire la tour du type sélectionné
-                if (obj.towerManager_.addTower(cell_pos, selectedTowerType_, obj.economy_)) {
-                    std::cout << "Tour construite en (" << cell_pos.x << ", " << cell_pos.y << ") de type ";
-                    switch (selectedTowerType_) {
-                        case TowerType::Weak:   std::cout << "Weak\n"; break;
-                        case TowerType::Medium: std::cout << "Medium\n"; break;
-                        case TowerType::Strong: std::cout << "Strong\n"; break;
-                    }
-                } else {
-                    std::cout << "Impossible de construire une tour ici !" << std::endl;
-                }
-            } else {
-                std::cout << "Position hors limites !" << std::endl;
+                obj.towerManager_.addTower(cell_pos, selectedTowerType_, obj.economy_);
             }
         }
     }
 
     obj.creatureManager_.update();
     obj.towerManager_.Update(obj.creatureManager_.getCreatures());
+
+    // UPDATE HUD MONEY
+    moneyText_.setString(
+        "Money : " + std::to_string(obj.economy_.getMoney())
+    );
 }
 
 void PlayMode::onRender(GameObject& obj, sf::RenderTarget& rt)
 {
     obj.map_.draw(rt);
-    obj.towerManager_.draw(rt); 
+    obj.towerManager_.draw(rt);
     if (isBuilding_) obj.towerManager_.drawGhost(rt);
     obj.creatureManager_.draw(rt);
+
+    // DRAW HUD
+    rt.draw(moneyText_);
 }
