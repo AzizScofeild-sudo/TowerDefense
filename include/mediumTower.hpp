@@ -3,6 +3,5 @@
 
 class MediumTower : public Tower {
 public:
-    MediumTower(int gridX, int gridY, tileMap& map);
-    ~MediumTower() = default;
+    MediumTower(sf::Vector2u pos, tileMap& map);
 };

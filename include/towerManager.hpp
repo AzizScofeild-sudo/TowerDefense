@@ -8,6 +8,13 @@
 #include "tileMap.hpp"
 #include "utils.hpp"
 
+#include "weakTower.hpp"
+#include "mediumTower.hpp"
+#include "strongTower.hpp"
+#include "gameEconomy.hpp"
+
+enum class TowerType { Weak, Medium, Strong };
+
 
 class TowerManager {
   
@@ -18,7 +25,7 @@ class TowerManager {
     bool buildable(sf::Vector2u grisPos) const;
     bool isOccupied(sf::Vector2u gridPos) const;
     bool inGround(sf::Vector2u gridPos) const;
-    bool addTower(sf::Vector2i cell_pos); 
+    bool addTower(sf::Vector2i cell_pos, TowerType type, gameEconomy& economy); // modifie ajout type et economy
     void draw(sf::RenderTarget& window) ; // jai enelever const
     // std::vector<Tower> getTowers() const { return towers_ ;}
 

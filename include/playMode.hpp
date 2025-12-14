@@ -3,6 +3,7 @@
 
 #include "interfaceGameMode.hpp"
 #include<SFML/Graphics.hpp>
+#include "towerManager.hpp"
 
 
 class PlayMode : public IGameMode {
@@ -16,6 +17,7 @@ private:
 
 bool isBuilding_ = false ;
 bool loaded_ = false ;
+TowerType selectedTowerType_ = TowerType::Weak;
 
 };
 #endif 

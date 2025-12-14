@@ -7,3 +7,12 @@ StrongTower::StrongTower(int gridX, int gridY, tileMap& map)
     shape.setFillColor(sf::Color::Red); 
     rangeCircle.setOutlineColor(sf::Color::Magenta); 
 } */
+
+#include "strongTower.hpp"
+
+StrongTower::StrongTower(sf::Vector2u pos, tileMap& map)
+    : Tower(pos, map,
+            200.f, 10, 0.4f, 500.f, 200)  
+{
+    tower_shape_.setFillColor(sf::Color(255, 100, 100));
+}

@@ -36,6 +36,7 @@ Window window_ ;
 tileMap map_ ;
 mapEditor editor_ ; 
 TowerManager towerManager_ ; 
+gameEconomy economy_; 
 CreatureManager creatureManager_ ; 
 GameObject obj_ ; 
 IGameMode* current_ = nullptr ; 

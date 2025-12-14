@@ -297,6 +297,10 @@ CMakeFiles/main.dir/src/game.cpp.o: \
  /home/achraf/project/TowerDefense/include/creature.hpp \
  /home/achraf/project/TowerDefense/include/hpBar.hpp \
  /home/achraf/project/TowerDefense/include/projectile.hpp \
+ /home/achraf/project/TowerDefense/include/weakTower.hpp \
+ /home/achraf/project/TowerDefense/include/mediumTower.hpp \
+ /home/achraf/project/TowerDefense/include/strongTower.hpp \
+ /home/achraf/project/TowerDefense/include/gameEconomy.hpp \
  /home/achraf/project/TowerDefense/include/creatureManager.hpp \
  /home/achraf/project/TowerDefense/include/interfaceGameMode.hpp \
  /home/achraf/project/TowerDefense/include/editMode.hpp \

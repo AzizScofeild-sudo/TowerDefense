@@ -8,3 +8,12 @@ WeakTower::WeakTower(int gridX, int gridY, tileMap& map)
     shape.setFillColor(sf::Color::Cyan); 
     rangeCircle.setOutlineColor(sf::Color::Blue); 
 } */
+
+#include "weakTower.hpp"
+
+WeakTower::WeakTower(sf::Vector2u pos, tileMap& map)
+    : Tower(pos, map,
+            120.f, 3, 0.4f, 350.f, 50)  
+{
+    tower_shape_.setFillColor(sf::Color(100, 200, 100));
+}

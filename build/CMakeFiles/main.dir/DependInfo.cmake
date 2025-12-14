@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/achraf/project/TowerDefense/src/creatureManager.cpp" "CMakeFiles/main.dir/src/creatureManager.cpp.o" "gcc" "CMakeFiles/main.dir/src/creatureManager.cpp.o.d"
   "/home/achraf/project/TowerDefense/src/editMode.cpp" "CMakeFiles/main.dir/src/editMode.cpp.o" "gcc" "CMakeFiles/main.dir/src/editMode.cpp.o.d"
   "/home/achraf/project/TowerDefense/src/game.cpp" "CMakeFiles/main.dir/src/game.cpp.o" "gcc" "CMakeFiles/main.dir/src/game.cpp.o.d"
+  "/home/achraf/project/TowerDefense/src/gameEconomy.cpp" "CMakeFiles/main.dir/src/gameEconomy.cpp.o" "gcc" "CMakeFiles/main.dir/src/gameEconomy.cpp.o.d"
   "/home/achraf/project/TowerDefense/src/hpBar.cpp" "CMakeFiles/main.dir/src/hpBar.cpp.o" "gcc" "CMakeFiles/main.dir/src/hpBar.cpp.o.d"
   "/home/achraf/project/TowerDefense/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   "/home/achraf/project/TowerDefense/src/mapEditor.cpp" "CMakeFiles/main.dir/src/mapEditor.cpp.o" "gcc" "CMakeFiles/main.dir/src/mapEditor.cpp.o.d"

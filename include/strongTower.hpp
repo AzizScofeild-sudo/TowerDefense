@@ -3,6 +3,5 @@
 
 class StrongTower : public Tower {
 public:
-    StrongTower(int gridX, int gridY, tileMap& map);
-    ~StrongTower() = default;
+    StrongTower(sf::Vector2u pos, tileMap& map);
 };

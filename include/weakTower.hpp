@@ -3,6 +3,6 @@
 
 class WeakTower : public Tower {
 public:
-    WeakTower(int gridX, int gridY, tileMap& map);
-    ~WeakTower() = default;
+    WeakTower(sf::Vector2u pos, tileMap& map);
 };
+

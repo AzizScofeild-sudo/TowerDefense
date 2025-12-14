@@ -7,6 +7,7 @@ class tileMap;
 class mapEditor;
 class TowerManager;
 class CreatureManager;
+class gameEconomy;
 
 
 // Regroupe les objets du jeu que les modes utilisent
@@ -16,6 +17,7 @@ struct GameObject {
     TowerManager& towerManager_;
     CreatureManager& creatureManager_ ; 
     Window&       window_;
+    gameEconomy&  economy_;  
 };
 
 // Interface polymorphe des modes de jeu

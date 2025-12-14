@@ -7,17 +7,18 @@
 #include <memory>
 #include "hpBar.hpp"
 
+class gameEconomy;
 
 class Creature {
 public:
-    Creature(int gridX, int gridY, tileMap& map, int health, float speed);
+    Creature(int gridX, int gridY, tileMap& map, int health, float speed, int reward);
 
     void move(const std::vector<sf::Vector2i>& pathTiles, float deltaTime);
     void draw(sf::RenderTarget& rt);
 
     sf::Vector2f getCreaturePosition() const;
     bool isAlive() const;
-    void takeDamage(int damage); // elle etait commentee par cheikh jamal
+    void takeDamage(int damage,gameEconomy* economy = nullptr); // elle etait commentee par cheikh jamal
     int getHealth() const;
     float getCreatureRadius() const;
 
@@ -31,6 +32,9 @@ private:
     bool alive;
 
     std::unique_ptr<hpBar> healthBar; // HP bar attachee a la créature
+
+    unsigned reward;
 };
+
 
 #endif

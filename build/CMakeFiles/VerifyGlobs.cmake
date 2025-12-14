@@ -9,6 +9,7 @@ set(OLD_GLOB
   "/home/achraf/project/TowerDefense/src/creatureManager.cpp"
   "/home/achraf/project/TowerDefense/src/editMode.cpp"
   "/home/achraf/project/TowerDefense/src/game.cpp"
+  "/home/achraf/project/TowerDefense/src/gameEconomy.cpp"
   "/home/achraf/project/TowerDefense/src/hpBar.cpp"
   "/home/achraf/project/TowerDefense/src/main.cpp"
   "/home/achraf/project/TowerDefense/src/mapEditor.cpp"

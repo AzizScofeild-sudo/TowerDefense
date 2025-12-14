@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/editMode.cpp.o.d"
   "CMakeFiles/main.dir/src/game.cpp.o"
   "CMakeFiles/main.dir/src/game.cpp.o.d"
+  "CMakeFiles/main.dir/src/gameEconomy.cpp.o"
+  "CMakeFiles/main.dir/src/gameEconomy.cpp.o.d"
   "CMakeFiles/main.dir/src/hpBar.cpp.o"
   "CMakeFiles/main.dir/src/hpBar.cpp.o.d"
   "CMakeFiles/main.dir/src/main.cpp.o"

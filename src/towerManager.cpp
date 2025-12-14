@@ -48,17 +48,37 @@ bool TowerManager::buildable(sf::Vector2u gridPos) const
 
 
 
-bool TowerManager::addTower(sf::Vector2i cell_pos)
+bool TowerManager::addTower(sf::Vector2i cell_pos, TowerType type, gameEconomy& economy)
 {
+    sf::Vector2u pos(cell_pos.x, cell_pos.y);
 
-    sf::Vector2u cell_unsigned = {static_cast<unsigned>(cell_pos.x),static_cast<unsigned>(cell_pos.y)};
+    if (!buildable(pos))
+        return false;
 
-    if(!buildable(cell_unsigned)) return false ; 
-    towers_.push_back(std::make_unique<Tower>(cell_unsigned , map_,150.f, 5, 0.6f, 400.f)) ;
-    
-            occupied_.insert( key( { cell_unsigned.x  , cell_unsigned.y  } ) ) ;
+    std::unique_ptr<Tower> tower;
 
-    return true ;
+    switch(type)
+    {
+        case TowerType::Weak:
+            tower = std::make_unique<WeakTower>(pos, map_);
+            break;
+        case TowerType::Medium:
+            tower = std::make_unique<MediumTower>(pos, map_);
+            break;
+        case TowerType::Strong:
+            tower = std::make_unique<StrongTower>(pos, map_);
+            break;
+    }
+
+    if (!economy.canAfford(tower->getCost()))
+        return false;
+
+    economy.spend(tower->getCost());
+
+    occupied_.insert(key({pos.x, pos.y}));
+    towers_.push_back(std::move(tower));
+
+    return true;
 }
 
 

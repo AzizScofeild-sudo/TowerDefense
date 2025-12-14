@@ -3,8 +3,8 @@
 #include <algorithm>
 
 
-Tower::Tower(sf::Vector2u gridPos, tileMap& map, float range, int damage, float fireRate, float projectileSpeed)
-    : gridPos_(gridPos), map_(map), range(range), damage(damage),fireRate(fireRate), cooldown(0.f), projectileSpeed(projectileSpeed)
+Tower::Tower(sf::Vector2u gridPos, tileMap& map, float range, int damage, float fireRate, float projectileSpeed,int cost)
+    : gridPos_(gridPos), map_(map), range(range), damage(damage),fireRate(fireRate), cooldown(0.f), projectileSpeed(projectileSpeed), cost_(cost)
 {
     int cellSize = map_.getSizeTile(); // Retirer l'attribus map_ p
     tower_shape_.setSize(sf::Vector2f(cellSize, cellSize));

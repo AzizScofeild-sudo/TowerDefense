@@ -226,6 +226,30 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/gameEconomy.o: src/gameEconomy.cpp.o
+.PHONY : src/gameEconomy.o
+
+# target to build an object file
+src/gameEconomy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gameEconomy.cpp.o
+.PHONY : src/gameEconomy.cpp.o
+
+src/gameEconomy.i: src/gameEconomy.cpp.i
+.PHONY : src/gameEconomy.i
+
+# target to preprocess a source file
+src/gameEconomy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gameEconomy.cpp.i
+.PHONY : src/gameEconomy.cpp.i
+
+src/gameEconomy.s: src/gameEconomy.cpp.s
+.PHONY : src/gameEconomy.s
+
+# target to generate assembly for a file
+src/gameEconomy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gameEconomy.cpp.s
+.PHONY : src/gameEconomy.cpp.s
+
 src/hpBar.o: src/hpBar.cpp.o
 .PHONY : src/hpBar.o
 
@@ -583,6 +607,9 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/gameEconomy.o"
+	@echo "... src/gameEconomy.i"
+	@echo "... src/gameEconomy.s"
 	@echo "... src/hpBar.o"
 	@echo "... src/hpBar.i"
 	@echo "... src/hpBar.s"

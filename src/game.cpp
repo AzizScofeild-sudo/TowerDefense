@@ -5,18 +5,18 @@
 
 
 
-Game::Game(): 
-window_("Tower Defense", 1200, 800), 
-map_(window_.getWidth_window(), window_.getHeight_window()),
-editor_(map_),
-towerManager_ (map_),
-creatureManager_(map_),
-obj_{map_, editor_, towerManager_, creatureManager_, window_}
-{
 
+Game::Game() :
+    window_("Tower Defense", 1200, 800),
+    map_(window_.getWidth_window(), window_.getHeight_window()),
+      economy_(),                   
+      editor_(map_),
+      towerManager_(map_),  
+      creatureManager_(map_, economy_),
+      obj_{map_, editor_, towerManager_, creatureManager_, window_, economy_}
+{
     switchMode(GameMode::Edit); // mode par default "Edit"
     wireCallBacks();
-
 }
 
 
