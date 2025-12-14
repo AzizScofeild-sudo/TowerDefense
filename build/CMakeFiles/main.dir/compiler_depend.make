@@ -118,7 +118,6 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/bits/hash_bytes.h \
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
-  /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/locale_conv.h \
@@ -198,8 +197,6 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
-  /usr/include/c++/13/iostream \
-  /usr/include/c++/13/istream \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/locale \
@@ -347,6 +344,7 @@ CMakeFiles/main.dir/src/creature.cpp.o: /home/achraf/project/TowerDefense/src/cr
 CMakeFiles/main.dir/src/creatureManager.cpp.o: /home/achraf/project/TowerDefense/src/creatureManager.cpp \
   /home/achraf/project/TowerDefense/include/creature.hpp \
   /home/achraf/project/TowerDefense/include/creatureManager.hpp \
+  /home/achraf/project/TowerDefense/include/gameEconomy.hpp \
   /home/achraf/project/TowerDefense/include/hpBar.hpp \
   /home/achraf/project/TowerDefense/include/mapManager.hpp \
   /home/achraf/project/TowerDefense/include/tile.hpp \
@@ -6498,6 +6496,10 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /home/achraf/project/TowerDefense/src/editMode.cpp:
 
+/usr/include/c++/13/istream:
+
+/usr/include/c++/13/iostream:
+
 /home/achraf/project/TowerDefense/include/mapManager.hpp:
 
 /usr/include/nlohmann/detail/macro_scope.hpp:
@@ -6626,15 +6628,13 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-/home/achraf/project/TowerDefense/src/mapEditor.cpp:
-
-/home/achraf/project/TowerDefense/include/weakTower.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/c++/13/bits/locale_conv.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
@@ -6651,10 +6651,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/errno.h:
 
 /usr/include/c++/13/bits/exception_ptr.h:
-
-/usr/include/c++/13/bits/locale_conv.h:
-
-/usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -6754,6 +6750,12 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/alloca.h:
 
+/usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/time.h:
+
 /usr/include/SFML/Window/WindowStyle.hpp:
 
 /usr/include/nlohmann/detail/conversions/to_json.hpp:
@@ -6800,17 +6802,17 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/SFML/System/Vector2.hpp:
 
-/usr/include/c++/13/iostream:
-
 /usr/include/SFML/System/Utf.inl:
 
 /usr/include/SFML/Graphics/Rect.inl:
 
 /usr/include/c++/13/cmath:
 
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+/home/achraf/project/TowerDefense/src/mapEditor.cpp:
 
-/usr/include/SFML/Graphics/Glyph.hpp:
+/home/achraf/project/TowerDefense/include/weakTower.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/c++/13/compare:
 
@@ -6986,6 +6988,10 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/SFML/Graphics/Drawable.hpp:
 
+/usr/include/SFML/Graphics/Glyph.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
 /usr/include/c++/13/bits/vector.tcc:
 
 /usr/include/c++/13/bits/locale_facets.h:
@@ -7040,10 +7046,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/SFML/System.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
 /usr/include/nlohmann/ordered_map.hpp:
 
 /usr/include/c++/13/ostream:
@@ -7068,11 +7070,13 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
-/usr/include/c++/13/istream:
-
 /usr/include/SFML/Graphics.hpp:
 
 /usr/include/c++/13/bits/localefwd.h:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/SFML/System/ThreadLocal.hpp:
 
@@ -7087,12 +7091,6 @@ CMakeFiles/main.dir/src/window.cpp.o: /home/achraf/project/TowerDefense/src/wind
 /usr/include/c++/13/bits/move.h:
 
 /usr/include/SFML/System/Time.hpp:
-
-/usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/time.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
