@@ -18,9 +18,11 @@ private:
     bool loaded_ = false;
     TowerType selectedTowerType_ = TowerType::Weak;
 
-    // ===== HUD MONEY =====
+
     sf::Font font_;
     sf::Text moneyText_;
+    sf::Text towerText_ ;
+    sf::Text selectedTowerText_; 
 };
 
 #endif

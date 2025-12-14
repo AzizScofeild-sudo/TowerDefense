@@ -22,6 +22,9 @@ public:
     int getHealth() const;
     float getCreatureRadius() const;
 
+    int getReward() const { return reward; }
+    bool wasKilledByPlayer() const { return killedByPlayer; }
+
 private:
     sf::CircleShape shape;
     sf::Vector2f position;
@@ -34,6 +37,7 @@ private:
     std::unique_ptr<hpBar> healthBar; // HP bar attachee a la créature
 
     unsigned reward;
+    bool killedByPlayer = false;
 };
 
 

@@ -26,10 +26,26 @@ void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
 
 
 
-        moneyText_.setFont(font_);
-        moneyText_.setCharacterSize(22);
-        moneyText_.setFillColor(sf::Color::Yellow);
-        moneyText_.setPosition(10.f, 10.f);
+    // Money
+    moneyText_.setFont(font_);
+    moneyText_.setCharacterSize(22);
+    moneyText_.setFillColor(sf::Color::Yellow);
+    moneyText_.setPosition(10.f, 10.f);
+
+    // Tower info
+    towerText_.setFont(font_);
+    towerText_.setCharacterSize(22);
+    towerText_.setFillColor(sf::Color::Yellow);
+    towerText_.setPosition(10.f, obj.window_.getSize().y - 60.f); // un peu plus haut pour laisser la place
+
+    // Tour sélectionnée
+    selectedTowerText_.setFont(font_);
+    selectedTowerText_.setCharacterSize(22);
+    selectedTowerText_.setFillColor(sf::Color::Yellow);
+    selectedTowerText_.setPosition(10.f, obj.window_.getSize().y - 30.f); // en bas
+    selectedTowerText_.setString("Selected: Weak Tower 50$"); // texte initial
+
+
 
         loaded_ = true;
     }
@@ -42,9 +58,22 @@ void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
 
     // Sélection type de tour
     if (event.type == sf::Event::KeyPressed) {
-        if (event.key.code == sf::Keyboard::Num1) selectedTowerType_ = TowerType::Weak;
-        if (event.key.code == sf::Keyboard::Num2) selectedTowerType_ = TowerType::Medium;
-        if (event.key.code == sf::Keyboard::Num3) selectedTowerType_ = TowerType::Strong;
+        switch (event.key.code) {
+            case sf::Keyboard::Num1: selectedTowerType_ = TowerType::Weak; break;
+            case sf::Keyboard::Num2: selectedTowerType_ = TowerType::Medium; break;
+            case sf::Keyboard::Num3: selectedTowerType_ = TowerType::Strong; break;
+            default: break;
+        }
+
+        // Mettre à jour le texte affiché de la tour sélectionnée
+        switch (selectedTowerType_) {
+            case TowerType::Weak:
+                selectedTowerText_.setString("Selected: Weak Tower 50$"); break;
+            case TowerType::Medium:
+                selectedTowerText_.setString("Selected: Medium Tower 100$"); break;
+            case TowerType::Strong:
+                selectedTowerText_.setString("Selected: Strong Tower 150$"); break;
+        }
     }
 }
 
@@ -66,10 +95,10 @@ void PlayMode::onUpdate(GameObject& obj, sf::Vector2i cell_pos)
     obj.creatureManager_.update();
     obj.towerManager_.Update(obj.creatureManager_.getCreatures());
 
-    // UPDATE HUD MONEY
-    moneyText_.setString(
-        "Money : " + std::to_string(obj.economy_.getMoney())
-    );
+    // ===== UPDATE HUD MONEY
+    moneyText_.setString("Money : " + std::to_string(obj.economy_.getMoney()) + "$");
+    towerText_.setString("Tower Info: weak 50$ / medium 100$ / strong 150$");
+
 }
 
 void PlayMode::onRender(GameObject& obj, sf::RenderTarget& rt)
@@ -81,4 +110,6 @@ void PlayMode::onRender(GameObject& obj, sf::RenderTarget& rt)
 
     // DRAW HUD
     rt.draw(moneyText_);
+    //rt.draw(towerText_);
+    rt.draw(selectedTowerText_); 
 }

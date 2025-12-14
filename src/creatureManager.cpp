@@ -80,6 +80,7 @@ void CreatureManager::buildPath()
 #include "creatureManager.hpp"
 #include "creature.hpp"
 #include "mapManager.hpp"
+#include "gameEconomy.hpp" 
 
 CreatureManager::CreatureManager(tileMap& map, gameEconomy& economy)
     : map_(map), economy_(economy)
@@ -149,12 +150,19 @@ void CreatureManager::update()
     // suppression des créatures mortes
     creatures_.erase(
         std::remove_if(creatures_.begin(), creatures_.end(),
-            [](const std::shared_ptr<Creature>& c)
+            [this](const std::shared_ptr<Creature>& c)
             {
-                return !c->isAlive();
+                if (!c->isAlive()) {
+                    if (c->wasKilledByPlayer())
+                        economy_.earn(c->getReward());
+                    return true; // retire la créature morte ou arrivée au goal
+                }
+                return false;
             }),
         creatures_.end()
     );
+
+
 
     // >>> MODIF : passer à la vague suivante
     if (creatures_.empty() &&
