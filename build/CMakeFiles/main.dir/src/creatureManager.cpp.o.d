@@ -278,4 +278,5 @@ CMakeFiles/main.dir/src/creatureManager.cpp.o: \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /home/achraf/project/TowerDefense/include/hpBar.hpp \
- /home/achraf/project/TowerDefense/include/mapManager.hpp
+ /home/achraf/project/TowerDefense/include/mapManager.hpp \
+ /home/achraf/project/TowerDefense/include/gameEconomy.hpp
