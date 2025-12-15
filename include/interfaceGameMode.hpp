@@ -1,12 +1,19 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <TGUI/Backend/SFML-Graphics.hpp>
+
+#include <TGUI/TGUI.hpp> 
+
+
 
 // Déclarations avancées pour éviter les #include croisés ici
 class Window;
 class tileMap;
 class mapEditor;
 class TowerManager;
-class CreatureManager ;
+class CreatureManager;
+class gameEconomy;
+
 
 // Regroupe les objets du jeu que les modes utilisent
 struct GameObject {
@@ -15,6 +22,12 @@ struct GameObject {
     TowerManager& towerManager_;
     CreatureManager& creatureManager_ ; 
     Window&       window_;
+    gameEconomy&  economy_; 
+    tgui::Gui& gui_;
+
+    std::function<void()> requestEditMode;
+    std::function<void()> requestPlayMode;
+    std::function<void()> requestMenuMode; // optionnel
 };
 
 // Interface polymorphe des modes de jeu

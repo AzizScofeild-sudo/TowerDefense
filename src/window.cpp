@@ -2,7 +2,6 @@
 #include <algorithm>
 
 
-
 Window::Window(const std::string window_name, unsigned width_window, unsigned height_window) : 
 sf::RenderWindow(sf::VideoMode(width_window, height_window), window_name),
 window_name_(window_name),
@@ -90,5 +89,5 @@ void Window::run()
 // Important : !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Modiefier l'architecture de programme : 
 // le callBack ----> onEvent doit de s'occuper des entrer de l'utilisateur, en mode edition(modification est creation des map) et en mode jeu, on
-//devra donc ajouter un controle du mode pour definir comme se deroulera le callBack
-// Remarque : la capture de la position de la souris doit n'est pas un Event donc elle doit etre presente dans la l'update,  
+//devra donc ajouter un controle du mode pour definir comment se deroulera le callBack
+// Remarque : la capture de la position de la souris  n'est pas un Event donc elle doit etre presente dans la l'update,  

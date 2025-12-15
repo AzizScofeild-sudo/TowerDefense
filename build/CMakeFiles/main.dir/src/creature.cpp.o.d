@@ -273,4 +273,7 @@ CMakeFiles/main.dir/src/creature.cpp.o: \
  /usr/include/c++/13/bits/atomic_base.h \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
- /usr/include/c++/13/pstl/glue_memory_defs.h
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /home/aziz-scofeild/TowerDedense/include/hpBar.hpp \
+ /home/aziz-scofeild/TowerDedense/include/hpBar.hpp \
+ /home/aziz-scofeild/TowerDedense/include/gameEconomy.hpp

@@ -239,11 +239,183 @@ CMakeFiles/main.dir/src/playMode.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
- /home/aziz-scofeild/TowerDedense/include/mapManager.hpp \
- /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
- /home/aziz-scofeild/TowerDedense/include/tile.hpp \
- /usr/include/c++/13/cstdint \
- /home/aziz-scofeild/TowerDedense/include/utils.hpp \
+ /usr/local/include/TGUI/Backend/SFML-Graphics.hpp \
+ /usr/local/include/TGUI/Config.hpp /usr/include/c++/13/version \
+ /usr/include/c++/13/cassert /usr/include/assert.h \
+ /usr/local/include/TGUI/Backend/Window/SFML/BackendSFML.hpp \
+ /usr/local/include/TGUI/Backend/Window/Backend.hpp \
+ /usr/local/include/TGUI/Font.hpp /usr/local/include/TGUI/String.hpp \
+ /usr/local/include/TGUI/StringView.hpp /usr/local/include/TGUI/Utf.hpp \
+ /usr/include/c++/13/cstdint /usr/include/c++/13/array \
+ /usr/include/c++/13/compare /usr/include/c++/13/cstring \
+ /usr/include/string.h /usr/include/strings.h /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/local/include/TGUI/Rect.hpp \
+ /usr/local/include/TGUI/Vector2.hpp /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /usr/local/include/TGUI/Event.hpp /usr/local/include/TGUI/Cursor.hpp \
+ /usr/local/include/TGUI/Backend/Font/BackendFont.hpp \
+ /usr/local/include/TGUI/Global.hpp /usr/local/include/TGUI/Exception.hpp \
+ /usr/local/include/TGUI/Duration.hpp /usr/include/c++/13/chrono \
+ /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
+ /usr/include/c++/13/limits /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/local/include/TGUI/Filesystem.hpp /usr/include/c++/13/filesystem \
+ /usr/include/c++/13/bits/fs_fwd.h /usr/include/c++/13/bits/fs_path.h \
+ /usr/include/c++/13/codecvt /usr/include/c++/13/bits/fs_dir.h \
+ /usr/include/c++/13/bits/fs_ops.h \
+ /usr/local/include/TGUI/Backend/Renderer/BackendTexture.hpp \
+ /usr/local/include/TGUI/Backend/Font/BackendFontFactory.hpp \
+ /usr/local/include/TGUI/Backend/Renderer/BackendText.hpp \
+ /usr/local/include/TGUI/Text.hpp /usr/local/include/TGUI/Color.hpp \
+ /usr/local/include/TGUI/Vertex.hpp /usr/local/include/TGUI/TextStyle.hpp \
+ /usr/local/include/TGUI/RenderStates.hpp \
+ /usr/local/include/TGUI/Transform.hpp \
+ /usr/local/include/TGUI/Backend/Renderer/BackendRenderer.hpp \
+ /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /usr/local/include/TGUI/Backend/Window/SFML/BackendGuiSFML.hpp \
+ /usr/local/include/TGUI/Backend/Window/BackendGui.hpp \
+ /usr/local/include/TGUI/Container.hpp /usr/local/include/TGUI/Widget.hpp \
+ /usr/local/include/TGUI/Signal.hpp /usr/local/include/TGUI/Animation.hpp \
+ /usr/local/include/TGUI/Layout.hpp \
+ /usr/local/include/TGUI/AbsoluteOrRelativeValue.hpp \
+ /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/typeindex /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
+ /usr/local/include/TGUI/Sprite.hpp /usr/local/include/TGUI/Texture.hpp \
+ /usr/local/include/TGUI/TextureData.hpp \
+ /usr/local/include/TGUI/Optional.hpp /usr/include/c++/13/optional \
+ /usr/local/include/TGUI/SvgImage.hpp \
+ /usr/local/include/TGUI/CopiedPtr.hpp /usr/local/include/TGUI/Any.hpp \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
+ /usr/include/c++/13/any \
+ /usr/local/include/TGUI/Backend/Renderer/BackendRenderTarget.hpp \
+ /usr/local/include/TGUI/Outline.hpp \
+ /usr/local/include/TGUI/Loading/Theme.hpp \
+ /usr/local/include/TGUI/Loading/ThemeLoader.hpp \
+ /usr/local/include/TGUI/Loading/DataIO.hpp \
+ /usr/local/include/TGUI/Renderers/WidgetRenderer.hpp \
+ /usr/local/include/TGUI/ObjectConverter.hpp \
+ /usr/local/include/TGUI/Variant.hpp /usr/include/c++/13/variant \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/local/include/TGUI/Loading/Serializer.hpp \
+ /usr/local/include/TGUI/Loading/Deserializer.hpp \
+ /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
+ /usr/include/c++/13/bits/list.tcc \
+ /usr/local/include/TGUI/RelFloatRect.hpp \
+ /usr/local/include/TGUI/TwoFingerScrollDetect.hpp \
+ /usr/include/c++/13/stack /usr/include/c++/13/bits/stl_stack.h \
+ /usr/local/include/TGUI/Backend/Renderer/SFML-Graphics/BackendRendererSFML.hpp \
+ /usr/local/include/TGUI/Backend/Renderer/SFML-Graphics/BackendTextureSFML.hpp \
+ /usr/local/include/TGUI/Backend/Renderer/SFML-Graphics/BackendRenderTargetSFML.hpp \
+ /usr/local/include/TGUI/Backend/Renderer/SFML-Graphics/CanvasSFML.hpp \
+ /usr/local/include/TGUI/Widgets/CanvasBase.hpp \
+ /usr/local/include/TGUI/Widgets/ClickableWidget.hpp \
+ /usr/local/include/TGUI/Backend/Font/SFML-Graphics/BackendFontSFML.hpp \
+ /usr/local/include/TGUI/TGUI.hpp /usr/local/include/TGUI/Core.hpp \
+ /usr/local/include/TGUI/Timer.hpp /usr/local/include/TGUI/ToolTip.hpp \
+ /usr/local/include/TGUI/SubwidgetContainer.hpp \
+ /usr/local/include/TGUI/Widgets/Group.hpp \
+ /usr/local/include/TGUI/Renderers/GroupRenderer.hpp \
+ /usr/local/include/TGUI/CopiedSharedPtr.hpp \
+ /usr/local/include/TGUI/Loading/WidgetFactory.hpp \
+ /usr/local/include/TGUI/AllWidgets.hpp \
+ /usr/local/include/TGUI/Widgets/BitmapButton.hpp \
+ /usr/local/include/TGUI/Widgets/Button.hpp \
+ /usr/local/include/TGUI/Widgets/ButtonBase.hpp \
+ /usr/local/include/TGUI/Renderers/ButtonRenderer.hpp \
+ /usr/local/include/TGUI/Components.hpp \
+ /usr/local/include/TGUI/Widgets/ChatBox.hpp \
+ /usr/local/include/TGUI/Widgets/Scrollbar.hpp \
+ /usr/local/include/TGUI/Renderers/ScrollbarRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/ChatBoxRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/CheckBox.hpp \
+ /usr/local/include/TGUI/Renderers/CheckBoxRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/RadioButtonRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/RadioButton.hpp \
+ /usr/local/include/TGUI/Widgets/ChildWindow.hpp \
+ /usr/local/include/TGUI/Renderers/ChildWindowRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/ColorPicker.hpp \
+ /usr/local/include/TGUI/Widgets/Slider.hpp \
+ /usr/local/include/TGUI/Renderers/SliderRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/Panel.hpp \
+ /usr/local/include/TGUI/Renderers/PanelRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/ColorPickerRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/ComboBox.hpp \
+ /usr/local/include/TGUI/Widgets/ListBox.hpp \
+ /usr/local/include/TGUI/Renderers/ListBoxRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/ComboBoxRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/ContextMenu.hpp \
+ /usr/local/include/TGUI/Widgets/MenuWidgetBase.hpp \
+ /usr/local/include/TGUI/Renderers/MenuWidgetBaseRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/ContextMenuRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/EditBox.hpp \
+ /usr/local/include/TGUI/Renderers/EditBoxRenderer.hpp \
+ /usr/include/c++/13/regex /usr/include/c++/13/bitset \
+ /usr/include/c++/13/bits/regex_constants.h \
+ /usr/include/c++/13/bits/regex_error.h \
+ /usr/include/c++/13/bits/regex_automaton.h \
+ /usr/include/c++/13/bits/regex_automaton.tcc \
+ /usr/include/c++/13/bits/regex_scanner.h \
+ /usr/include/c++/13/bits/regex_scanner.tcc \
+ /usr/include/c++/13/bits/regex_compiler.h \
+ /usr/include/c++/13/bits/regex_compiler.tcc \
+ /usr/include/c++/13/bits/regex.h /usr/include/c++/13/bits/regex.tcc \
+ /usr/include/c++/13/bits/regex_executor.h \
+ /usr/include/c++/13/bits/regex_executor.tcc \
+ /usr/local/include/TGUI/Widgets/EditBoxSlider.hpp \
+ /usr/local/include/TGUI/Widgets/FileDialog.hpp \
+ /usr/local/include/TGUI/Widgets/Label.hpp \
+ /usr/local/include/TGUI/Renderers/LabelRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/ListView.hpp \
+ /usr/local/include/TGUI/Renderers/ListViewRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/FileDialogRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/Grid.hpp \
+ /usr/local/include/TGUI/Widgets/GrowHorizontalLayout.hpp \
+ /usr/local/include/TGUI/Widgets/BoxLayoutRatios.hpp \
+ /usr/local/include/TGUI/Widgets/BoxLayout.hpp \
+ /usr/local/include/TGUI/Renderers/BoxLayoutRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/GrowVerticalLayout.hpp \
+ /usr/local/include/TGUI/Widgets/HorizontalLayout.hpp \
+ /usr/local/include/TGUI/Widgets/HorizontalWrap.hpp \
+ /usr/local/include/TGUI/Widgets/Knob.hpp \
+ /usr/local/include/TGUI/Renderers/KnobRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/MenuBar.hpp \
+ /usr/local/include/TGUI/Renderers/MenuBarRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/MessageBox.hpp \
+ /usr/local/include/TGUI/Renderers/MessageBoxRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/PanelListBox.hpp \
+ /usr/local/include/TGUI/Widgets/ScrollablePanel.hpp \
+ /usr/local/include/TGUI/Renderers/ScrollablePanelRenderer.hpp \
+ /usr/local/include/TGUI/Renderers/PanelListBoxRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/Picture.hpp \
+ /usr/local/include/TGUI/Renderers/PictureRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/ProgressBar.hpp \
+ /usr/local/include/TGUI/Renderers/ProgressBarRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/RadioButtonGroup.hpp \
+ /usr/local/include/TGUI/Widgets/RangeSlider.hpp \
+ /usr/local/include/TGUI/Renderers/RangeSliderRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/RichTextLabel.hpp \
+ /usr/local/include/TGUI/Widgets/SeparatorLine.hpp \
+ /usr/local/include/TGUI/Renderers/SeparatorLineRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/SpinButton.hpp \
+ /usr/local/include/TGUI/Renderers/SpinButtonRenderer.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -254,8 +426,7 @@ CMakeFiles/main.dir/src/playMode.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/limits \
- /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
  /usr/include/c++/13/tr1/special_function_util.h \
  /usr/include/c++/13/tr1/bessel_function.tcc \
  /usr/include/c++/13/tr1/beta_function.tcc \
@@ -267,33 +438,35 @@ CMakeFiles/main.dir/src/playMode.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /usr/local/include/TGUI/Widgets/SpinControl.hpp \
+ /usr/local/include/TGUI/Widgets/SplitContainer.hpp \
+ /usr/local/include/TGUI/Renderers/SplitContainerRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/Tabs.hpp \
+ /usr/local/include/TGUI/Renderers/TabsRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/TabContainer.hpp \
+ /usr/local/include/TGUI/Widgets/TextArea.hpp \
+ /usr/local/include/TGUI/Renderers/TextAreaRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/ToggleButton.hpp \
+ /usr/local/include/TGUI/Widgets/TreeView.hpp \
+ /usr/local/include/TGUI/Renderers/TreeViewRenderer.hpp \
+ /usr/local/include/TGUI/Widgets/VerticalLayout.hpp \
  /home/aziz-scofeild/TowerDedense/include/towerManager.hpp \
- /usr/include/c++/13/unordered_set \
- /usr/include/c++/13/bits/unordered_set.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/enable_special_members.h \
  /home/aziz-scofeild/TowerDedense/include/tower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
+ /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+ /home/aziz-scofeild/TowerDedense/include/utils.hpp \
+ /home/aziz-scofeild/TowerDedense/include/creature.hpp \
+ /home/aziz-scofeild/TowerDedense/include/hpBar.hpp \
+ /home/aziz-scofeild/TowerDedense/include/projectile.hpp \
+ /home/aziz-scofeild/TowerDedense/include/weakTower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/mediumTower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/strongTower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/gameEconomy.hpp \
+ /home/aziz-scofeild/TowerDedense/include/mapManager.hpp \
+ /home/aziz-scofeild/TowerDedense/include/towerManager.hpp \
  /home/aziz-scofeild/TowerDedense/include/window.hpp \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/functional \
- /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h /usr/include/c++/13/array \
- /usr/include/c++/13/compare \
- /home/aziz-scofeild/TowerDedense/include/creatureManager.hpp \
- /home/aziz-scofeild/TowerDedense/include/creature.hpp \
- /usr/include/c++/13/memory \
- /usr/include/c++/13/bits/stl_raw_storage_iter.h \
- /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
- /usr/include/c++/13/bits/shared_ptr.h \
- /usr/include/c++/13/bits/shared_ptr_base.h \
- /usr/include/c++/13/bits/allocated_ptr.h \
- /usr/include/c++/13/ext/concurrence.h \
- /usr/include/c++/13/bits/shared_ptr_atomic.h \
- /usr/include/c++/13/bits/atomic_base.h \
- /usr/include/c++/13/bits/atomic_lockfree_defines.h \
- /usr/include/c++/13/backward/auto_ptr.h \
- /usr/include/c++/13/pstl/glue_memory_defs.h
+ /usr/include/c++/13/bits/fstream.tcc \
+ /home/aziz-scofeild/TowerDedense/include/creatureManager.hpp

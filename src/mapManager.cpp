@@ -181,7 +181,7 @@ std::vector<sf::Vector2i> mapManager::extractPathTiles(tileMap& map)
         }
     }
 
-    // --- Reconstruire le chemin start → goal ---
+    // --- Reconstruire le chemin start to goal ---
     std::vector<sf::Vector2i> pathTiles;
     if (found) {
         sf::Vector2i cur = goal;

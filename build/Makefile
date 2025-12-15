@@ -226,6 +226,54 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/gameEconomy.o: src/gameEconomy.cpp.o
+.PHONY : src/gameEconomy.o
+
+# target to build an object file
+src/gameEconomy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gameEconomy.cpp.o
+.PHONY : src/gameEconomy.cpp.o
+
+src/gameEconomy.i: src/gameEconomy.cpp.i
+.PHONY : src/gameEconomy.i
+
+# target to preprocess a source file
+src/gameEconomy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gameEconomy.cpp.i
+.PHONY : src/gameEconomy.cpp.i
+
+src/gameEconomy.s: src/gameEconomy.cpp.s
+.PHONY : src/gameEconomy.s
+
+# target to generate assembly for a file
+src/gameEconomy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/gameEconomy.cpp.s
+.PHONY : src/gameEconomy.cpp.s
+
+src/hpBar.o: src/hpBar.cpp.o
+.PHONY : src/hpBar.o
+
+# target to build an object file
+src/hpBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.o
+.PHONY : src/hpBar.cpp.o
+
+src/hpBar.i: src/hpBar.cpp.i
+.PHONY : src/hpBar.i
+
+# target to preprocess a source file
+src/hpBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.i
+.PHONY : src/hpBar.cpp.i
+
+src/hpBar.s: src/hpBar.cpp.s
+.PHONY : src/hpBar.s
+
+# target to generate assembly for a file
+src/hpBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.s
+.PHONY : src/hpBar.cpp.s
+
 src/interfaceGameMode.o: src/interfaceGameMode.cpp.o
 .PHONY : src/interfaceGameMode.o
 
@@ -322,6 +370,54 @@ src/mapManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.s
 .PHONY : src/mapManager.cpp.s
 
+src/mediumTower.o: src/mediumTower.cpp.o
+.PHONY : src/mediumTower.o
+
+# target to build an object file
+src/mediumTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.o
+.PHONY : src/mediumTower.cpp.o
+
+src/mediumTower.i: src/mediumTower.cpp.i
+.PHONY : src/mediumTower.i
+
+# target to preprocess a source file
+src/mediumTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.i
+.PHONY : src/mediumTower.cpp.i
+
+src/mediumTower.s: src/mediumTower.cpp.s
+.PHONY : src/mediumTower.s
+
+# target to generate assembly for a file
+src/mediumTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.s
+.PHONY : src/mediumTower.cpp.s
+
+src/menuMode.o: src/menuMode.cpp.o
+.PHONY : src/menuMode.o
+
+# target to build an object file
+src/menuMode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/menuMode.cpp.o
+.PHONY : src/menuMode.cpp.o
+
+src/menuMode.i: src/menuMode.cpp.i
+.PHONY : src/menuMode.i
+
+# target to preprocess a source file
+src/menuMode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/menuMode.cpp.i
+.PHONY : src/menuMode.cpp.i
+
+src/menuMode.s: src/menuMode.cpp.s
+.PHONY : src/menuMode.s
+
+# target to generate assembly for a file
+src/menuMode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/menuMode.cpp.s
+.PHONY : src/menuMode.cpp.s
+
 src/playMode.o: src/playMode.cpp.o
 .PHONY : src/playMode.o
 
@@ -345,6 +441,54 @@ src/playMode.s: src/playMode.cpp.s
 src/playMode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/playMode.cpp.s
 .PHONY : src/playMode.cpp.s
+
+src/projectile.o: src/projectile.cpp.o
+.PHONY : src/projectile.o
+
+# target to build an object file
+src/projectile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.o
+.PHONY : src/projectile.cpp.o
+
+src/projectile.i: src/projectile.cpp.i
+.PHONY : src/projectile.i
+
+# target to preprocess a source file
+src/projectile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.i
+.PHONY : src/projectile.cpp.i
+
+src/projectile.s: src/projectile.cpp.s
+.PHONY : src/projectile.s
+
+# target to generate assembly for a file
+src/projectile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.s
+.PHONY : src/projectile.cpp.s
+
+src/strongTower.o: src/strongTower.cpp.o
+.PHONY : src/strongTower.o
+
+# target to build an object file
+src/strongTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.o
+.PHONY : src/strongTower.cpp.o
+
+src/strongTower.i: src/strongTower.cpp.i
+.PHONY : src/strongTower.i
+
+# target to preprocess a source file
+src/strongTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.i
+.PHONY : src/strongTower.cpp.i
+
+src/strongTower.s: src/strongTower.cpp.s
+.PHONY : src/strongTower.s
+
+# target to generate assembly for a file
+src/strongTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.s
+.PHONY : src/strongTower.cpp.s
 
 src/tile.o: src/tile.cpp.o
 .PHONY : src/tile.o
@@ -442,6 +586,30 @@ src/towerManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/towerManager.cpp.s
 .PHONY : src/towerManager.cpp.s
 
+src/weakTower.o: src/weakTower.cpp.o
+.PHONY : src/weakTower.o
+
+# target to build an object file
+src/weakTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.o
+.PHONY : src/weakTower.cpp.o
+
+src/weakTower.i: src/weakTower.cpp.i
+.PHONY : src/weakTower.i
+
+# target to preprocess a source file
+src/weakTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.i
+.PHONY : src/weakTower.cpp.i
+
+src/weakTower.s: src/weakTower.cpp.s
+.PHONY : src/weakTower.s
+
+# target to generate assembly for a file
+src/weakTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.s
+.PHONY : src/weakTower.cpp.s
+
 src/window.o: src/window.cpp.o
 .PHONY : src/window.o
 
@@ -487,6 +655,12 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/gameEconomy.o"
+	@echo "... src/gameEconomy.i"
+	@echo "... src/gameEconomy.s"
+	@echo "... src/hpBar.o"
+	@echo "... src/hpBar.i"
+	@echo "... src/hpBar.s"
 	@echo "... src/interfaceGameMode.o"
 	@echo "... src/interfaceGameMode.i"
 	@echo "... src/interfaceGameMode.s"
@@ -499,9 +673,21 @@ help:
 	@echo "... src/mapManager.o"
 	@echo "... src/mapManager.i"
 	@echo "... src/mapManager.s"
+	@echo "... src/mediumTower.o"
+	@echo "... src/mediumTower.i"
+	@echo "... src/mediumTower.s"
+	@echo "... src/menuMode.o"
+	@echo "... src/menuMode.i"
+	@echo "... src/menuMode.s"
 	@echo "... src/playMode.o"
 	@echo "... src/playMode.i"
 	@echo "... src/playMode.s"
+	@echo "... src/projectile.o"
+	@echo "... src/projectile.i"
+	@echo "... src/projectile.s"
+	@echo "... src/strongTower.o"
+	@echo "... src/strongTower.i"
+	@echo "... src/strongTower.s"
 	@echo "... src/tile.o"
 	@echo "... src/tile.i"
 	@echo "... src/tile.s"
@@ -514,6 +700,9 @@ help:
 	@echo "... src/towerManager.o"
 	@echo "... src/towerManager.i"
 	@echo "... src/towerManager.s"
+	@echo "... src/weakTower.o"
+	@echo "... src/weakTower.i"
+	@echo "... src/weakTower.s"
 	@echo "... src/window.o"
 	@echo "... src/window.i"
 	@echo "... src/window.s"

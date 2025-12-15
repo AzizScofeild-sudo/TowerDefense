@@ -46,4 +46,3 @@ void mapEditor::eventManager(sf ::Event& event, sf::Vector2i cell_pos)
             isPainting_ = false ; 
         } 
 }
-

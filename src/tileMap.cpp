@@ -17,6 +17,7 @@ tileMap::tileMap(float width_window , float height_window)
     setDimenssion(width_window , height_window);
     tiles_.resize(width_ * height_);
     Grid::setTileSize(cell_size_);
+    this->loadTextures();
 }
 
 
@@ -62,8 +63,28 @@ void tileMap::draw(sf::RenderTarget& rt) const
             
             const tile& t = tiles_[y*width_ + x] ;
             cell.setPosition(static_cast<float>(x*cell_size_), static_cast<float>(y*cell_size_));
+           if(TexLoaded_)
+           {
+            if (t.getType() == tileType::ground) {
+             cell.setTexture(&groundTex_);
+             cell.setFillColor(sf::Color::White);
+            }else if(t.getType() == tileType::path){
+             cell.setTexture(&pathTex_);
+             cell.setFillColor(sf::Color::White);
+            }else if(t.getType() == tileType::obstacle){
+             cell.setTexture(&obstacleTex_);
+             cell.setFillColor(sf::Color::White);
+            }else{
+             cell.setTexture(nullptr);
+             cell.setFillColor(t.displayColor());
+            }
+
+           } else {
+            cell.setTexture(nullptr);
             cell.setFillColor(t.displayColor());
-            rt.draw(cell);
+           }
+
+          rt.draw(cell);
         }
     }
 // Dessiner la grille : 
@@ -123,3 +144,26 @@ void tileMap::setDimenssion(float width_window , float height_window)
      return cell_size_ ;
  }
 
+
+bool tileMap::loadOneTexture(sf::Texture& tex, const char* path)
+{
+    if (!tex.loadFromFile(path)) {
+        std::cerr << "[ERR] Impossible de charger! " << path << "\n";
+        return false;
+    }
+    tex.setSmooth(false);
+    return true;
+}
+
+bool tileMap::loadTextures()
+{
+    TexLoaded_ = false;
+
+    if (!loadOneTexture(groundTex_, "texture/ground.png"))return false;
+    if (!loadOneTexture(pathTex_, "texture/path.png")) return false;
+    if (!loadOneTexture(obstacleTex_, "texture/obstacle.png")) return false;
+
+    TexLoaded_ = true;
+    return true;
+}
+ 

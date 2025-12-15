@@ -8,6 +8,13 @@
 #include "tileMap.hpp"
 #include "utils.hpp"
 
+#include "weakTower.hpp"
+#include "mediumTower.hpp"
+#include "strongTower.hpp"
+#include "gameEconomy.hpp"
+
+enum class TowerType { Weak, Medium, Strong };
+
 
 class TowerManager {
   
@@ -18,14 +25,15 @@ class TowerManager {
     bool buildable(sf::Vector2u grisPos) const;
     bool isOccupied(sf::Vector2u gridPos) const;
     bool inGround(sf::Vector2u gridPos) const;
-    bool addTower(sf::Vector2i cell_pos); 
-    void draw(sf::RenderTarget& window) const ;
-    std::vector<Tower> getTowers() const { return towers_ ;}
+    bool addTower(sf::Vector2i cell_pos, TowerType type, gameEconomy& economy); // modifie ajout type et economy
+    void draw(sf::RenderTarget& window) ; // jai enelever const
+    // std::vector<Tower> getTowers() const { return towers_ ;}
 
     void Ghost();
     void updateGhost(sf::Vector2i cell_pos);
     void drawGhost(sf::RenderTarget& window) const;
 
+    void Update(const std::vector<std::shared_ptr<Creature>>& creatures);
     
 
     private :
@@ -36,10 +44,13 @@ class TowerManager {
 
    tileMap& map_ ;
    std::unordered_set<uint64_t> occupied_ ;
-   std::vector<Tower> towers_ ;
-   sf::RectangleShape ghost_;
+    std::vector<std::unique_ptr<Tower>> towers_;
+    sf::RectangleShape ghost_;
    sf::Vector2i ghostGridPos_ =  {-1, -1};
+
+
    
+   sf::Clock deltaClock_; ///
 
 
 

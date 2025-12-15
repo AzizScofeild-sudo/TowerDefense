@@ -242,6 +242,18 @@ CMakeFiles/main.dir/src/towerManager.cpp.o: \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/enable_special_members.h \
  /home/aziz-scofeild/TowerDedense/include/tower.hpp \
+ /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /usr/include/c++/13/cstdint \
@@ -268,5 +280,13 @@ CMakeFiles/main.dir/src/towerManager.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/iostream \
- /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /home/aziz-scofeild/TowerDedense/include/creature.hpp \
+ /home/aziz-scofeild/TowerDedense/include/hpBar.hpp \
+ /home/aziz-scofeild/TowerDedense/include/projectile.hpp \
+ /home/aziz-scofeild/TowerDedense/include/weakTower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/mediumTower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/strongTower.hpp \
+ /home/aziz-scofeild/TowerDedense/include/gameEconomy.hpp \
+ /usr/include/c++/13/iostream /usr/include/c++/13/istream \
+ /usr/include/c++/13/bits/istream.tcc

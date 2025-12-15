@@ -42,4 +42,3 @@ tileType tile::getType() const noexcept
 {
     return type_ ;
 }
-

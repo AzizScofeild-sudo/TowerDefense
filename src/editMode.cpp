@@ -18,11 +18,12 @@ void EditMode::onEvent(GameObject& obj ,const sf::Event& event, sf::Vector2i cel
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::F5) 
         {
-            mapManager::saveJson("/home/aziz-scofeild/TowerDedense/maps/level2.json", obj.map_);
+            mapManager::saveJson("../maps/level2.json", obj.map_);
             std::cout<<"Map enregistrer avec succee"<< std::endl; 
         }
         if (event.key.code == sf::Keyboard::F9) {
-            mapManager::loadJson("/home/aziz-scofeild/TowerDedense/maps/level2.json", obj.map_);
+            mapManager::loadJson("../maps/level2.json", obj.map_);
+            obj.map_.loadTextures();
             std::cout<<"Map chargee avec succeeeeey !"<<std::endl;
         }
     }

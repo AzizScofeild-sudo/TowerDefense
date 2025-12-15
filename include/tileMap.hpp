@@ -20,6 +20,9 @@ class tileMap
    void  paint(unsigned x , unsigned y , tileType t );
    sf::Vector2i worldToCell(sf::Vector2f& world) const;
    void draw(sf::RenderTarget& rt) const;
+   bool loadTextures();
+   bool loadOneTexture(sf::Texture& tex, const char* path);
+
 
    // les accesseurs : 
 
@@ -38,5 +41,12 @@ class tileMap
     unsigned height_ ;
     unsigned cell_size_ = 25 ;
     std::vector<tile> tiles_ ;
+    sf::Texture groundTex_;
+    sf::Texture pathTex_ ;
+    sf::Texture obstacleTex_ ; 
+
+
+
+    bool TexLoaded_ = false;
 };
 #endif 
