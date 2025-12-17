@@ -5,12 +5,14 @@
 
 Creature::Creature(int gridX, int gridY, tileMap& map, int health, float speed, int reward)
     : position(gridX * map.getSizeTile(), gridY * map.getSizeTile()),
-      health(health), speed(speed),
+      health(health), 
+      speed(speed),
       currentPathIndex(0),
       map_(map),
       alive(true),
       killedByPlayer(false),
-      reward(reward)
+      reward(reward),
+      reachedGoal_(false)
 {
     unsigned cellSize = map_.getSizeTile();
     shape.setRadius(cellSize / 2.f);
@@ -28,6 +30,8 @@ void Creature::move(const std::vector<sf::Vector2i>& pathTiles, float deltaTime)
     if (currentPathIndex < 0 || currentPathIndex >= static_cast<int>(pathTiles.size())) {
         alive = false;
         killedByPlayer = false; 
+        reachedGoal_ = true;
+        return ; 
     }
 
     unsigned cellSize = map_.getSizeTile();
@@ -48,8 +52,10 @@ void Creature::move(const std::vector<sf::Vector2i>& pathTiles, float deltaTime)
     if (distance < 2.f) {
         ++currentPathIndex;
         if (currentPathIndex >= static_cast<int>(pathTiles.size())) {
-            alive = false;
-            killedByPlayer = false; // <<< atteint la fin
+        alive = false;
+        reachedGoal_ = true;     //arrivé au goal
+        killedByPlayer = false;
+        return;
         }
     }
 }
@@ -69,12 +75,17 @@ float Creature::getCreatureRadius() const { return shape.getRadius(); }
 
 void Creature::takeDamage(int damage, gameEconomy* economy)
 {
+    if (!alive) return;
+
     health -= damage;
     if (health <= 0) {
         health = 0;
         alive = false;
-        killedByPlayer = true; // <<< tuée par le joueur
+        killedByPlayer = true;
+        reachedGoal_ = false;     // <<< cohérence
         if (economy)
             economy->earn(reward);
     }
 }
+
+

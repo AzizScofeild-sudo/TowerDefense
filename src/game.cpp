@@ -14,7 +14,7 @@ Game::Game() :
     towerManager_(map_),  
     creatureManager_(map_, economy_),
     gui_(window_),
-    obj_{map_, editor_, towerManager_, creatureManager_, window_, economy_, gui_}
+    obj_{map_, editor_, towerManager_, creatureManager_, window_, economy_, gui_, playerHp_}
     
 {
 

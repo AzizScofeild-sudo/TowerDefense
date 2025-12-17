@@ -23,11 +23,10 @@ class CreatureManager
 public:
     CreatureManager(tileMap& map, gameEconomy& economy);
 
-    void update();
+    int update(float dt);
     void draw(sf::RenderTarget& rt);
     void buildPath();
     const std::vector<std::shared_ptr<Creature>>& getCreatures() const;
-
 
 private:
     void spawn();
@@ -44,5 +43,5 @@ private:
 
     // >>> MODIF : système de vagues
     std::vector<Wave> waves_;
-    int currentWave_ = 0;
+    size_t currentWave_ = 0;
 };

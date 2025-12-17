@@ -25,7 +25,7 @@ sf::Vector2f Tower::getTowerPosition() const
     //return gridPos_;
     int cellSize = map_.getSizeTile();
     return sf::Vector2f(gridPos_.x * cellSize + cellSize / 2.f,
-                        gridPos_.y * cellSize + cellSize / 2.f);
+     gridPos_.y * cellSize + cellSize / 2.f);
 }
 
 

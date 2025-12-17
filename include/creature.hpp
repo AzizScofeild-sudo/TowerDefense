@@ -24,6 +24,8 @@ public:
 
     int getReward() const { return reward; }
     bool wasKilledByPlayer() const { return killedByPlayer; }
+    bool reachedGoal() const noexcept { return reachedGoal_; }
+
 
 private:
     sf::CircleShape shape;
@@ -31,13 +33,14 @@ private:
     int health;
     float speed;
     int currentPathIndex;
-    tileMap map_ ; // Solution chatGPT !!!!
+    tileMap& map_ ; // Solution chatGPT !!!!
     bool alive;
 
     std::unique_ptr<hpBar> healthBar; // HP bar attachee a la créature
 
     unsigned reward;
     bool killedByPlayer = false;
+    bool reachedGoal_ = false;
 };
 
 

@@ -1,78 +1,3 @@
-/* #include <algorithm>
-#include "creatureManager.hpp"
-#include "mapManager.hpp"
-
-
-
-
-
-
-
-CreatureManager::CreatureManager(tileMap& map, gameEconomy& economy)
-    : map_(map), economy_(economy)
-{
-    // ajouter un controlle sur le bon calcule du path avec une sorte de 
-    // if(path.empty()) std::cout<<"aucun chemin trouve...."<<std::endl ;  
-    //path_ = mapManager::extractPathTiles(map_);
-    //if (path_.empty()) {
-    //    std::cout << "[CreatureManager] Aucun chemin trouvé, les créatures ne pourront pas bouger" <<std::endl;
-    //}
-    spawnTimer_.restart();
-}
-
-
-void CreatureManager::spawn()
-{
-    if(path_.empty()) return ; 
-    if(spawnTimer_.getElapsedTime().asSeconds() >= spawnInterval_)
-    {
-        creatures_.push_back(std::make_shared<Creature>(path_.front().x, path_.front().y, map_, 70, 100.f, 10));
-        std::cout<<"une nouvelle creature a etait cree !"<<std::endl;
-        spawnTimer_.restart();
-    } 
-}
-
-void CreatureManager::update() 
-{
-    float dt = frameClock_.restart().asSeconds();
-    spawn();
-    for (auto& c : creatures_){c->move(path_, dt);}
-
-    // supprimer les créatures mortes (qui ont fini le chemin ou sont "tuées")
-    //std::cout<<"la taille du creatures 2 :"<<creatures_.size()<<std::endl;
-    creatures_.erase(
-        std::remove_if(creatures_.begin(), creatures_.end(),
-            [this](const std::shared_ptr<Creature>& c) {
-                if (!c->isAlive()) {
-                    return true;
-                }
-                return false;
-            }),
-        creatures_.end()
-    );
-    //std::cout<<"la taille du creatures 3 :"<<creatures_.size()<<std::endl;
-}
-
-void CreatureManager::draw(sf::RenderTarget& rt)
-{
-    for (auto& c : creatures_) c->draw(rt);
-
-}
-
-
-
-void CreatureManager::buildPath()
-{
-    path_ = mapManager::extractPathTiles(map_);
-    //petit test de bof : 
-    std::cout<<"la taille du paff 1 :" << path_.size() <<std::endl; 
-    if (path_.empty()) {
-        std::cout << "Aucun chemin trouvé, les créatures ne pourront pas bouger" <<std::endl;
-    }
-
-    
-   
-} */
 
 #include <algorithm>
 #include <iostream>
@@ -90,7 +15,7 @@ CreatureManager::CreatureManager(tileMap& map, gameEconomy& economy)
     waves_ = {
         // creatureCount, spawned, health, speed, reward, spawnInterval
 
-        {15,  0,  50,  80.f,  5,  1.5f}, // vague 1
+        {20,  0,  50,  80.f,  12,  1.5f}, // vague 1
         {20,  0,  80, 110.f,  8,  1.2f}, // vague 2
         {25, 0, 120, 150.f, 12, 0.8f}  // vague 3
     };
@@ -138,40 +63,58 @@ void CreatureManager::spawn()
     }
 }
 
-void CreatureManager::update()
+int CreatureManager::update(float dt)
 {
-    float dt = frameClock_.restart().asSeconds();
+    if (dt <= 0.f) return 0;
+    if (dt > 0.1f) dt = 0.1f;
+    if (path_.empty())
+        return 0;
 
+    // 1) spawn
     spawn();
 
+    // 2) move
     for (auto& c : creatures_)
         c->move(path_, dt);
 
-    // suppression des créatures mortes
+    // 3) collect + erase
+    int leaked = 0;
+
     creatures_.erase(
         std::remove_if(creatures_.begin(), creatures_.end(),
-            [this](const std::shared_ptr<Creature>& c)
+            [this, &leaked](const std::shared_ptr<Creature>& c)
             {
-                if (!c->isAlive()) {
-                    if (c->wasKilledByPlayer())
-                        economy_.earn(c->getReward());
-                    return true; // retire la créature morte ou arrivée au goal
+                if (c->isAlive())
+                    return false;
+
+                if (c->wasKilledByPlayer())
+                {
+                    economy_.earn(c->getReward());
                 }
-                return false;
+                else if (c->reachedGoal())
+                {
+                    leaked += 1;
+                }
+
+                return true;
             }),
         creatures_.end()
     );
 
-
-
-    // >>> MODIF : passer à la vague suivante
-    if (creatures_.empty() &&
-        currentWave_ < waves_.size() &&
-        waves_[currentWave_].spawned >= waves_[currentWave_].creatureCount)
+    // 4) next wave
+    if (currentWave_ < waves_.size())
     {
-        startNextWave();
+        Wave& wave = waves_[currentWave_];
+        const bool waveCompleted = (wave.spawned >= wave.creatureCount);
+        const bool noCreatureLeft = creatures_.empty();
+
+        if (waveCompleted && noCreatureLeft)
+            startNextWave();
     }
+
+    return leaked;
 }
+
 
 void CreatureManager::startNextWave()
 {

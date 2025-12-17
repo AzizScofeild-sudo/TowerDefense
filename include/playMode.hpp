@@ -16,13 +16,17 @@ public:
 private:
     bool isBuilding_ = false;
     bool loaded_ = false;
+    bool gameOver_ = false;
     TowerType selectedTowerType_ = TowerType::Weak;
 
 
     sf::Font font_;
     sf::Text moneyText_;
     sf::Text towerText_ ;
-    sf::Text selectedTowerText_; 
-};
+    sf::Text selectedTowerText_;
+    sf::Text gameOverText_;
+    
+    sf::Clock dtClock_;
+};  
 
 #endif

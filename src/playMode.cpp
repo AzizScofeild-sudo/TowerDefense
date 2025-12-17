@@ -4,6 +4,8 @@
 #include "towerManager.hpp"
 #include "window.hpp"
 #include "creatureManager.hpp"
+#include "playerHealth.hpp"
+
 
 void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
 {
@@ -41,7 +43,19 @@ void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
     selectedTowerText_.setPosition(10.f, obj.window_.getSize().y - 30.f); // en bas
     selectedTowerText_.setString("Selected: Weak Tower 50$"); // texte initial
 
+    gameOverText_.setFont(font_);
+    gameOverText_.setString("GAME OVER");
+    gameOverText_.setCharacterSize(128);
+    gameOverText_.setFillColor(sf::Color::Red);
+    gameOverText_.setStyle(sf::Text::Bold);
 
+    // centrer le texte
+    sf::FloatRect bounds = gameOverText_.getLocalBounds();
+    gameOverText_.setOrigin(bounds.width / 2.f, bounds.height / 2.f);
+    gameOverText_.setPosition(
+    obj.window_.getSize().x / 2.f,
+    obj.window_.getSize().y / 2.f 
+    );
 
         loaded_ = true;
     }
@@ -62,6 +76,9 @@ void PlayMode::onEvent(GameObject& obj, const sf::Event& event, sf::Vector2i)
 
 void PlayMode::onUpdate(GameObject& obj, sf::Vector2i cell_pos)
 {
+    if (gameOver_) return;
+
+    const float dt = dtClock_.restart().asSeconds();
     if (isBuilding_) {
         obj.towerManager_.Ghost();
         obj.towerManager_.updateGhost(cell_pos);
@@ -88,7 +105,17 @@ void PlayMode::onUpdate(GameObject& obj, sf::Vector2i cell_pos)
         }
     }
 
-    obj.creatureManager_.update();
+
+    int leaked = obj.creatureManager_.update(dt);
+    if (leaked > 0) obj.playerHp_.lose(leaked);
+
+    if (obj.playerHp_.isDead())
+    {
+        gameOver_ = true;
+        std::cout << "GAME OVER !"<<std::endl;
+        return;
+    }
+
     obj.towerManager_.Update(obj.creatureManager_.getCreatures());
     moneyText_.setString("Money : " + std::to_string(obj.economy_.getMoney()) + "$");
     towerText_.setString("Tower Info: weak 50$ / medium 100$ / strong 150$");
@@ -101,4 +128,7 @@ void PlayMode::onRender(GameObject& obj, sf::RenderTarget& rt)
     if (isBuilding_) obj.towerManager_.drawGhost(rt);
     obj.creatureManager_.draw(rt);
     rt.draw(moneyText_);
+    obj.playerHp_.draw(rt);
+    if(gameOver_) rt.draw(gameOverText_);
+
 }

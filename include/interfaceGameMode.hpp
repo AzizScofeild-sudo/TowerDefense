@@ -13,17 +13,19 @@ class mapEditor;
 class TowerManager;
 class CreatureManager;
 class gameEconomy;
+class PlayerHealth;
 
 
 // Regroupe les objets du jeu que les modes utilisent
 struct GameObject {
-    tileMap&      map_;
-    mapEditor&    editor_;
+    tileMap& map_;
+    mapEditor& editor_;
     TowerManager& towerManager_;
     CreatureManager& creatureManager_ ; 
-    Window&       window_;
-    gameEconomy&  economy_; 
+    Window& window_;
+    gameEconomy& economy_; 
     tgui::Gui& gui_;
+    PlayerHealth& playerHp_; 
 
     std::function<void()> requestEditMode;
     std::function<void()> requestPlayMode;

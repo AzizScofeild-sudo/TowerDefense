@@ -39,7 +39,6 @@ protected :
     sf::RectangleShape tower_shape_;
     sf::CircleShape rangeCircle; ////////
     sf::Vector2u gridPos_;
-    float size_tower  ;
    
 
     //

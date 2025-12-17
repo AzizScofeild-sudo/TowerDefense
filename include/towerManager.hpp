@@ -38,7 +38,7 @@ class TowerManager {
 
     private :
 
-   static uint64_t key(sf::Vector2u gridPos) { return (uint64_t(gridPos.x) << 32) ^ gridPos.y; }
+   static uint64_t key(sf::Vector2u gridPos) { return (uint64_t(gridPos.x) << 32) ^ uint64_t(gridPos.y); }
 
    private : 
 

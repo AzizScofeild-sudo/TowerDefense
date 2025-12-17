@@ -13,6 +13,7 @@
 #include "editMode.hpp"
 #include "playMode.hpp"
 #include "menuMode.hpp"
+#include "playerHealth.hpp"
 
 
 enum class GameMode {Edit, Play, Menu}; 
@@ -50,6 +51,7 @@ EditMode editMode_ ;
 PlayMode playMode_ ;
 MenuMode menuMode_ ;
 tgui::Gui gui_ ;
+PlayerHealth playerHp_{20};
 
 };
 #endif 
