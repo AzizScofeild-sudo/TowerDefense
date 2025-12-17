@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aziz-scofeild/TowerDedense
+CMAKE_SOURCE_DIR = /home/achraf/project/TowerDefense
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aziz-scofeild/TowerDedense/build
+CMAKE_BINARY_DIR = /home/achraf/project/TowerDefense/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aziz-scofeild/TowerDedense/build/CMakeFiles /home/aziz-scofeild/TowerDedense/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/achraf/project/TowerDefense/build/CMakeFiles /home/achraf/project/TowerDefense/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aziz-scofeild/TowerDedense/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/achraf/project/TowerDefense/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,7 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /home/aziz-scofeild/TowerDedense/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/achraf/project/TowerDefense/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -129,6 +129,54 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+src/creature.o: src/creature.cpp.o
+.PHONY : src/creature.o
+
+# target to build an object file
+src/creature.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.o
+.PHONY : src/creature.cpp.o
+
+src/creature.i: src/creature.cpp.i
+.PHONY : src/creature.i
+
+# target to preprocess a source file
+src/creature.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.i
+.PHONY : src/creature.cpp.i
+
+src/creature.s: src/creature.cpp.s
+.PHONY : src/creature.s
+
+# target to generate assembly for a file
+src/creature.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/creature.cpp.s
+.PHONY : src/creature.cpp.s
+
+src/hpBar.o: src/hpBar.cpp.o
+.PHONY : src/hpBar.o
+
+# target to build an object file
+src/hpBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.o
+.PHONY : src/hpBar.cpp.o
+
+src/hpBar.i: src/hpBar.cpp.i
+.PHONY : src/hpBar.i
+
+# target to preprocess a source file
+src/hpBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.i
+.PHONY : src/hpBar.cpp.i
+
+src/hpBar.s: src/hpBar.cpp.s
+.PHONY : src/hpBar.s
+
+# target to generate assembly for a file
+src/hpBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/hpBar.cpp.s
+.PHONY : src/hpBar.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -154,29 +202,245 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/text.o: src/text.cpp.o
-.PHONY : src/text.o
+src/mapEditor.o: src/mapEditor.cpp.o
+.PHONY : src/mapEditor.o
 
 # target to build an object file
-src/text.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.o
-.PHONY : src/text.cpp.o
+src/mapEditor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.o
+.PHONY : src/mapEditor.cpp.o
 
-src/text.i: src/text.cpp.i
-.PHONY : src/text.i
+src/mapEditor.i: src/mapEditor.cpp.i
+.PHONY : src/mapEditor.i
 
 # target to preprocess a source file
-src/text.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.i
-.PHONY : src/text.cpp.i
+src/mapEditor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.i
+.PHONY : src/mapEditor.cpp.i
 
-src/text.s: src/text.cpp.s
-.PHONY : src/text.s
+src/mapEditor.s: src/mapEditor.cpp.s
+.PHONY : src/mapEditor.s
 
 # target to generate assembly for a file
-src/text.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/text.cpp.s
-.PHONY : src/text.cpp.s
+src/mapEditor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapEditor.cpp.s
+.PHONY : src/mapEditor.cpp.s
+
+src/mapManager.o: src/mapManager.cpp.o
+.PHONY : src/mapManager.o
+
+# target to build an object file
+src/mapManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.o
+.PHONY : src/mapManager.cpp.o
+
+src/mapManager.i: src/mapManager.cpp.i
+.PHONY : src/mapManager.i
+
+# target to preprocess a source file
+src/mapManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.i
+.PHONY : src/mapManager.cpp.i
+
+src/mapManager.s: src/mapManager.cpp.s
+.PHONY : src/mapManager.s
+
+# target to generate assembly for a file
+src/mapManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapManager.cpp.s
+.PHONY : src/mapManager.cpp.s
+
+src/mediumTower.o: src/mediumTower.cpp.o
+.PHONY : src/mediumTower.o
+
+# target to build an object file
+src/mediumTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.o
+.PHONY : src/mediumTower.cpp.o
+
+src/mediumTower.i: src/mediumTower.cpp.i
+.PHONY : src/mediumTower.i
+
+# target to preprocess a source file
+src/mediumTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.i
+.PHONY : src/mediumTower.cpp.i
+
+src/mediumTower.s: src/mediumTower.cpp.s
+.PHONY : src/mediumTower.s
+
+# target to generate assembly for a file
+src/mediumTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mediumTower.cpp.s
+.PHONY : src/mediumTower.cpp.s
+
+src/projectile.o: src/projectile.cpp.o
+.PHONY : src/projectile.o
+
+# target to build an object file
+src/projectile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.o
+.PHONY : src/projectile.cpp.o
+
+src/projectile.i: src/projectile.cpp.i
+.PHONY : src/projectile.i
+
+# target to preprocess a source file
+src/projectile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.i
+.PHONY : src/projectile.cpp.i
+
+src/projectile.s: src/projectile.cpp.s
+.PHONY : src/projectile.s
+
+# target to generate assembly for a file
+src/projectile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/projectile.cpp.s
+.PHONY : src/projectile.cpp.s
+
+src/strongTower.o: src/strongTower.cpp.o
+.PHONY : src/strongTower.o
+
+# target to build an object file
+src/strongTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.o
+.PHONY : src/strongTower.cpp.o
+
+src/strongTower.i: src/strongTower.cpp.i
+.PHONY : src/strongTower.i
+
+# target to preprocess a source file
+src/strongTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.i
+.PHONY : src/strongTower.cpp.i
+
+src/strongTower.s: src/strongTower.cpp.s
+.PHONY : src/strongTower.s
+
+# target to generate assembly for a file
+src/strongTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/strongTower.cpp.s
+.PHONY : src/strongTower.cpp.s
+
+src/tile.o: src/tile.cpp.o
+.PHONY : src/tile.o
+
+# target to build an object file
+src/tile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tile.cpp.o
+.PHONY : src/tile.cpp.o
+
+src/tile.i: src/tile.cpp.i
+.PHONY : src/tile.i
+
+# target to preprocess a source file
+src/tile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tile.cpp.i
+.PHONY : src/tile.cpp.i
+
+src/tile.s: src/tile.cpp.s
+.PHONY : src/tile.s
+
+# target to generate assembly for a file
+src/tile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tile.cpp.s
+.PHONY : src/tile.cpp.s
+
+src/tileMap.o: src/tileMap.cpp.o
+.PHONY : src/tileMap.o
+
+# target to build an object file
+src/tileMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tileMap.cpp.o
+.PHONY : src/tileMap.cpp.o
+
+src/tileMap.i: src/tileMap.cpp.i
+.PHONY : src/tileMap.i
+
+# target to preprocess a source file
+src/tileMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tileMap.cpp.i
+.PHONY : src/tileMap.cpp.i
+
+src/tileMap.s: src/tileMap.cpp.s
+.PHONY : src/tileMap.s
+
+# target to generate assembly for a file
+src/tileMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tileMap.cpp.s
+.PHONY : src/tileMap.cpp.s
+
+src/tower.o: src/tower.cpp.o
+.PHONY : src/tower.o
+
+# target to build an object file
+src/tower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.o
+.PHONY : src/tower.cpp.o
+
+src/tower.i: src/tower.cpp.i
+.PHONY : src/tower.i
+
+# target to preprocess a source file
+src/tower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.i
+.PHONY : src/tower.cpp.i
+
+src/tower.s: src/tower.cpp.s
+.PHONY : src/tower.s
+
+# target to generate assembly for a file
+src/tower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/tower.cpp.s
+.PHONY : src/tower.cpp.s
+
+src/weakTower.o: src/weakTower.cpp.o
+.PHONY : src/weakTower.o
+
+# target to build an object file
+src/weakTower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.o
+.PHONY : src/weakTower.cpp.o
+
+src/weakTower.i: src/weakTower.cpp.i
+.PHONY : src/weakTower.i
+
+# target to preprocess a source file
+src/weakTower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.i
+.PHONY : src/weakTower.cpp.i
+
+src/weakTower.s: src/weakTower.cpp.s
+.PHONY : src/weakTower.s
+
+# target to generate assembly for a file
+src/weakTower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/weakTower.cpp.s
+.PHONY : src/weakTower.cpp.s
+
+src/window.o: src/window.cpp.o
+.PHONY : src/window.o
+
+# target to build an object file
+src/window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/window.cpp.o
+.PHONY : src/window.cpp.o
+
+src/window.i: src/window.cpp.i
+.PHONY : src/window.i
+
+# target to preprocess a source file
+src/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/window.cpp.i
+.PHONY : src/window.cpp.i
+
+src/window.s: src/window.cpp.s
+.PHONY : src/window.s
+
+# target to generate assembly for a file
+src/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/window.cpp.s
+.PHONY : src/window.cpp.s
 
 # Help Target
 help:
@@ -187,12 +451,45 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/creature.o"
+	@echo "... src/creature.i"
+	@echo "... src/creature.s"
+	@echo "... src/hpBar.o"
+	@echo "... src/hpBar.i"
+	@echo "... src/hpBar.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/text.o"
-	@echo "... src/text.i"
-	@echo "... src/text.s"
+	@echo "... src/mapEditor.o"
+	@echo "... src/mapEditor.i"
+	@echo "... src/mapEditor.s"
+	@echo "... src/mapManager.o"
+	@echo "... src/mapManager.i"
+	@echo "... src/mapManager.s"
+	@echo "... src/mediumTower.o"
+	@echo "... src/mediumTower.i"
+	@echo "... src/mediumTower.s"
+	@echo "... src/projectile.o"
+	@echo "... src/projectile.i"
+	@echo "... src/projectile.s"
+	@echo "... src/strongTower.o"
+	@echo "... src/strongTower.i"
+	@echo "... src/strongTower.s"
+	@echo "... src/tile.o"
+	@echo "... src/tile.i"
+	@echo "... src/tile.s"
+	@echo "... src/tileMap.o"
+	@echo "... src/tileMap.i"
+	@echo "... src/tileMap.s"
+	@echo "... src/tower.o"
+	@echo "... src/tower.i"
+	@echo "... src/tower.s"
+	@echo "... src/weakTower.o"
+	@echo "... src/weakTower.i"
+	@echo "... src/weakTower.s"
+	@echo "... src/window.o"
+	@echo "... src/window.i"
+	@echo "... src/window.s"
 .PHONY : help
 
 
@@ -204,7 +501,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /home/aziz-scofeild/TowerDedense/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /home/achraf/project/TowerDefense/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

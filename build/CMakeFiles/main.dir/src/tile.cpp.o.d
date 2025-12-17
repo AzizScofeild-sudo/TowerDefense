@@ -1,6 +1,12 @@
 CMakeFiles/main.dir/src/tile.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/tile.cpp /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/tile.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/SFML/Graphics/Color.hpp \
  /usr/include/SFML/Graphics/Export.hpp /usr/include/SFML/Config.hpp \
  /usr/include/c++/13/cstdint \

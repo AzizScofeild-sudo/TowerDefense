@@ -1,8 +1,15 @@
 CMakeFiles/main.dir/src/tileMap.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/tileMap.cpp \
  /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/tileMap.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/SFML/Graphics/Color.hpp \
  /usr/include/SFML/Graphics/Export.hpp /usr/include/SFML/Config.hpp \
  /usr/include/c++/13/cstdint \
@@ -238,6 +245,7 @@ CMakeFiles/main.dir/src/tileMap.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/include/utils.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -264,5 +272,8 @@ CMakeFiles/main.dir/src/tileMap.cpp.o: \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+=======
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/c++/13/iostream /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc

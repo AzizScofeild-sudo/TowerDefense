@@ -1,7 +1,13 @@
 CMakeFiles/main.dir/src/window.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/window.cpp \
  /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/window.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/window.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/window.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -240,6 +246,7 @@ CMakeFiles/main.dir/src/window.cpp.o: \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+<<<<<<< HEAD
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/functional \
  /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/unordered_map \
@@ -275,3 +282,30 @@ CMakeFiles/main.dir/src/window.cpp.o: \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /usr/include/c++/13/cstdint
+=======
+ /usr/include/c++/13/bits/fstream.tcc \
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+ /usr/include/c++/13/cstdint \
+ /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/mapEditor.hpp \
+ /home/achraf/project/TowerDefense/include/weakTower.hpp \
+ /home/achraf/project/TowerDefense/include/tower.hpp \
+ /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /home/achraf/project/TowerDefense/include/creature.hpp \
+ /home/achraf/project/TowerDefense/include/hpBar.hpp \
+ /home/achraf/project/TowerDefense/include/projectile.hpp \
+ /home/achraf/project/TowerDefense/include/mediumTower.hpp \
+ /home/achraf/project/TowerDefense/include/strongTower.hpp \
+ /home/achraf/project/TowerDefense/include/mapManager.hpp
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67

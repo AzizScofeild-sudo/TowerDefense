@@ -1,7 +1,13 @@
 CMakeFiles/main.dir/src/tower.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/tower.cpp \
  /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/tower.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/tower.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/tower.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -247,10 +253,19 @@ CMakeFiles/main.dir/src/tower.cpp.o: \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /usr/include/c++/13/cstdint \
  /home/aziz-scofeild/TowerDedense/include/utils.hpp \
+=======
+ /home/achraf/project/TowerDefense/include/creature.hpp \
+ /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+ /usr/include/c++/13/cstdint \
+ /home/achraf/project/TowerDefense/include/hpBar.hpp \
+ /home/achraf/project/TowerDefense/include/projectile.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -273,7 +288,11 @@ CMakeFiles/main.dir/src/tower.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
+<<<<<<< HEAD
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /home/aziz-scofeild/TowerDedense/include/creature.hpp \
  /home/aziz-scofeild/TowerDedense/include/hpBar.hpp \
  /home/aziz-scofeild/TowerDedense/include/projectile.hpp
+=======
+ /usr/include/c++/13/tr1/riemann_zeta.tcc
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67

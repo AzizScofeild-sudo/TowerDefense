@@ -1,7 +1,13 @@
 CMakeFiles/main.dir/src/mapManager.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/mapManager.cpp \
  /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/mapManager.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/mapManager.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/mapManager.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -116,8 +122,13 @@ CMakeFiles/main.dir/src/mapManager.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
+=======
+ /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/SFML/Graphics/Color.hpp \
  /usr/include/SFML/Graphics/Export.hpp /usr/include/SFML/Config.hpp \
  /usr/include/c++/13/cstdint \
@@ -240,6 +251,7 @@ CMakeFiles/main.dir/src/mapManager.cpp.o: \
  /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
+<<<<<<< HEAD
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
  /home/aziz-scofeild/TowerDedense/include/utils.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
@@ -265,6 +277,9 @@ CMakeFiles/main.dir/src/mapManager.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/fstream \
+=======
+ /usr/include/SFML/Graphics/VertexBuffer.hpp /usr/include/c++/13/fstream \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
@@ -295,6 +310,32 @@ CMakeFiles/main.dir/src/mapManager.cpp.o: \
  /usr/include/nlohmann/detail/conversions/from_json.hpp \
  /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
  /usr/include/c++/13/bits/forward_list.tcc /usr/include/c++/13/valarray \
+<<<<<<< HEAD
+=======
+ /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/limits \
+ /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/c++/13/bits/valarray_array.h \
  /usr/include/c++/13/bits/valarray_array.tcc \
  /usr/include/c++/13/bits/valarray_before.h \

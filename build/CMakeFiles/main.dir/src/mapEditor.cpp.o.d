@@ -1,7 +1,13 @@
 CMakeFiles/main.dir/src/mapEditor.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/mapEditor.cpp \
  /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/mapEditor.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/mapEditor.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/mapEditor.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -238,6 +244,7 @@ CMakeFiles/main.dir/src/mapEditor.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /usr/include/c++/13/cstdint \
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
@@ -265,3 +272,27 @@ CMakeFiles/main.dir/src/mapEditor.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc
+=======
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+ /usr/include/c++/13/cstdint \
+ /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/weakTower.hpp \
+ /home/achraf/project/TowerDefense/include/tower.hpp \
+ /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /home/achraf/project/TowerDefense/include/creature.hpp \
+ /home/achraf/project/TowerDefense/include/hpBar.hpp \
+ /home/achraf/project/TowerDefense/include/projectile.hpp \
+ /home/achraf/project/TowerDefense/include/mediumTower.hpp \
+ /home/achraf/project/TowerDefense/include/strongTower.hpp
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67

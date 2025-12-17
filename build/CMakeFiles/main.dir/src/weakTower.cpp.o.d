@@ -1,8 +1,15 @@
 CMakeFiles/main.dir/src/weakTower.cpp.o: \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/src/weakTower.cpp \
  /usr/include/stdc-predef.h \
  /home/aziz-scofeild/TowerDedense/include/weakTower.hpp \
  /home/aziz-scofeild/TowerDedense/include/tower.hpp \
+=======
+ /home/achraf/project/TowerDefense/src/weakTower.cpp \
+ /usr/include/stdc-predef.h \
+ /home/achraf/project/TowerDefense/include/weakTower.hpp \
+ /home/achraf/project/TowerDefense/include/tower.hpp \
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -248,6 +255,7 @@ CMakeFiles/main.dir/src/weakTower.cpp.o: \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
+<<<<<<< HEAD
  /home/aziz-scofeild/TowerDedense/include/tileMap.hpp \
  /home/aziz-scofeild/TowerDedense/include/tile.hpp \
  /usr/include/c++/13/cstdint \
@@ -278,3 +286,11 @@ CMakeFiles/main.dir/src/weakTower.cpp.o: \
  /home/aziz-scofeild/TowerDedense/include/creature.hpp \
  /home/aziz-scofeild/TowerDedense/include/hpBar.hpp \
  /home/aziz-scofeild/TowerDedense/include/projectile.hpp
+=======
+ /home/achraf/project/TowerDefense/include/creature.hpp \
+ /home/achraf/project/TowerDefense/include/tileMap.hpp \
+ /home/achraf/project/TowerDefense/include/tile.hpp \
+ /usr/include/c++/13/cstdint \
+ /home/achraf/project/TowerDefense/include/hpBar.hpp \
+ /home/achraf/project/TowerDefense/include/projectile.hpp
+>>>>>>> 26e5f89969ffd896dd93e9c7c1b275932ae92b67
